@@ -26,6 +26,8 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-<p style="font-size: 20px; line-height: 1.8;">
-    江川，出生在一个偏远小镇。童年时，父母离异，他跟随奶奶生活，日子虽清苦，但奶奶的爱让他心怀温暖。15岁那年，奶奶病逝，江川一夜长大。他独自前往大城市打工，做过餐厅服务员、快递员。一次偶然的机会，他救助了一位受伤的导演，被邀请参与电影拍摄。凭借坚韧与天赋，他从龙套演员一步步成长为知名影星。然而，正当事业如日中天，他却因一场误会陷入舆论风波，被迫退出娱乐圈，如今他复仇归来，v我50，听我详述复仇计划。
+<p style="font-size: 20px; line-height: 1.5;">
+    主要研究方向为智慧农业技术与装备，针对果园进行全程智能化生产研究，研发的猕猴桃采摘机器人、授粉机器人、果园智能测产App等被央视CCTV17《我爱发明》、《超级新农人》、陕西卫视等栏目专题报道。在ComputersandElectronicsinAgriculture、PrecisionAgriculture、BiosystemsEngineering、JournaloftheASABE、JournalofFieldRobotics、JournalofFoodEngineering、InternationalJournalofAgriculturalandBiologicalEngineering (IJABE)、农业工程学报、农业机械学报、InformationProcessinginAgriculture、ArtificialIntelligenceinAgriculture等权威期刊上发表SCI论文40篇（ESI高被引论文8篇），连续入选World top 2% scientists（全球前2%科学家榜单）、爱思唯尔“中国高被引学者”榜单、中国知网高被引学者Top1%，获中国发明专利12项、国际发明专利2项、实用新型专利43项、外观设计专利1项、软件著作权20余项。
+
+主持国家自然科学基金面上项目（2项）、国家自然科学基金青年项目，科技部高端外国专家引进计划、科技部“一带一路”创新人才交流外国专家项目、科技部外国青年人才项目等5项，陕西省重点研发计划特色产业创新链（群）项目、揭榜挂帅项目（350万）、教育部留学回国人员科研启动基金、中国博士后基金、陕西省自然基金、西北农林科技大学国际合作种子基金、王同川创业创新基金等，第一参与人承担多项重点项目。主持企业横向合作项目10余项，研制多款样机产品，专利转化2项，取得较好反响和效应。
 </p>
