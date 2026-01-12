@@ -1,6 +1,6 @@
 ---
 layout: about
-title: 主页
+title: Home
 permalink: /
 subtitle: 学生, 青城一高. 
 
