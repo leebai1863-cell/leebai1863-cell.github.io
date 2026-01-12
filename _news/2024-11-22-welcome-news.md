@@ -1,43 +1,37 @@
 ---
 layout: news
-title: "Welcome to My Academic Website"
-date: 2024-11-22
-description: "My personal academic website is now live, and I'll be sharing research updates and publications here."
-category: "announcement"
-tags: ["welcome", "website", "academic"]
----
-
-# Welcome to My Academic Website
-
-I'm excited to launch my personal academic website! This platform will serve as a central hub for my research activities, publications, and professional updates.
-
-## What to Expect
-
-On this website, you'll find:
-
-### 1. Research Publications
-- Latest papers and preprints
-- Conference proceedings
-- Technical reports
-
-### 2. Project Updates
-- Ongoing research projects
-- Collaborations
-- Open-source contributions
-
-### 3. Academic News
-- Conference presentations
-- Awards and recognitions
-- Research milestones
-
-## About Me
-
-I'm currently focused on [your research area]. My work combines [methodology/approach] to address [research problems].
-
-## Stay Connected
-
-Feel free to explore the different sections of the site, and check back regularly for updates. You can also connect with me through the contact information provided.
+title: "New Research Project Started"
+date: 2024-11-21
+description: 
+category: "research"
+image: "/assets/2024-11-21.jpg"
 
 ---
 
-*Last updated: November 22, 2024*
+## Project Overview
+
+I'm excited to announce the start of a new research project exploring the intersection of machine learning and scientific computing.
+
+### Project Goals
+
+1. **Develop new algorithms** for scientific data analysis
+2. **Create open-source tools** for the research community
+3. **Publish findings** in peer-reviewed journals
+
+### Methodology
+
+The project will utilize:
+- Deep learning frameworks (PyTorch, TensorFlow)
+- High-performance computing resources
+- Real-world scientific datasets
+
+### Timeline
+
+- **Phase 1** (Nov 2024 - Feb 2025): Algorithm development
+- **Phase 2** (Mar 2025 - Jun 2025): Experimental validation
+- **Phase 3** (Jul 2025 - Oct 2025): Publication and dissemination
+
+## Get Involved
+
+Interested in collaborating? Check out the project repository:
+[GitHub Repository](https://github.com/yourusername/project)
