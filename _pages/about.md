@@ -2,16 +2,16 @@
 layout: about
 title: Home
 permalink: /
-subtitle: 学生, 青城一高. 
+subtitle: 教授, 博士. 
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>9527
-    复兴大街
-    青城<p>
+    <p>fulsh@nwafu.edu.cn
+    longsheng.fu@outlook.com
+    029-87092391<p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
