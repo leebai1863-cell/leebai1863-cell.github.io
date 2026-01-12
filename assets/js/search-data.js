@@ -458,9 +458,9 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "news-welcome-to-my-academic-website",
-          title: 'Welcome to My Academic Website',
-          description: "My personal academic website is now live, and I&#39;ll be sharing research updates and publications here.",
+          section: "News",},{id: "news-new-research-project-started",
+          title: 'New Research Project Started',
+          description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2024-11-22-welcome-news/";
             },},{id: "projects-project-1",
