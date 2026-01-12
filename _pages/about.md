@@ -9,9 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>9527<br></p>
-    <p>复兴大街<br></p>
-    <p>青城<br></p>
+    9527<br>
+    复兴大街<br>
+    青城
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
