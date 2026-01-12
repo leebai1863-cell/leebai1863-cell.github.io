@@ -2,9 +2,9 @@
 layout: page
 title: News
 permalink: /news/
-description: "Latest news and announcements"
+description: 
 nav: true
-nav_order: 3
+nav_order: 2
 ---
 
 # News Archive
