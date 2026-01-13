@@ -9,10 +9,12 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>fulsh@nwafu.edu.cn
-    longsheng.fu@outlook.com
-    029-87092391<p>
+  more_info: |
+   <p>
+     fulsh@nwafu.edu.cn<br>
+     longsheng.fu@outlook.com<br>
+     029-87092391
+   </p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
