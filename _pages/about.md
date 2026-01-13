@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle:   教授, 博士. 
+subtitle:  博士、教授、博导.
 
 
 profile:
