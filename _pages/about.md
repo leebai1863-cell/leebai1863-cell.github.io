@@ -4,25 +4,6 @@ title: Home
 permalink: /
 subtitle:   教授, 博士. 
 
-<style>
-  /* 为 about 页面所有段落添加首行缩进 */
-  .about-page p {
-    text-indent: 2em;  /* 缩进2个字符宽度 */
-    margin-bottom: 1em;  /* 段落间距 */
-    line-height: 1.6;  /* 行高 */
-  }
-  
-  /* 排除标题、列表、引用等 */
-  .about-page h1,
-  .about-page h2,
-  .about-page h3,
-  .about-page li,
-  .about-page blockquote,
-  .about-page code,
-  .about-page pre {
-    text-indent: 0;
-  }
-</style>
 
 profile:
   align: right
