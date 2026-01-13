@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: 教授, 博士. 
+subtitle:   教授, 博士. 
 
 profile:
   align: right
