@@ -2,28 +2,23 @@
 layout: about
 title: Home
 permalink: /
-subtitle:  博士、教授、博导.
-
-
+subtitle: 博士、教授、博导.
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: |
-  <div style="font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; line-height: 1.8; color: #333;">
-    <div style="margin: 4px 0;">fulsh@nwafu.edu.cn</div>
-    <div style="margin: 4px 0;">longsheng.fu@outlook.com</div>
-    <div style="margin: 4px 0;">029-87092391</div>
-  </div>
-
+    <div style="font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; line-height: 1.8; color: #333;">
+      <div style="margin: 4px 0;">fulsh@nwafu.edu.cn</div>
+      <div style="margin: 4px 0;">longsheng.fu@outlook.com</div>
+      <div style="margin: 4px 0;">029-87092391</div>
+    </div>
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
-
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
-
 latest_posts:
   enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
