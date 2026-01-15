@@ -60,16 +60,77 @@
 ],
 
   "work": [
-    {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
+  {
+    "name": "杨凌示范区现代农业和乡村振兴局",
+    "position": "副局长",
+    "location": "中国陕西省咸阳市杨凌示范区",
+    "startDate": "2024-05-01",
+    "endDate": "2025-05-01"
+  },
+  {
+    "name": "杨凌农业智能装备产业创新中心",
+    "position": "副主任",
+    "location": "中国陕西省咸阳市杨凌示范区",
+    "startDate": "2022-10-01",
+    "endDate": "2023-10-01"
+  },
+  {
+    "name": "西北农林科技大学机械与电子工程学院",
+    "position": "教授",
+    "location": "中国陕西省咸阳市杨凌示范区",
+    "startDate": "2022-01-01",
+    "endDate": "至今"
+  },
+  {
+    "name": "华盛顿州立大学",
+    "position": "博士后研究员",
+    "location": "美国华盛顿州",
+    "startDate": "2017-08-01",
+    "endDate": "2019-08-01"
+  },
+  {
+    "name": "西北农林科技大学机械与电子工程学院",
+    "position": "副教授",
+    "location": "中国陕西省咸阳市杨凌示范区",
+    "startDate": "2016-01-01",
+    "endDate": "2021-12-31"
+  },
+  {
+    "name": "西安交通大学",
+    "position": "进修",
+    "location": "中国陕西省西安市",
+    "startDate": "2015-09-01",
+    "endDate": "2016-01-31"
+  },
+  {
+    "name": "西北农林科技大学机械与电子工程学院",
+    "position": "讲师",
+    "location": "中国陕西省咸阳市杨凌示范区",
+    "startDate": "2012-06-01",
+    "endDate": "2015-12-31"
+  },
+  {
+    "name": "北海道大学",
+    "position": "专门研究员",
+    "location": "日本北海道札幌市",
+    "startDate": "2012-04-01",
+    "endDate": "2013-03-31"
+  },
+  {
+    "name": "北海道大学可持续发展学教育研究中心",
+    "position": "研究助理",
+    "location": "日本北海道札幌市",
+    "startDate": "2009-12-01",
+    "endDate": "2011-10-31"
+  },
+  {
+    "name": "北京凌云光子集团",
+    "position": "实习软件工程师",
+    "location": "中国北京市",
+    "startDate": "2007-07-01",
+    "endDate": "2008-01-31"
+  }
+],
 
   "awards": [
     {
