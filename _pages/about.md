@@ -6,13 +6,9 @@ subtitle: 博士、教授、博导.
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: true # Crop image to circular
+  image_circular: false # Crop image to circular
   more_info: |
-    <div style="font-family: 'Times New Roman', 'SimSun', serif; font-size: 14px; line-height: 1.8; color: #333;">
-      <div style="margin: 4px 0;">fulsh@nwafu.edu.cn</div>
-      <div style="margin: 4px 0;">longsheng.fu@outlook.com</div>
-      <div style="margin: 4px 0;">029-87092391</div>
-    </div>
+    
 selected_papers: true # Show selected papers
 social: false # Hide social icons
 announcements:
