@@ -63,21 +63,21 @@
   {
     "name": "杨凌示范区现代农业和乡村振兴局",
     "position": "副局长",
-    "location": "中国陕西省咸阳市杨凌示范区",
+    "location": "杨凌示范区",
     "startDate": "2024-05-01",
     "endDate": "2025-05-01"
   },
   {
     "name": "杨凌农业智能装备产业创新中心",
     "position": "副主任",
-    "location": "中国陕西省咸阳市杨凌示范区",
+    "location": "杨凌示范区",
     "startDate": "2022-10-01",
     "endDate": "2023-10-01"
   },
   {
     "name": "西北农林科技大学机械与电子工程学院",
     "position": "教授",
-    "location": "中国陕西省咸阳市杨凌示范区",
+    "location": "杨凌示范区",
     "startDate": "2022-01-01",
     "endDate": "至今"
   },
@@ -91,21 +91,21 @@
   {
     "name": "西北农林科技大学机械与电子工程学院",
     "position": "副教授",
-    "location": "中国陕西省咸阳市杨凌示范区",
+    "location": "杨凌示范区",
     "startDate": "2016-01-01",
     "endDate": "2021-12-31"
   },
   {
     "name": "西安交通大学",
     "position": "进修",
-    "location": "中国陕西省西安市",
+    "location": "西安市",
     "startDate": "2015-09-01",
     "endDate": "2016-01-31"
   },
   {
     "name": "西北农林科技大学机械与电子工程学院",
     "position": "讲师",
-    "location": "中国陕西省咸阳市杨凌示范区",
+    "location": "杨凌示范区",
     "startDate": "2012-06-01",
     "endDate": "2015-12-31"
   },
@@ -126,7 +126,7 @@
   {
     "name": "北京凌云光子集团",
     "position": "实习软件工程师",
-    "location": "中国北京市",
+    "location": "北京市",
     "startDate": "2007-07-01",
     "endDate": "2008-01-31"
   }
