@@ -312,12 +312,36 @@
   
   "projects": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "学术评审与专家评议工作",
+      "summary": "承担国家自然科学基金委员会国家重大科研仪器研制项目通讯评议、国家重大人才工程通讯评审、国家自然科学基金通讯评议、教育部学位与研究生教育发展中心通讯评议、中国政府奖学金“高水平研究生”项目专家通讯评审、中原科技创新青年拔尖人才通讯评审等工作；担任澳大利亚莫纳什大学（Monash University）、新南威尔士大学（UNSW）、中央昆士兰大学（Central Queensland University）博士论文评审专家。",
+      "highlights": ["国家级项目通讯评议", "海外高校博士论文评审", "人才工程评审"],
+      "startDate": "",
+      "endDate": "",
+      "url": ""
+    },
+    {
+      "name": "行业技术团体兼职工作",
+      "summary": "兼任中国作物学会智慧农业分委会、中国农业机械学会基础技术分会、中国农业机械学会人工智能分会、中国农业机械学会青年委员会、中国农业工程学会农业电气化与信息化分会、中国农业工程学会青年科技委员会、国际自动控制联合会（IFAC）8.1 Control in Agriculture专委会、美国农业与生物工程师协会（ASABE）MS-48 Specialty Crop Engineering分会等多个行业技术团体的委员。",
+      "highlights": ["国内一级学会委员", "国际学术组织委员", "跨领域技术团体兼职"],
+      "startDate": "",
+      "endDate": "",
+      "url": ""
+    },
+    {
+      "name": "地方与校级社会兼职工作",
+      "summary": "兼任陕西省猕猴桃产业体系智能机械岗岗位专家、榆林市科技特派员、西安市现代农业产业技术服务体系岗位专家、中国留日学人联谊会理事、陕西省侨联青年委员、西北农林科技大学归国华侨联合会委员会青年委员。",
+      "highlights": ["省级产业体系专家", "地方科技特派员", "侨联青年委员"],
+      "startDate": "",
+      "endDate": "",
+      "url": ""
+    },
+    {
+      "name": "期刊审稿与评审荣誉",
+      "summary": "承担Computers and Electronics in Agriculture、Biosystems Engineering、Transactions of the ASABE、Precision Agriculture、IEEE Transactions on Industrial Informatics、Computers in Industry、农业工程学报、农业机械学报、光谱学与光谱分析、食品科学、中国农业大学学报、Postharvest Biology and Technology等50余个期刊的审稿任务；获Computers and Electronics in Agriculture、Biosystems Engineering、Computers in Industry、IJABE、农业工程学报的“Outstanding Contribution in Reviewing”荣誉。",
+      "highlights": ["50+国内外核心期刊审稿", "多项期刊杰出审稿人荣誉", "跨学科期刊评审"],
+      "startDate": "",
+      "endDate": "",
+      "url": ""
     }
   ]
 }
