@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Projects
+title: projects
 permalink: /projects/
 description: A growing collection of your cool projects.
 nav: true
 nav_order: 4
 display_categories: [work, fun]
-horizontal: true
+horizontal: false  # 保持 false 即可，核心改下面的列配置
 ---
 
 <!-- pages/projects.md -->
@@ -22,14 +22,16 @@ horizontal: true
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
+    <!-- 横向布局：改为 1 列（row-cols-md-1） -->
+    <div class="row row-cols-1 row-cols-md-1">
     {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  <!-- 纵向布局：核心修改：row-cols-md-1（原 row-cols-md-3） -->
+  <div class="row row-cols-1 row-cols-md-1">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
@@ -48,14 +50,16 @@ horizontal: true
 {% if page.horizontal %}
 
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
+    <!-- 横向布局：改为 1 列 -->
+    <div class="row row-cols-1 row-cols-md-1">
     {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
+  <!-- 纵向布局：核心修改：row-cols-md-1（原 row-cols-md-3） -->
+  <div class="row row-cols-1 row-cols-md-1">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
