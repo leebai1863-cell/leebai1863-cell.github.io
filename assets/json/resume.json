@@ -130,83 +130,183 @@
     }
   ],
   "awards": [
-  {
-    "title": "陕西省第十五届自然科学优秀论文奖",
-    "awarder": "陕西省科学技术厅/陕西省教育厅",
-    "summary": "通讯作者身份获得该奖项",
-    "category": "科研论文类"
-  },
-  {
-    "title": "陕西高等学校科学技术研究优秀成果奖",
-    "awarder": "陕西省教育厅",
-    "summary": "排名1/7获得该奖项",
-    "category": "科研成果类"
-  },
-  {
-    "title": "ASABE 2025 ITSC Paper Awards",
-    "awarder": "美国农业与生物工程师学会（ASABE）",
-    "summary": "美国农业与生物工程师年会优秀论文奖",
-    "category": "国际论文类"
-  },
-  {
-    "title": "ASABE 2022 ITSC Paper Awards",
-    "awarder": "美国农业与生物工程师学会（ASABE）",
-    "summary": "美国农业与生物工程师年会优秀论文奖",
-    "category": "国际论文类"
-  },
-  {
-    "title": "中国农业工程学会40周年40篇优秀论文奖",
-    "awarder": "中国农业工程学会",
-    "category": "科研论文类"
-  },
-  {
-    "title": "2021智慧农业创新发展国际研讨会优秀论文奖",
-    "awarder": "智慧农业创新发展国际研讨会组委会",
-    "category": "科研论文类"
-  },
-  {
-    "title": "2021年中国科技期刊农林学科年度优秀论文奖",
-    "awarder": "中国科学技术信息研究所/相关农林期刊联盟",
-    "category": "科研论文类"
-  },
-  {
-    "title": "F5000论文奖",
-    "awarder": "中国科学技术信息研究所",
-    "category": "科研论文类"
-  },
-  {
-    "title": "Outstanding Contribution in Reviewing",
-    "awarder": "本领域公认权威期刊",
-    "summary": "六次获得该杰出审稿人荣誉称号",
-    "category": "学术服务类"
-  },
-  {
-    "title": "西北农林科技大学教学成果特等奖",
-    "awarder": "西北农林科技大学",
-    "category": "教学成果类"
-  },
-  {
-    "title": "西北农林科技大学教学成果二等奖",
-    "awarder": "西北农林科技大学",
-    "category": "教学成果类"
-  },
-  {
-    "title": "优秀指导教师",
-    "awarder": "西北农林科技大学/相关竞赛组委会",
-    "summary": "指导学生竞赛/毕业设计/学位论文等成果：\n1. 研究生：校优秀硕士学位论文8人、国家奖学金7人、校长奖学金3人、优秀研究生11人；\n2. 竞赛获奖：全国特/一等奖5次、二等奖8次、三等奖5次，西北赛区一等奖3次、二等奖4次、三等奖4次；\n3. 本科毕业生：陕西省优秀毕业生1人、校百篇优秀毕业设计1人、校级优秀毕业设计3人、院级优秀毕业设计5人；\n4. 个人获优秀指导教师5次",
-    "category": "指导成果类"
-  }
-],
+    {
+      "title": "陕西省第十五届自然科学优秀论文奖",
+      "awarder": "陕西省科学技术厅/陕西省教育厅",
+      "summary": "通讯作者身份获得该奖项",
+      "category": "科研论文类"
+    },
+    {
+      "title": "陕西高等学校科学技术研究优秀成果奖",
+      "awarder": "陕西省教育厅",
+      "summary": "排名1/7获得该奖项",
+      "category": "科研成果类"
+    },
+    {
+      "title": "ASABE 2025 ITSC Paper Awards",
+      "awarder": "美国农业与生物工程师学会（ASABE）",
+      "summary": "美国农业与生物工程师年会优秀论文奖",
+      "category": "国际论文类"
+    },
+    {
+      "title": "ASABE 2022 ITSC Paper Awards",
+      "awarder": "美国农业与生物工程师学会（ASABE）",
+      "summary": "美国农业与生物工程师年会优秀论文奖",
+      "category": "国际论文类"
+    },
+    {
+      "title": "中国农业工程学会40周年40篇优秀论文奖",
+      "awarder": "中国农业工程学会",
+      "category": "科研论文类"
+    },
+    {
+      "title": "2021智慧农业创新发展国际研讨会优秀论文奖",
+      "awarder": "智慧农业创新发展国际研讨会组委会",
+      "category": "科研论文类"
+    },
+    {
+      "title": "2021年中国科技期刊农林学科年度优秀论文奖",
+      "awarder": "中国科学技术信息研究所/相关农林期刊联盟",
+      "category": "科研论文类"
+    },
+    {
+      "title": "F5000论文奖",
+      "awarder": "中国科学技术信息研究所",
+      "category": "科研论文类"
+    },
+    {
+      "title": "Outstanding Contribution in Reviewing",
+      "awarder": "本领域公认权威期刊",
+      "summary": "六次获得该杰出审稿人荣誉称号",
+      "category": "学术服务类"
+    },
+    {
+      "title": "西北农林科技大学教学成果特等奖",
+      "awarder": "西北农林科技大学",
+      "category": "教学成果类"
+    },
+    {
+      "title": "西北农林科技大学教学成果二等奖",
+      "awarder": "西北农林科技大学",
+      "category": "教学成果类"
+    },
+    {
+      "title": "优秀指导教师",
+      "awarder": "西北农林科技大学/相关竞赛组委会",
+      "summary": "指导学生竞赛/毕业设计/学位论文等成果：\n1. 研究生：校优秀硕士学位论文8人、国家奖学金7人、校长奖学金3人、优秀研究生11人；\n2. 竞赛获奖：全国特/一等奖5次、二等奖8次、三等奖5次，西北赛区一等奖3次、二等奖4次、三等奖4次；\n3. 本科毕业生：陕西省优秀毕业生1人、校百篇优秀毕业设计1人、校级优秀毕业设计3人、院级优秀毕业设计5人；\n4. 个人获优秀指导教师5次",
+      "category": "指导成果类"
+    }
+  ],
   "volunteer": [
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "organization": "《Computers and Electronics in Agriculture》",
+      "location": "",
+      "position": "Editor-in-Chief（主编）",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院一区Top期刊，SCI、IF：8.9、IF5：9.3",
+      "highlights": []
+    },
+    {
+      "organization": "《Precision Agriculture》",
+      "location": "",
+      "position": "Associate Editor（副主编）",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院基础版一区Top期刊，SCI、IF5：6.1",
+      "highlights": []
+    },
+    {
+      "organization": "《Information Processing in Agriculture》",
+      "location": "",
+      "position": "副主编",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院一区Top期刊，中国科技期刊卓越行动计划、SCI、EI，CiteScore13.7，IF：7.4",
+      "highlights": []
+    },
+    {
+      "organization": "《Biosystems Engineering》",
+      "location": "",
+      "position": "Editorial Board（编委）",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院一区Top期刊，SCI、IF5：5.2",
+      "highlights": []
+    },
+    {
+      "organization": "《International Journal of Agricultural and Biological Engineering》",
+      "location": "",
+      "position": "栏目编辑",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院二区期刊，SCI、IF5：2.4",
+      "highlights": []
+    },
+    {
+      "organization": "《Smart Agricultural Technology》",
+      "location": "",
+      "position": "编委",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院二区期刊，ESCI，IF：6.3，Elsevier出版社期刊",
+      "highlights": []
+    },
+    {
+      "organization": "Frontiers in Plant Science",
+      "location": "",
+      "position": "Guest Editor",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院二区、SCI",
+      "highlights": []
+    },
+    {
+      "organization": "Agronomy",
+      "location": "",
+      "position": "Guest Editor",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院二区、SCI",
+      "highlights": []
+    },
+    {
+      "organization": "ISO/TC23/SC19",
+      "location": "",
+      "position": "委员",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "国际标准化组织农林拖拉机和机械标准化技术委员会/农业电子分技术委员会",
+      "highlights": []
+    },
+    {
+      "organization": "SAC/TC201/SC6",
+      "location": "",
+      "position": "委员",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "全国农业机械标准化技术委员会农业电子分技术委员会",
+      "highlights": []
+    },
+    {
+      "organization": "IFAC 8.1 Control in Agriculture",
+      "location": "",
+      "position": "委员",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "国际自动控制联合会（IFAC）8.1 Control in Agriculture专委会",
+      "highlights": []
     }
   ],
   "certificates": [
