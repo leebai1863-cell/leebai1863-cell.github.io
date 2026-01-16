@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Scholarly Seminars
-permalink: /projects/
-description: A growing collection of your cool projects.
+permalink: /scholarly seminars
+description: 实验室例会与学术报告
 nav: true
 nav_order: 4
 display_categories: [Presentations, Conferences]
