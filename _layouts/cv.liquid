@@ -21,7 +21,7 @@ layout: default
           </a>
         {% endif %}
       </h1>
-      {% if page.description %}
+      {% if page.cv_pdf contains '://' %}
         <p class="post-description">{{ page.description }}</p>
       {% endif %}
     </header>
@@ -111,10 +111,11 @@ layout: default
                   {% include resume/projects.liquid %}
                 {% when 'awards' %}
                   {% include resume/awards.liquid %}
-                {% when 'skills' %}
-                  {% include resume/skills.liquid %}
                 {% when 'publications' %}
                   {% include resume/publications.liquid %}
+                <!-- 以下5个板块已注释，不再渲染 -->
+                {# {% when 'skills' %}
+                  {% include resume/skills.liquid %}
                 {% when 'languages' %}
                   {% include resume/languages.liquid %}
                 {% when 'interests' %}
@@ -122,7 +123,7 @@ layout: default
                 {% when 'certificates' %}
                   {% include resume/certificates.liquid %}
                 {% when 'references' %}
-                  {% include resume/references.liquid %}
+                  {% include resume/references.liquid %} #}
                 {% else %}
 
               {% endcase %}
