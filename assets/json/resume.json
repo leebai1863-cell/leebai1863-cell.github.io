@@ -199,106 +199,16 @@
   ],
   "volunteer": [
     {
-      "order": 1,
-      "organization": "《Computers and Electronics in Agriculture》",
-      "location": "",
-      "position": "Editor-in-Chief（主编）",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "中科院一区Top期刊，SCI、IF：8.9、IF5：9.3",
-      "highlights": []
-    },
-    {
-      "order": 2,
-      "organization": "《Precision Agriculture》",
-      "location": "",
-      "position": "Associate Editor（副主编）",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "中科院基础版一区Top期刊，SCI、IF5：6.1",
-      "highlights": []
-    },
-    {
-      "order": 3,
-      "organization": "《Information Processing in Agriculture》",
-      "location": "",
-      "position": "副主编",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "中科院一区Top期刊，中国科技期刊卓越行动计划、SCI、EI，CiteScore13.7，IF：7.4",
-      "highlights": []
-    },
-    {
-      "order": 4,
-      "organization": "《Biosystems Engineering》",
-      "location": "",
-      "position": "Editorial Board（编委）",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "中科院一区Top期刊，SCI、IF5：5.2",
-      "highlights": []
-    },
-    {
-      "order": 5,
-      "organization": "《International Journal of Agricultural and Biological Engineering》",
-      "location": "",
-      "position": "栏目编辑",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "中科院二区期刊，SCI、IF5：2.4",
-      "highlights": []
-    },
-    {
-      "order": 6,
-      "organization": "《Smart Agricultural Technology》",
-      "location": "",
-      "position": "编委",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "中科院二区期刊，ESCI，IF：6.3，Elsevier出版社期刊",
-      "highlights": []
-    },
-    {
-      "order": 7,
-      "organization": "Frontiers in Plant Science",
-      "location": "",
-      "position": "Guest Editor",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "中科院二区、SCI",
-      "highlights": []
-    },
-    {
-      "order": 8,
-      "organization": "Agronomy",
-      "location": "",
-      "position": "Guest Editor",
-      "url": "",
-      "startDate": "",
-      "endDate": "",
-      "summary": "中科院二区、SCI",
-      "highlights": []
-    },
-    {
-      "order": 9,
-      "organization": "ISO/TC23/SC19",
+      "organization": "IFAC 8.1 Control in Agriculture",
       "location": "",
       "position": "委员",
       "url": "",
       "startDate": "",
       "endDate": "",
-      "summary": "国际标准化组织农林拖拉机和机械标准化技术委员会/农业电子分技术委员会",
+      "summary": "国际自动控制联合会（IFAC）8.1 Control in Agriculture专委会",
       "highlights": []
     },
     {
-      "order": 10,
       "organization": "SAC/TC201/SC6",
       "location": "",
       "position": "委员",
@@ -309,14 +219,93 @@
       "highlights": []
     },
     {
-      "order": 11,
-      "organization": "IFAC 8.1 Control in Agriculture",
+      "organization": "ISO/TC23/SC19",
       "location": "",
       "position": "委员",
       "url": "",
       "startDate": "",
       "endDate": "",
-      "summary": "国际自动控制联合会（IFAC）8.1 Control in Agriculture专委会",
+      "summary": "国际标准化组织农林拖拉机和机械标准化技术委员会/农业电子分技术委员会",
+      "highlights": []
+    },
+    {
+      "organization": "Agronomy",
+      "location": "",
+      "position": "Guest Editor",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院二区、SCI",
+      "highlights": []
+    },
+    {
+      "organization": "Frontiers in Plant Science",
+      "location": "",
+      "position": "Guest Editor",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院二区、SCI",
+      "highlights": []
+    },
+    {
+      "organization": "《Smart Agricultural Technology》",
+      "location": "",
+      "position": "编委",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院二区期刊，ESCI，IF：6.3，Elsevier出版社期刊",
+      "highlights": []
+    },
+    {
+      "organization": "《International Journal of Agricultural and Biological Engineering》",
+      "location": "",
+      "position": "栏目编辑",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院二区期刊，SCI、IF5：2.4",
+      "highlights": []
+    },
+    {
+      "organization": "《Biosystems Engineering》",
+      "location": "",
+      "position": "Editorial Board（编委）",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院一区Top期刊，SCI、IF5：5.2",
+      "highlights": []
+    },
+    {
+      "organization": "《Information Processing in Agriculture》",
+      "location": "",
+      "position": "副主编",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院一区Top期刊，中国科技期刊卓越行动计划、SCI、EI，CiteScore13.7，IF：7.4",
+      "highlights": []
+    },
+    {
+      "organization": "《Precision Agriculture》",
+      "location": "",
+      "position": "Associate Editor（副主编）",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院基础版一区Top期刊，SCI、IF5：6.1",
+      "highlights": []
+    },
+    {
+      "organization": "《Computers and Electronics in Agriculture》",
+      "location": "",
+      "position": "Editor-in-Chief（主编）",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "中科院一区Top期刊，SCI、IF：8.9、IF5：9.3",
       "highlights": []
     }
   ],
