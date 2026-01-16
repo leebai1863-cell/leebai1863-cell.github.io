@@ -16,9 +16,9 @@
     },
     "profiles": [
       {
-        "network": " ",
-        "username": " ",
-        "url": " "
+        "network": "",
+        "username": "",
+        "url": ""
       }
     ]
   },
@@ -26,8 +26,8 @@
     {
       "institution": "北海道大学",
       "location": "日本北海道札幌市",
-      "url": " ",
-      "area": " ",
+      "url": "",
+      "area": "",
       "studyType": "博士",
       "startDate": "2009-01-01",
       "endDate": "2012-03-01",
@@ -37,8 +37,8 @@
     {
       "institution": "中国农业大学",
       "location": "中国北京市",
-      "url": " ",
-      "area": " ",
+      "url": "",
+      "area": "",
       "studyType": "硕士",
       "startDate": "2006-09-01",
       "endDate": "2009-01-01",
@@ -48,12 +48,12 @@
     {
       "institution": "中国农业大学",
       "location": "中国北京市",
-      "url": " ",
-      "area": " ",
+      "url": "",
+      "area": "",
       "studyType": "学士",
       "startDate": "2002-09-01",
       "endDate": "2006-07-01",
-      "score": " ",
+      "score": "",
       "courses": ["电子信息工程"]
     }
   ],
