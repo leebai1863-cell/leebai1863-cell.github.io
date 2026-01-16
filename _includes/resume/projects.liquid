@@ -18,8 +18,8 @@
           <h6 class="title font-weight-bold ml-1 ml-md-4">
             {{ content.name }}
           </h6>
-          <!-- 2. 取消summary的斜体：删除font-style: italic -->
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.summary }}</h6>
+          <!-- 2. 取消summary的斜体 + 新增首行缩进2字符样式 -->
+          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; text-indent: 2em;">{{ content.summary }}</h6>
           <ul class="items">
             {% for item in content.highlights %}
               <li>
