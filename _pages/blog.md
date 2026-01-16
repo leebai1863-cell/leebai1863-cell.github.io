@@ -3,7 +3,7 @@ layout: default
 permalink: /blog/
 title: Blog
 nav: true
-nav_order: 7
+nav_order: 6
 ---
 
 <div class="post" style="text-align: center; padding: 4rem 1rem;">
