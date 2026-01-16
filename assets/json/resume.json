@@ -199,6 +199,7 @@
   ],
   "volunteer": [
     {
+      "order": 1,
       "organization": "《Computers and Electronics in Agriculture》",
       "location": "",
       "position": "Editor-in-Chief（主编）",
@@ -209,6 +210,7 @@
       "highlights": []
     },
     {
+      "order": 2,
       "organization": "《Precision Agriculture》",
       "location": "",
       "position": "Associate Editor（副主编）",
@@ -219,6 +221,7 @@
       "highlights": []
     },
     {
+      "order": 3,
       "organization": "《Information Processing in Agriculture》",
       "location": "",
       "position": "副主编",
@@ -229,6 +232,7 @@
       "highlights": []
     },
     {
+      "order": 4,
       "organization": "《Biosystems Engineering》",
       "location": "",
       "position": "Editorial Board（编委）",
@@ -239,6 +243,7 @@
       "highlights": []
     },
     {
+      "order": 5,
       "organization": "《International Journal of Agricultural and Biological Engineering》",
       "location": "",
       "position": "栏目编辑",
@@ -249,6 +254,7 @@
       "highlights": []
     },
     {
+      "order": 6,
       "organization": "《Smart Agricultural Technology》",
       "location": "",
       "position": "编委",
@@ -259,6 +265,7 @@
       "highlights": []
     },
     {
+      "order": 7,
       "organization": "Frontiers in Plant Science",
       "location": "",
       "position": "Guest Editor",
@@ -269,6 +276,7 @@
       "highlights": []
     },
     {
+      "order": 8,
       "organization": "Agronomy",
       "location": "",
       "position": "Guest Editor",
@@ -279,6 +287,7 @@
       "highlights": []
     },
     {
+      "order": 9,
       "organization": "ISO/TC23/SC19",
       "location": "",
       "position": "委员",
@@ -289,6 +298,7 @@
       "highlights": []
     },
     {
+      "order": 10,
       "organization": "SAC/TC201/SC6",
       "location": "",
       "position": "委员",
@@ -299,6 +309,7 @@
       "highlights": []
     },
     {
+      "order": 11,
       "organization": "IFAC 8.1 Control in Agriculture",
       "location": "",
       "position": "委员",
