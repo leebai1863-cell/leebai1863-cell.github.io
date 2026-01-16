@@ -2,16 +2,27 @@
   {% for content in data[1] %}
     <li class="list-group-item">
       <div class="row">
-        <div class="col-xs-2 col-sm-2 col-md-2 text-center date-column">
-          {% if content.date %} {% assign date = content.date | split: '-' | join: '.' %} {% else %} {% assign date = '' %} {% endif %}
-          <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px"> {{ date }} </span>
-        </div>
-        <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
-          <h6 class="title font-weight-bold ml-1 ml-md-4">
-            <a href="{{ content.url }}">{{ content.title }}</a>
-          </h6>
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.awarder }}</h6>
-          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ content.summary }}</h6>
+        <!-- 隐藏空的日期栏 -->
+        {% if content.date != "" %}
+          <div class="col-xs-2 col-sm-2 col-md-2 text-center date-column">
+            {% assign date = content.date | split: '-' | join: '.' %}
+            <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px"> {{ date }} </span>
+          </div>
+          <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
+        {% else %}
+          <div class="col-12"> <!-- 无日期时占满整行 -->
+        {% endif %}
+            <!-- 关键修改：去除<a>链接，添加style保留原链接颜色 -->
+            <h6 class="title font-weight-bold ml-1 ml-md-4" style="color: #0d6efd; cursor: default;">
+              {{ content.title }} <!-- 仅保留标题文本，无链接 -->
+            </h6>
+            <!-- 显示颁奖机构（空则不显示） -->
+            {% if content.awarder != "" %}
+              <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.awarder }}</h6>
+            {% endif %}
+            <!-- 显示获奖描述 -->
+            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ content.summary }}</h6>
+          </div>
         </div>
       </div>
     </li>
