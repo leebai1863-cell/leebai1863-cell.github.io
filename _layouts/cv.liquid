@@ -88,13 +88,11 @@ layout: default
           {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
           <a class="anchor" id="{{ data[0] }}"></a>
           <div class="card mt-3 p-3">
-            <!-- 核心修改：自定义volunteer和awards的展示标题 -->
+            <!-- 核心修改：将volunteer的标题改为Academic Part-time Position -->
             <h3 class="card-title font-weight-medium">
               {% case data[0] %}
                 {% when 'volunteer' %}
                   Academic Part-time Position
-                {% when 'awards' %}
-                  Awards
                 {% else %}
                   {{ data[0] | capitalize }}
                 {% endcase %}
