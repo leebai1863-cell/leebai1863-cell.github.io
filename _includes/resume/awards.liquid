@@ -1,23 +1,19 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
-  {% for position in resume.academic_positions %} <!-- 读取JSON中的学术兼职字段 -->
+  {% for position in resume.academic_positions %}
     <li class="list-group-item">
       <div class="row">
         <div class="col-xs-2 col-sm-2 col-md-2 text-center date-column">
-          <!-- 学术兼职无日期，替换为更贴合的标识（或留空） -->
           <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px"> 兼职 </span>
         </div>
         <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
-          <!-- 显示学术兼职名称（无链接，纯文本） -->
           <h6 class="title font-weight-bold ml-1 ml-md-4">
-            {{ position.name | default: "学术兼职" }} <!-- 兜底显示"学术兼职" -->
+            {{ position.name | default: "学术兼职" }}
           </h6>
-          <!-- 显示具体兼职项（用分隔符拼接，替代原awarder字段） -->
           <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
             {% for keyword in position.keywords %}
-              {{ keyword }} {% unless forloop.last %} | {% endunless %} <!-- 多项用|分隔 -->
+              {{ keyword }} {% unless forloop.last %} | {% endunless %}
             {% endfor %}
           </h6>
-          <!-- 移除原summary（学术兼职无此字段，若有需要可保留并自定义） -->
         </div>
       </div>
     </li>
