@@ -32,10 +32,10 @@ ninja.data = [{
           },
         },{id: "nav-scholarly-seminars",
           title: "Scholarly Seminars",
-          description: "A growing collection of your cool projects.",
+          description: "实验室例会与学术报告",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/scholarly%20seminars";
           },
         },{id: "nav-teaching",
           title: "Teaching",
