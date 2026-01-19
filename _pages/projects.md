@@ -9,6 +9,13 @@ display_categories: [Presentations, Conferences]
 horizontal: false
 ---
 
+<!-- 仅新增：强制Scholarly Seminars在导航栏单行显示 -->
+<style>
+  nav a[href="/scholarly seminars"] {
+    white-space: nowrap !important; /* 核心：禁止文本换行 */
+  }
+</style>
+
 <!-- pages/projects.md -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
