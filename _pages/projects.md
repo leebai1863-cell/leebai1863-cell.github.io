@@ -2,7 +2,7 @@
 # Jekyll 页面前置配置
 layout: page
 title: Scholarly Seminars
-permalink: /scholarly-seminars  # 页面访问URL，与文件路径无关
+permalink: /scholarly-seminars
 description: 实验室例会与学术报告
 nav: true
 nav_order: 4
@@ -100,13 +100,13 @@ horizontal: false
         <div class="project-card">
           <!-- 左侧图片区域（3列） -->
           <div class="col-md-3 p-0">
-            {% comment %} 核心修复：适配项目img路径 assets/img/scholarly_photos/xxx.jpg {% endcomment %}
+            {% comment %} 核心修复：1. 清理多余/ 2. 修正assetsimg为assets/img 3. 拼接正确路径 {% endcomment %}
             {% assign raw_img_path = project.img | default: "assets/images/default-seminar.jpg" %}
-            {% assign clean_img_path = raw_img_path | remove_first: "/" %} <!-- 移除开头多余的/ -->
-            {% assign final_img_path = "/" | append: clean_img_path %} <!-- 拼接为 /assets/img/xxx.jpg -->
+            {% assign clean_img_path = raw_img_path | remove_first: "/" | replace: "assetsimg", "assets/img" %}
+            {% assign final_img_path = "/" | append: clean_img_path %}
             
             <img 
-              src="{{ final_img_path | absolute_url }}"  <!-- 生成绝对URL，适配_pages/projects路径 -->
+              src="{{ final_img_path | absolute_url }}"  <!-- 生成正确的绝对URL -->
               class="project-img" 
               alt="{{ project.title | escape }}"
               <!-- 兜底：图片加载失败显示默认图（防止无限循环） -->
@@ -137,7 +137,7 @@ horizontal: false
         <div class="project-card">
           <div class="col-md-3 p-0">
             {% assign raw_img_path = project.img | default: "assets/images/default-seminar.jpg" %}
-            {% assign clean_img_path = raw_img_path | remove_first: "/" %}
+            {% assign clean_img_path = raw_img_path | remove_first: "/" | replace: "assetsimg", "assets/img" %}
             {% assign final_img_path = "/" | append: clean_img_path %}
             
             <img 
