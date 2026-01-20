@@ -25,7 +25,7 @@ horizontal: false
     <h2 class="category">{{ category }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
+  {% assign sorted_projects = categorized_projects | sort: "importance" | reverse %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
   <div class="container">
@@ -36,6 +36,7 @@ horizontal: false
     </div>
   </div>
   {% else %}
+  <!-- 修改这里：去掉 row-cols-md-3，改为整行显示 -->
   <div class="row">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
@@ -48,7 +49,7 @@ horizontal: false
 
 <!-- Display projects without categories -->
 
-{% assign sorted_projects = site.projects | sort: "importance" %}
+{% assign sorted_projects = site.projects | sort: "importance" | reverse %}
 
   <!-- Generate cards for each project -->
 
@@ -62,6 +63,7 @@ horizontal: false
     </div>
   </div>
   {% else %}
+  <!-- 修改这里：去掉 row-cols-md-3，改为整行显示 -->
   <div class="row">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
