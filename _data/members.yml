@@ -1,0 +1,64 @@
+# _data/members.yml
+# 实验室成员信息数据文件
+# 分为两大类别：current（在读学生）和graduated（已毕业学生）
+
+current:
+  - year: "2020级"
+    name: "姜立志"
+    degree: "博士研究生"
+    photo: "/assets/img/members/jianglizhi.jpg"
+    research: "保护性耕作技术与智能装备"
+  
+  - year: "2022级"
+    name: "毛吾兰"
+    degree: "博士研究生"
+    photo: "/assets/img/members/maowulan.jpg"
+    research: "农业机器人视觉导航"
+  
+  - year: "2022级"
+    name: "刘小娟"
+    degree: "博士研究生"
+    photo: "/assets/img/members/liuxiaojuan.jpg"
+    research: "智能农业装备控制"
+  
+  - year: "2023级"
+    name: "贺磊磊"
+    degree: "博士研究生"
+    photo: "/assets/img/members/heleilei.jpg"
+    research: "农业物联网技术"
+  
+  
+  # 继续添加其他在读学生...
+  # 格式：年-姓名-学位-照片路径-研究方向
+
+graduated:
+  - year: "2019级"
+    name: "张伟"
+    degree: "博士研究生"
+    photo: "/assets/img/members/zhangwei.jpg"
+    research: "现就职于XX大学，副教授"
+    
+  
+  - year: "2020级"
+    name: "李娜"
+    degree: "博士研究生"
+    photo: "/assets/img/members/lina.jpg"
+    research: "现就职于XX研究院，副研究员"
+    
+  
+  - year: "2020级"
+    name: "王强"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/wangqiang.jpg"
+    research: "现就职于XX科技公司，算法工程师"
+    
+  
+  - year: "2021级"
+    name: "刘芳"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/liufang.jpg"
+    research: "现就职于XX农业公司，技术总监"
+    
+  
+  # 继续添加其他已毕业学生...
+  # 格式：年-姓名-学位-照片路径-毕业后去向-毕业年份
