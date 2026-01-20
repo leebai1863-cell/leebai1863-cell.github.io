@@ -2,12 +2,35 @@
 layout: page
 title: Activities
 permalink: /activities/
-description: 实验室集体活动
+description: 学术活动
 nav: true
 nav_order: 5
-display_categories: [Workshops, Courses, Seminars]  # 根据需要修改分类
+display_categories: [Workshops, Courses, Seminars]
 horizontal: false
 ---
+
+<style>
+  /* 强制每个活动占据整行 */
+  .activities .row-cols-1.row-cols-md-3 {
+    display: block !important;
+  }
+  
+  .activities .row-cols-1.row-cols-md-3 > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+  
+  .activities .row-cols-1.row-cols-md-2 {
+    display: block !important;
+  }
+  
+  .activities .row-cols-1.row-cols-md-2 > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+</style>
 
 <!-- pages/activities.md -->
 <div class="activities">
@@ -38,15 +61,9 @@ horizontal: false
   {% endfor %}
 
 {% else %}
-
 <!-- Display activities without categories -->
-
 {% assign sorted_activities = site.activities | sort: "importance" | reverse %}
-
-  <!-- Generate cards for each activity -->
-
-{% if page.horizontal %}
-
+  {% if page.horizontal %}
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
     {% for activity in sorted_activities %}
