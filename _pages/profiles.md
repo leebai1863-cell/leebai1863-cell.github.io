@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /members/
-title: 团队成员
-description: 实验室成员介绍
+title: Members
+description: Team members of lab
 nav: true
 nav_order: 7
 ---
