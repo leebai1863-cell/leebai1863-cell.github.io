@@ -1,8 +1,8 @@
 ---
 layout: profiles
 permalink: /members/
-title: Team Members
-description: members of the lab
+title: Team
+description: Team members of the lab
 nav: true
 nav_order: 7
 
