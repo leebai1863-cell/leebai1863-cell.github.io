@@ -35,7 +35,7 @@ ninja.data = [{
           description: "实验室例会与学术报告",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/scholarly-seminars";
+            window.location.href = "/scholarly%20seminars";
           },
         },{id: "nav-teaching",
           title: "Teaching",
