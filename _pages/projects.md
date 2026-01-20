@@ -12,7 +12,25 @@ horizontal: false
 <!-- 仅新增：强制Scholarly Seminars在导航栏单行显示 -->
 <style>
   nav a[href="/scholarly seminars"] {
-    white-space: nowrap !important; /* 核心：禁止文本换行 */
+    white-space: nowrap !important;
+  }
+  
+  /* 新增：确保项目卡片完全占据整行 */
+  .projects .container,
+  .projects .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+  
+  .projects .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .projects .col-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 </style>
 
@@ -28,19 +46,20 @@ horizontal: false
   {% assign sorted_projects = categorized_projects | sort: "importance" | reverse %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid px-0">
+    <div class="row no-gutters">
     {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
-  <!-- 修改这里：去掉 row-cols-md-3，改为整行显示 -->
-  <div class="row">
+  <div class="container-fluid px-0">
+    <div class="row no-gutters">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
+    </div>
   </div>
   {% endif %}
   {% endfor %}
@@ -55,19 +74,20 @@ horizontal: false
 
 {% if page.horizontal %}
 
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid px-0">
+    <div class="row no-gutters">
     {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
-  <!-- 修改这里：去掉 row-cols-md-3，改为整行显示 -->
-  <div class="row">
+  <div class="container-fluid px-0">
+    <div class="row no-gutters">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
+    </div>
   </div>
   {% endif %}
 {% endif %}
