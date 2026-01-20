@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-activities",
           title: "Activities",
-          description: "学术活动与课程材料",
+          description: "实验室集体活动",
           section: "Navigation",
           handler: () => {
             window.location.href = "/activities/";
