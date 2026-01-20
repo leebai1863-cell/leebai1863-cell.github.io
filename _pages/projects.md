@@ -12,25 +12,7 @@ horizontal: false
 <!-- 仅新增：强制Scholarly Seminars在导航栏单行显示 -->
 <style>
   nav a[href="/scholarly seminars"] {
-    white-space: nowrap !important;
-  }
-  
-  /* 新增：确保项目卡片完全占据整行 */
-  .projects .container,
-  .projects .container-fluid {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    max-width: 100% !important;
-  }
-  
-  .projects .row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  
-  .projects .col-12 {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    white-space: nowrap !important; /* 核心：禁止文本换行 */
   }
 </style>
 
@@ -43,23 +25,21 @@ horizontal: false
     <h2 class="category">{{ category }}</h2>
   </a>
   {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" | reverse %}
+  {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
-  <div class="container-fluid px-0">
-    <div class="row no-gutters">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
-  <div class="container-fluid px-0">
-    <div class="row no-gutters">
+  <div class="row row-cols-1 row-cols-md-3">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
-    </div>
   </div>
   {% endif %}
   {% endfor %}
@@ -68,26 +48,24 @@ horizontal: false
 
 <!-- Display projects without categories -->
 
-{% assign sorted_projects = site.projects | sort: "importance" | reverse %}
+{% assign sorted_projects = site.projects | sort: "importance" %}
 
   <!-- Generate cards for each project -->
 
 {% if page.horizontal %}
 
-  <div class="container-fluid px-0">
-    <div class="row no-gutters">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
       {% include projects_horizontal.liquid %}
     {% endfor %}
     </div>
   </div>
   {% else %}
-  <div class="container-fluid px-0">
-    <div class="row no-gutters">
+  <div class="row row-cols-1 row-cols-md-3">
     {% for project in sorted_projects %}
       {% include projects.liquid %}
     {% endfor %}
-    </div>
   </div>
   {% endif %}
 {% endif %}
