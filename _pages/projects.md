@@ -6,7 +6,7 @@ description: 实验室例会与学术报告
 nav: true
 nav_order: 4
 display_categories: [Presentations, Conferences]
-horizontal: false
+horizontal: true
 ---
 
 <!-- 仅新增：强制Scholarly Seminars在导航栏单行显示 -->
