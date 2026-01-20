@@ -456,16 +456,16 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/2024-11-22-welcome-news/";
-            },},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project%20-%20%E5%89%AF%E6%9C%AC/";
             },},{id: "projects-ai与机器人赋能特色作物管理技术及研究进展",
           title: 'AI与机器人赋能特色作物管理技术及研究进展',
           description: "美国佛罗里达大学Yiannis AMPATZIDIS教授",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Yiannis%20AMPATZIDIS%E6%95%99%E6%8E%88/";
+            },},{id: "projects-现代苹果园的人工智能应用进展",
+          title: '现代苹果园的人工智能应用进展',
+          description: "俄罗斯国立土地规划大学副校长Vladimir I. SOLOVIEV教授",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Nikita%20ANDRIYANOV%E5%89%AF%E6%95%99%E6%8E%88/";
             },},{id: "projects-现代苹果园的人工智能应用进展",
           title: '现代苹果园的人工智能应用进展',
           description: "俄罗斯国立土地规划大学副校长Vladimir I. SOLOVIEV教授",
