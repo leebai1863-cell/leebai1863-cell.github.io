@@ -10,14 +10,14 @@ display_categories: [Presentations, Conferences]
 horizontal: false
 ---
 
-<!-- 强制导航栏文本单行显示 + 项目卡片样式 -->
+<!-- 样式：导航栏+卡片+图片 -->
 <style>
   /* 导航栏文本不换行 */
   nav a[href="/scholarly seminars"] {
     white-space: nowrap !important;
   }
 
-  /* 项目卡片整体样式 */
+  /* 项目卡片样式 */
   .project-card {
     margin-bottom: 20px;
     border: 1px solid #eee;
@@ -26,87 +26,77 @@ horizontal: false
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     transition: box-shadow 0.2s ease;
   }
-
-  /* 卡片hover效果（可选，提升交互） */
   .project-card:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
-  /* 图片样式：3列宽度，固定高度，不拉伸 */
+  /* 核心：图片样式（强制读取project第一张图） */
   .project-img {
     width: 100%;
     height: 180px;
-    object-fit: cover; /* 等比裁剪，不拉伸 */
+    object-fit: cover; /* 保证图片不变形 */
+    display: block; /* 消除图片底部空白 */
   }
 
-  /* 内容区域内边距 */
+  /* 内容区域样式 */
   .project-content {
     padding: 15px;
   }
-
-  /* 标题样式 */
   .project-title {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 8px;
     color: #333;
-    text-decoration: none; /* 去掉标题默认下划线 */
+    text-decoration: none;
   }
-
-  /* 标题hover颜色 */
   .project-title:hover {
-    color: #007bff; /* 蓝色高亮，可自定义 */
+    color: #007bff;
   }
-
-  /* 描述文本样式 */
   .project-desc {
     color: #666;
     font-size: 0.95rem;
     line-height: 1.5;
     margin: 0;
   }
-
-  /* 去除a标签的默认样式 */
   .card-link {
     text-decoration: none;
   }
 </style>
 
-<!-- 页面主体：3列图片 + 9列内容的项目展示（含详情链接） -->
+<!-- 页面主体：强制读取project第一张图片 -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
-  <!-- 有分类的场景：按分类展示项目 -->
+  <!-- 有分类场景 -->
   {% for category in page.display_categories %}
-  <!-- 分类标题锚点 -->
   <a id="{{ category }}" href=".#{{ category }}">
     <h2 class="category">{{ category }}</h2>
   </a>
-  <!-- 筛选当前分类的项目并按重要性排序 -->
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
 
-  <!-- 3:9布局的项目列表 -->
   <div class="row">
     {% for project in sorted_projects %}
-    <div class="col-12 mb-4"> <!-- 每个项目占整行 -->
-      <!-- 核心：给整个卡片添加详情页链接 -->
+    <div class="col-12 mb-4">
+      <!-- 卡片链接 -->
       <a href="{{ project.url | relative_url }}" class="card-link">
-        <div class="project-card row g-0"> <!-- 内部3:9分栏，消除列间距 -->
-          <!-- 左侧3列：图片区域（移动端自动占整行） -->
+        <div class="project-card row g-0">
+          <!-- 左侧3列：强制读取project的第一张图片 -->
           <div class="col-md-3">
+            {% comment %} 核心逻辑：优先用project的image字段（第一张图），无则用默认图 {% endcomment %}
+            {% assign project_image = project.image | default: "/assets/images/default-seminar.jpg" %}
             <img 
-              src="{{ project.image | default: '/assets/images/default-seminar.jpg' }}" 
+              src="{{ project_image | absolute_url }}"  <!-- 强制解析为绝对路径，避免路径错误 -->
               class="project-img" 
-              alt="{{ project.title }}"
-              <!-- 图片加载失败时自动替换为默认图 -->
-              onerror="this.src='/assets/images/default-seminar.jpg'"
+              alt="{{ project.title | escape }}"  <!-- 转义特殊字符，避免alt属性出错 -->
+              <!-- 图片加载失败时兜底 -->
+              onerror="this.src='{{ '/assets/images/default-seminar.jpg' | absolute_url }}'"
             >
           </div>
-          <!-- 右侧9列：标题+描述区域 -->
+          <!-- 右侧9列：标题+描述 -->
           <div class="col-md-9">
             <div class="project-content">
               <h3 class="project-title">{{ project.title }}</h3>
-              <p class="project-desc">{{ project.description }}</p>
+              <p class="project-desc">{{ project.description | truncate: 200 }}</p> <!-- 描述过长时截断 -->
             </div>
           </div>
         </div>
@@ -117,26 +107,26 @@ horizontal: false
   {% endfor %}
 
 {% else %}
-  <!-- 无分类的场景：展示所有项目 -->
+  <!-- 无分类场景 -->
   {% assign sorted_projects = site.projects | sort: "importance" %}
   <div class="row">
     {% for project in sorted_projects %}
     <div class="col-12 mb-4">
-      <!-- 核心：给整个卡片添加详情页链接 -->
       <a href="{{ project.url | relative_url }}" class="card-link">
         <div class="project-card row g-0">
           <div class="col-md-3">
+            {% assign project_image = project.image | default: "/assets/images/default-seminar.jpg" %}
             <img 
-              src="{{ project.image | default: '/assets/images/default-seminar.jpg' }}" 
+              src="{{ project_image | absolute_url }}"
               class="project-img" 
-              alt="{{ project.title }}"
-              onerror="this.src='/assets/images/default-seminar.jpg'"
+              alt="{{ project.title | escape }}"
+              onerror="this.src='{{ '/assets/images/default-seminar.jpg' | absolute_url }}'"
             >
           </div>
           <div class="col-md-9">
             <div class="project-content">
               <h3 class="project-title">{{ project.title }}</h3>
-              <p class="project-desc">{{ project.description }}</p>
+              <p class="project-desc">{{ project.description | truncate: 200 }}</p>
             </div>
           </div>
         </div>
