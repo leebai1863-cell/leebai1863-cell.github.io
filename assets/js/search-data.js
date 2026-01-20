@@ -460,6 +460,11 @@ ninja.data = [{
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project%20-%20%E5%89%AF%E6%9C%AC/";
+            },},{id: "projects-project-1",
+          title: 'project 1',
+          description: "with background image",
+          section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-ai与机器人赋能特色作物管理技术及研究进展",
           title: 'AI与机器人赋能特色作物管理技术及研究进展',
