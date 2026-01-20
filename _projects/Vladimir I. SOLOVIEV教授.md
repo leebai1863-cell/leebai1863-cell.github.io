@@ -2,11 +2,11 @@
 layout: page
 title: 现代苹果园的人工智能应用进展
 description: 俄罗斯国立土地规划大学副校长Vladimir I. SOLOVIEV教授
-img: assets/img/scholarly_photos/Yiannis_AMPATZIDIS-1.jpg
+img: assets/img/scholarly_photos/Vladimir_I._SOLOVIEV.jpg
 importance: 1
 category: Conferences
 related_publications: false
-date: 2026-01-17
+date: 2026-01-18
 ---
 
 <!-- 仅新增标题字体大小样式，其余样式保留不变 -->
@@ -44,7 +44,7 @@ date: 2026-01-17
     <div class="row">
         <div class="col-sm-8 offset-sm-2 mt-3 mt-md-0">
             <div class="ratio ratio-4x3">
-                {% include figure.liquid loading="eager" path="assets/img/scholarly_photos/Yiannis_AMPATZIDIS-2.jpg" title="example image" class="img-fluid rounded z-depth-1 object-fit-cover" %}
+                {% include figure.liquid loading="eager" path="assets/img/scholarly_photos/Vladimir_I._SOLOVIEV.jpg" title="example image" class="img-fluid rounded z-depth-1 object-fit-cover" %}
             </div>
         </div>
     </div>     
