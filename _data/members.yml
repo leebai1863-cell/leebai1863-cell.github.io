@@ -6,25 +6,25 @@ current:
   - year: "2020级"
     name: "姜立志"
     degree: "博士研究生"
-    photo: "/assets/img/members/jianglizhi.jpg"
+    photo: "/assets/img/members/jlz.jpg"
     research: "保护性耕作技术与智能装备"
   
   - year: "2022级"
     name: "毛吾兰"
     degree: "博士研究生"
-    photo: "/assets/img/members/maowulan.jpg"
+    photo: "/assets/img/members/mwl.jpg"
     research: "农业机器人视觉导航"
   
   - year: "2022级"
     name: "刘小娟"
     degree: "博士研究生"
-    photo: "/assets/img/members/liuxiaojuan.jpg"
+    photo: "/assets/img/members/lxj.jpg"
     research: "智能农业装备控制"
   
   - year: "2023级"
     name: "贺磊磊"
     degree: "博士研究生"
-    photo: "/assets/img/members/heleilei.jpg"
+    photo: "/assets/img/members/hll.jpg"
     research: "农业物联网技术"
   
   
