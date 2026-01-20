@@ -10,7 +10,7 @@ nav_order: 7
 <style>
 /* 团队成员页面样式 */
 .team-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -34,24 +34,40 @@ nav_order: 7
   border-bottom: 2px solid #eaeaea;
 }
 
-/* 列表视图样式 - 简洁 */
-.student-list-item {
+/* 网格布局 - 每行两列卡片 */
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 固定两列 */
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+/* 卡片样式 */
+.student-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #f0f0f0;
+  height: 180px; /* 固定高度，确保卡片对齐 */
+}
+
+.student-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  border-color: #d0d0d0;
 }
 
 .student-photo {
-  width: 60px;
-  height: 80px;
-  margin-right: 15px;
+  width: 140px;
+  height: 100%;
   overflow: hidden;
-  border-radius: 4px;
-  border: 1px solid #eaeaea;
-  background: #f5f5f5;
   flex-shrink: 0;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .student-photo img {
@@ -60,16 +76,29 @@ nav_order: 7
   object-fit: cover;
 }
 
-.student-info {
-  flex: 1;
+.no-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #7f8c8d;
+  font-size: 14px;
 }
 
-.student-year {
-  font-family: "Times New Roman", SimSun, serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #7f8c8d;
-  margin-bottom: 5px;
+.no-photo-placeholder .icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.student-info {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .student-name {
@@ -77,30 +106,65 @@ nav_order: 7
   font-size: 20px;
   font-weight: bold;
   color: #2c3e50;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.student-year {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3498db;
   margin-bottom: 5px;
 }
 
 .student-degree {
   font-family: "Times New Roman", SimSun, serif;
-  font-size: 14px;
-  color: #95a5a6;
+  font-size: 15px;
+  color: #7f8c8d;
+  margin-bottom: 10px;
 }
 
-/* 已毕业学生特殊样式 */
-.graduated-section .student-list-item {
-  opacity: 0.8;
-}
-
-.graduated-section .student-year {
-  color: #b0b0b0;
+/* 已毕业学生卡片特殊样式 */
+.graduated-section .student-card {
+  opacity: 0.9;
 }
 
 .graduated-section .student-name {
   color: #666;
 }
 
+.graduated-section .student-year {
+  color: #95a5a6;
+}
+
 .graduated-section .student-degree {
   color: #aaa;
+}
+
+/* 搜索框样式 */
+.search-container {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.search-input {
+  padding: 12px 20px;
+  width: 350px;
+  max-width: 80%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.search-input:focus {
+  border-color: #3498db;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 /* 响应式设计 */
@@ -111,47 +175,41 @@ nav_order: 7
   
   .team-title {
     font-size: 24px;
+    margin-bottom: 30px;
   }
   
   .section-title {
     font-size: 20px;
+    margin: 30px 0 20px 0;
+  }
+  
+  .students-grid {
+    grid-template-columns: 1fr; /* 在小屏幕上变为单列 */
+    gap: 20px;
+  }
+  
+  .student-card {
+    height: auto;
+    flex-direction: column;
   }
   
   .student-photo {
-    width: 50px;
-    height: 70px;
-    margin-right: 10px;
+    width: 100%;
+    height: 180px;
   }
   
-  .student-name {
-    font-size: 18px;
-  }
-  
-  .student-year {
-    font-size: 14px;
+  .search-input {
+    width: 90%;
+    padding: 10px 15px;
+    font-size: 15px;
   }
 }
 
-/* 搜索框样式 */
-.search-container {
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.search-input {
-  padding: 10px 15px;
-  width: 300px;
-  max-width: 80%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: "Times New Roman", SimSun, serif;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.search-input:focus {
-  border-color: #3498db;
+/* 搜索结果高亮 */
+.highlight {
+  background-color: #fffacd;
+  padding: 2px 4px;
+  border-radius: 2px;
 }
 </style>
 
@@ -160,22 +218,23 @@ nav_order: 7
   
   <!-- 搜索框 -->
   <div class="search-container">
-    <input type="text" id="studentSearch" class="search-input" placeholder="搜索学生姓名...">
+    <input type="text" id="studentSearch" class="search-input" placeholder="搜索学生姓名或年级...">
   </div>
   
   <!-- 使用数据文件动态生成 -->
   {% if site.data.members %}
     <!-- 在校学生 -->
     <h2 class="section-title">在读学生</h2>
-    <div class="current-section">
+    <div class="students-grid current-section">
       {% for student in site.data.members.current %}
-      <div class="student-list-item">
+      <div class="student-card" data-search="{{ student.name }} {{ student.year }} {{ student.degree }}">
         <div class="student-photo">
           {% if student.photo %}
           <img src="{{ student.photo | relative_url }}" alt="{{ student.name }}">
           {% else %}
-          <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #999; font-size: 12px;">
-            照片
+          <div class="no-photo-placeholder">
+            <div class="icon">👤</div>
+            <div>暂无照片</div>
           </div>
           {% endif %}
         </div>
@@ -190,15 +249,16 @@ nav_order: 7
     
     <!-- 已毕业学生 -->
     <h2 class="section-title">已毕业学生</h2>
-    <div class="graduated-section">
+    <div class="students-grid graduated-section">
       {% for student in site.data.members.graduated %}
-      <div class="student-list-item">
+      <div class="student-card" data-search="{{ student.name }} {{ student.year }} {{ student.degree }}">
         <div class="student-photo">
           {% if student.photo %}
           <img src="{{ student.photo | relative_url }}" alt="{{ student.name }}">
           {% else %}
-          <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #999; font-size: 12px;">
-            照片
+          <div class="no-photo-placeholder">
+            <div class="icon">👤</div>
+            <div>暂无照片</div>
           </div>
           {% endif %}
         </div>
@@ -213,17 +273,19 @@ nav_order: 7
     
   {% else %}
   <!-- 如果数据文件不存在，显示静态内容 -->
-  <p style="text-align: center; color: #666; font-style: italic;">
+  <p style="text-align: center; color: #666; font-style: italic; margin: 40px 0;">
     请创建 _data/members.yml 文件来管理团队成员信息
   </p>
   
   <!-- 静态示例（仅用于演示） -->
   <h2 class="section-title">在读学生</h2>
-  <div class="current-section">
-    <div class="student-list-item">
+  <div class="students-grid current-section">
+    <!-- 示例卡片 1 -->
+    <div class="student-card" data-search="姜立志 2020级 博士研究生">
       <div class="student-photo">
-        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #999; font-size: 12px;">
-          照片
+        <div class="no-photo-placeholder">
+          <div class="icon">👤</div>
+          <div>暂无照片</div>
         </div>
       </div>
       <div class="student-info">
@@ -232,14 +294,60 @@ nav_order: 7
         <div class="student-degree">博士研究生</div>
       </div>
     </div>
+    
+    <!-- 示例卡片 2 -->
+    <div class="student-card" data-search="毛吾兰 2022级 博士研究生">
+      <div class="student-photo">
+        <div class="no-photo-placeholder">
+          <div class="icon">👤</div>
+          <div>暂无照片</div>
+        </div>
+      </div>
+      <div class="student-info">
+        <div class="student-year">2022级</div>
+        <div class="student-name">毛吾兰</div>
+        <div class="student-degree">博士研究生</div>
+      </div>
+    </div>
+    
+    <!-- 示例卡片 3 -->
+    <div class="student-card" data-search="刘小娟 2022级 博士研究生">
+      <div class="student-photo">
+        <div class="no-photo-placeholder">
+          <div class="icon">👤</div>
+          <div>暂无照片</div>
+        </div>
+      </div>
+      <div class="student-info">
+        <div class="student-year">2022级</div>
+        <div class="student-name">刘小娟</div>
+        <div class="student-degree">博士研究生</div>
+      </div>
+    </div>
+    
+    <!-- 示例卡片 4 -->
+    <div class="student-card" data-search="贺磊磊 2023级 博士研究生">
+      <div class="student-photo">
+        <div class="no-photo-placeholder">
+          <div class="icon">👤</div>
+          <div>暂无照片</div>
+        </div>
+      </div>
+      <div class="student-info">
+        <div class="student-year">2023级</div>
+        <div class="student-name">贺磊磊</div>
+        <div class="student-degree">博士研究生</div>
+      </div>
+    </div>
   </div>
   
   <h2 class="section-title">已毕业学生</h2>
-  <div class="graduated-section">
-    <div class="student-list-item">
+  <div class="students-grid graduated-section">
+    <div class="student-card" data-search="张三 2019级 博士研究生">
       <div class="student-photo">
-        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #f0f0f0; color: #999; font-size: 12px;">
-          照片
+        <div class="no-photo-placeholder">
+          <div class="icon">👤</div>
+          <div>暂无照片</div>
         </div>
       </div>
       <div class="student-info">
@@ -256,22 +364,49 @@ nav_order: 7
 // 学生搜索功能
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('studentSearch');
-  const studentItems = document.querySelectorAll('.student-list-item');
+  const studentCards = document.querySelectorAll('.student-card');
   
   searchInput.addEventListener('input', function(e) {
     const searchTerm = e.target.value.toLowerCase().trim();
     
-    studentItems.forEach(item => {
-      const name = item.querySelector('.student-name').textContent.toLowerCase();
-      const year = item.querySelector('.student-year').textContent.toLowerCase();
-      const degree = item.querySelector('.student-degree').textContent.toLowerCase();
+    studentCards.forEach(card => {
+      const searchData = card.getAttribute('data-search').toLowerCase();
       
-      if (searchTerm === '' || name.includes(searchTerm) || year.includes(searchTerm) || degree.includes(searchTerm)) {
-        item.style.display = 'flex';
+      if (searchTerm === '' || searchData.includes(searchTerm)) {
+        card.style.display = 'flex';
+        
+        // 高亮显示匹配的文本
+        if (searchTerm !== '') {
+          const nameElement = card.querySelector('.student-name');
+          const yearElement = card.querySelector('.student-year');
+          const degreeElement = card.querySelector('.student-degree');
+          
+          [nameElement, yearElement, degreeElement].forEach(element => {
+            const originalText = element.textContent;
+            const regex = new RegExp(`(${searchTerm})`, 'gi');
+            const highlightedText = originalText.replace(regex, '<span class="highlight">$1</span>');
+            element.innerHTML = highlightedText;
+          });
+        }
       } else {
-        item.style.display = 'none';
+        card.style.display = 'none';
       }
     });
+  });
+  
+  // 恢复原始文本（当搜索框清空时）
+  searchInput.addEventListener('blur', function(e) {
+    if (e.target.value === '') {
+      studentCards.forEach(card => {
+        const nameElement = card.querySelector('.student-name');
+        const yearElement = card.querySelector('.student-year');
+        const degreeElement = card.querySelector('.student-degree');
+        
+        [nameElement, yearElement, degreeElement].forEach(element => {
+          element.innerHTML = element.textContent;
+        });
+      });
+    }
   });
 });
 </script>
