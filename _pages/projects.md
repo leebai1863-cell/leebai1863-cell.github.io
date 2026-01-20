@@ -50,6 +50,12 @@ horizontal: false
     font-weight: 600;
     margin-bottom: 8px;
     color: #333;
+    text-decoration: none; /* 去掉标题默认下划线 */
+  }
+
+  /* 标题hover颜色 */
+  .project-title:hover {
+    color: #007bff; /* 蓝色高亮，可自定义 */
   }
 
   /* 描述文本样式 */
@@ -59,9 +65,14 @@ horizontal: false
     line-height: 1.5;
     margin: 0;
   }
+
+  /* 去除a标签的默认样式 */
+  .card-link {
+    text-decoration: none;
+  }
 </style>
 
-<!-- 页面主体：3列图片 + 9列内容的项目展示 -->
+<!-- 页面主体：3列图片 + 9列内容的项目展示（含详情链接） -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- 有分类的场景：按分类展示项目 -->
@@ -78,25 +89,28 @@ horizontal: false
   <div class="row">
     {% for project in sorted_projects %}
     <div class="col-12 mb-4"> <!-- 每个项目占整行 -->
-      <div class="project-card row g-0"> <!-- 内部3:9分栏，消除列间距 -->
-        <!-- 左侧3列：图片区域（移动端自动占整行） -->
-        <div class="col-md-3">
-          <img 
-            src="{{ project.image | default: '/assets/images/default-seminar.jpg' }}" 
-            class="project-img" 
-            alt="{{ project.title }}"
-            <!-- 图片加载失败时自动替换为默认图 -->
-            onerror="this.src='/assets/images/default-seminar.jpg'"
-          >
-        </div>
-        <!-- 右侧9列：标题+描述区域 -->
-        <div class="col-md-9">
-          <div class="project-content">
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-desc">{{ project.description }}</p>
+      <!-- 核心：给整个卡片添加详情页链接 -->
+      <a href="{{ project.url | relative_url }}" class="card-link">
+        <div class="project-card row g-0"> <!-- 内部3:9分栏，消除列间距 -->
+          <!-- 左侧3列：图片区域（移动端自动占整行） -->
+          <div class="col-md-3">
+            <img 
+              src="{{ project.image | default: '/assets/images/default-seminar.jpg' }}" 
+              class="project-img" 
+              alt="{{ project.title }}"
+              <!-- 图片加载失败时自动替换为默认图 -->
+              onerror="this.src='/assets/images/default-seminar.jpg'"
+            >
+          </div>
+          <!-- 右侧9列：标题+描述区域 -->
+          <div class="col-md-9">
+            <div class="project-content">
+              <h3 class="project-title">{{ project.title }}</h3>
+              <p class="project-desc">{{ project.description }}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
     {% endfor %}
   </div>
@@ -108,22 +122,25 @@ horizontal: false
   <div class="row">
     {% for project in sorted_projects %}
     <div class="col-12 mb-4">
-      <div class="project-card row g-0">
-        <div class="col-md-3">
-          <img 
-            src="{{ project.image | default: '/assets/images/default-seminar.jpg' }}" 
-            class="project-img" 
-            alt="{{ project.title }}"
-            onerror="this.src='/assets/images/default-seminar.jpg'"
-          >
-        </div>
-        <div class="col-md-9">
-          <div class="project-content">
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-desc">{{ project.description }}</p>
+      <!-- 核心：给整个卡片添加详情页链接 -->
+      <a href="{{ project.url | relative_url }}" class="card-link">
+        <div class="project-card row g-0">
+          <div class="col-md-3">
+            <img 
+              src="{{ project.image | default: '/assets/images/default-seminar.jpg' }}" 
+              class="project-img" 
+              alt="{{ project.title }}"
+              onerror="this.src='/assets/images/default-seminar.jpg'"
+            >
+          </div>
+          <div class="col-md-9">
+            <div class="project-content">
+              <h3 class="project-title">{{ project.title }}</h3>
+              <p class="project-desc">{{ project.description }}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
     {% endfor %}
   </div>
