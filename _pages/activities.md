@@ -5,7 +5,6 @@ permalink: /activities/
 description: 实验室集体活动
 nav: true
 nav_order: 5
-display_categories: [Workshops, Courses, Seminars]
 horizontal: false
 ---
 

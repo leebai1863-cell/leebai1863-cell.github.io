@@ -4,7 +4,6 @@ title: 机器学习与农业应用课程
 description: 面向研究生的机器学习在农业中应用的高级课程
 img: assets/img/activities/1.jpg
 importance: 5
-category: Courses
 date: 2024-09-01
 ---
 
