@@ -435,9 +435,9 @@ ninja.data = [{
             window.location.href = "/blog/2015/formatting-and-links/";
           
         },
-      },{id: "activities-机器学习与农业应用课程",
-          title: '机器学习与农业应用课程',
-          description: "面向研究生的机器学习在农业中应用的高级课程",
+      },{id: "activities-实验室集体活动",
+          title: '实验室集体活动',
+          description: "羽毛球",
           section: "Activities",handler: () => {
               window.location.href = "/activities/example-activity/";
             },},{id: "books-the-godfather",
