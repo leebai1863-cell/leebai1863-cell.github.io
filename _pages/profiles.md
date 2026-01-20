@@ -9,7 +9,7 @@ nav_order: 7
 profiles:
   - align: left
     image: prof_pic.jpg
-    content: 傅隆生
+    content: 
     image_circular: false # crops the image to make it circular
 
 
