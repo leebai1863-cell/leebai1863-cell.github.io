@@ -2,7 +2,7 @@
 layout: page
 title: Activities
 permalink: /activities/
-description: 学术活动
+description: 学术活动与课程材料
 nav: true
 nav_order: 5
 display_categories: [Workshops, Courses, Seminars]
