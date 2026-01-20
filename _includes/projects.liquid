@@ -1,11 +1,11 @@
-<div class="col">
+<div class="col-12 mb-4">
   <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" 
      class="project-card-link">
     <div class="card h-100 hoverable project-card">
       <div class="row g-0 h-100">
         <!-- 左侧：图片 -->
         {% if project.img %}
-        <div class="col-md-5">
+        <div class="col-md-4 col-lg-3">
           <div class="project-img-container h-100">
             {%
               include figure.liquid
@@ -20,17 +20,26 @@
         {% endif %}
         
         <!-- 右侧：文本内容 -->
-        <div class="{% if project.img %}col-md-7{% else %}col-12{% endif %}">
+        <div class="{% if project.img %}col-md-8 col-lg-9{% else %}col-12{% endif %}">
           <div class="card-body d-flex flex-column h-100">
             <div class="mb-auto">
-              <h2 class="card-title project-main-title">{{ project.title }}</h2>
-              <p class="card-text project-description">{{ project.description }}</p>
+              <h2 class="card-title project-main-title mb-2">{{ project.title }}</h2>
+              <div class="project-description-wrapper">
+                <p class="card-text project-description mb-3">{{ project.description }}</p>
+              </div>
             </div>
             
-            <!-- 如果需要，可以在这里添加其他信息 -->
-            <div class="mt-2">
+            <!-- 底部信息 -->
+            <div class="project-footer mt-auto">
+              {% if project.date %}
+              <div class="date-info d-flex align-items-center">
+                <i class="fas fa-calendar-alt me-2"></i>
+                <span>{{ project.date | date: "%Y年%m月%d日" }}</span>
+              </div>
+              {% endif %}
+              
               {% if project.github %}
-              <div class="github-icon">
+              <div class="github-icon mt-2">
                 <div class="icon" data-toggle="tooltip" title="Code Repository">
                   <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
                 </div>
@@ -42,13 +51,6 @@
                 {% endif %}
               </div>
               {% endif %}
-              
-              <!-- 添加日期信息（如果项目中有date字段） -->
-              {% if project.date %}
-              <small class="text-muted d-block mt-1">
-                <i class="fas fa-calendar-alt me-1"></i>{{ project.date | date: "%Y年%m月%d日" }}
-              </small>
-              {% endif %}
             </div>
           </div>
         </div>
@@ -58,16 +60,17 @@
 </div>
 
 <style>
-/* 项目卡片样式 */
+/* 项目卡片样式 - 整行显示 */
 .project-card {
   border: 1px solid #eaeaea;
   border-radius: 8px;
   transition: all 0.3s ease;
   overflow: hidden;
+  height: 200px; /* 固定高度，确保整行卡片高度一致 */
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   border-color: #3498db;
 }
@@ -85,12 +88,13 @@
 .project-img-container {
   overflow: hidden;
   border-right: 1px solid #f0f0f0;
+  height: 100%; /* 使图片容器充满整个卡片高度 */
 }
 
 .project-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* 保持图片比例，覆盖整个容器 */
   transition: transform 0.3s ease;
 }
 
@@ -101,11 +105,11 @@
 /* 标题样式 */
 .project-main-title {
   font-family: "Times New Roman", SimSun, serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   color: #2c3e50;
   line-height: 1.4;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* 限制标题最多显示2行 */
   -webkit-box-orient: vertical;
@@ -113,11 +117,16 @@
 }
 
 /* 描述样式 */
+.project-description-wrapper {
+  max-height: 80px; /* 限制描述区域最大高度 */
+  overflow: hidden;
+}
+
 .project-description {
   font-family: "Times New Roman", SimSun, serif;
-  font-size: 14px;
+  font-size: 15px;
   color: #7f8c8d;
-  line-height: 1.4;
+  line-height: 1.5;
   margin-bottom: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3; /* 限制描述最多显示3行 */
@@ -125,11 +134,21 @@
   overflow: hidden;
 }
 
-/* 卡片内容区域 */
-.card-body {
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
+/* 底部信息样式 */
+.project-footer {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 10px;
+}
+
+.date-info {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 14px;
+  color: #95a5a6;
+}
+
+.date-info i {
+  color: #3498db;
+  font-size: 14px;
 }
 
 /* GitHub图标样式 */
@@ -148,8 +167,25 @@
   color: #3498db;
 }
 
-/* 确保图片在移动设备上也能正常显示 */
+/* 卡片内容区域 */
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 确保所有卡片高度一致 */
+.col-12 {
+  display: flex;
+}
+
+/* 移动设备响应式 */
 @media (max-width: 768px) {
+  .project-card {
+    height: auto; /* 移动设备上高度自适应 */
+  }
+  
   .project-img-container {
     border-right: none;
     border-bottom: 1px solid #f0f0f0;
@@ -157,11 +193,12 @@
   }
   
   .project-main-title {
-    font-size: 16px;
+    font-size: 17px;
+    margin-top: 15px;
   }
   
   .project-description {
-    font-size: 13px;
+    font-size: 14px;
     -webkit-line-clamp: 2; /* 移动设备上显示2行 */
   }
   
@@ -170,8 +207,18 @@
   }
 }
 
-/* 确保卡片高度一致 */
-.row-cols-md-3 .col {
-  display: flex;
+/* 大屏幕设备优化 */
+@media (min-width: 1200px) {
+  .project-card {
+    height: 220px; /* 大屏幕上稍微增加高度 */
+  }
+  
+  .project-main-title {
+    font-size: 20px;
+  }
+  
+  .project-description {
+    font-size: 16px;
+  }
 }
 </style>
