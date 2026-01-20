@@ -36,6 +36,7 @@ horizontal: false
     height: 180px;
     object-fit: cover; /* 保证图片不变形 */
     display: block; /* 消除图片底部空白 */
+    border: none; /* 避免图片边框干扰 */
   }
 
   /* 内容区域样式 */
@@ -80,15 +81,15 @@ horizontal: false
       <!-- 卡片链接 -->
       <a href="{{ project.url | relative_url }}" class="card-link">
         <div class="project-card row g-0">
-          <!-- 左侧3列：强制读取project的第一张图片 -->
+          <!-- 左侧3列：读取project的img字段（已改无空格路径） -->
           <div class="col-md-3">
-            {% comment %} 核心修改：将project.image 改为 project.img，匹配你的project文件字段 {% endcomment %}
+            {% comment %} 核心：匹配project里的img字段，补全路径开头的/ {% endcomment %}
             {% assign project_image = project.img | default: "/assets/images/default-seminar.jpg" %}
             <img 
-              src="{{ project_image | prepend: '/' | absolute_url }}"  <!-- 补全开头的/，再解析为绝对路径 -->
+              src="{{ '/' | append: project_image | absolute_url }}"  <!-- 确保路径以/开头 -->
               class="project-img" 
-              alt="{{ project.title | escape }}"  <!-- 转义特殊字符，避免alt属性出错 -->
-              <!-- 图片加载失败时兜底 -->
+              alt="{{ project.title | escape }}"
+              <!-- 最终兜底：图片加载失败显示默认图 -->
               onerror="this.src='{{ '/assets/images/default-seminar.jpg' | absolute_url }}'"
             >
           </div>
@@ -96,7 +97,7 @@ horizontal: false
           <div class="col-md-9">
             <div class="project-content">
               <h3 class="project-title">{{ project.title }}</h3>
-              <p class="project-desc">{{ project.description | truncate: 200 }}</p> <!-- 描述过长时截断 -->
+              <p class="project-desc">{{ project.description | truncate: 200 }}</p>
             </div>
           </div>
         </div>
@@ -117,7 +118,7 @@ horizontal: false
           <div class="col-md-3">
             {% assign project_image = project.img | default: "/assets/images/default-seminar.jpg" %}
             <img 
-              src="{{ project_image | prepend: '/' | absolute_url }}"
+              src="{{ '/' | append: project_image | absolute_url }}"
               class="project-img" 
               alt="{{ project.title | escape }}"
               onerror="this.src='{{ '/assets/images/default-seminar.jpg' | absolute_url }}'"
