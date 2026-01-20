@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 机器学习与农业应用课程
-description: 面向研究生的机器学习在农业中应用的高级课程
+title: 实验室集体活动
+description: 羽毛球
 img: assets/img/activities/1.jpg
 importance: 5
 date: 2024-09-01
