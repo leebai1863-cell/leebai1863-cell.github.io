@@ -1,8 +1,8 @@
 ---
 layout: page
-title: 现代苹果园的人工智能应用进展
-description: 俄罗斯国立土地规划大学副校长Vladimir I. SOLOVIEV教授
-img: assets/img/scholarly_photos/Vladimir_I._SOLOVIEV.jpg
+title: 面向集约化果园自主运输的感知技术
+description: 俄罗斯联邦金融大学Nikita ANDRIYANOV副教授
+img: assets/img/scholarly_photos/Nikita_ANDRIYANOV.jpg
 importance: 1
 category: Conferences
 related_publications: false
@@ -36,7 +36,7 @@ date: 2026-01-18
 
 <!-- 原有结构完全保留，仅包裹类名 -->
 <div class="project-main-text">
-    2026年1月18日上午8：30-9：00，俄罗斯国立土地规划大学Vladimir I. SOLOVIEV教授做了题为“Artificial Intelligence for Smart Intensive Apple Orchards: Lessons and Prospects of China–Russia Collaboration”的学术报告。报告会由机电学院傅隆生教授主持，俄罗斯联邦金融大学Petr NIKITIN教授、Nikita ANDRIYANOV副教授及机电学院40余位师生参加了此次学术报告。
+    2026年1月18日上午9:30-10:00，俄罗斯联邦金融大学Nikita ANDRIYANOV副教授做了题为“Ensembling Apple Detection Models and Semantic Segmentation for Autonomous Transport in Horticulture”的学术报告。报告会由傅隆生教授主持，俄罗斯国立土地规划大学副校长Vladimir I. SOLOVIEV教授、俄罗斯联邦金融大学Petr NIKITIN副教授以及机电学院40多位师生参加了此次学术报告。
 </div>
 
 <!-- 新增image-container类，为图片添加顶部间距 -->
@@ -44,15 +44,15 @@ date: 2026-01-18
     <div class="row">
         <div class="col-sm-8 offset-sm-2 mt-3 mt-md-0">
             <div class="ratio ratio-4x3">
-                {% include figure.liquid loading="eager" path="assets/img/scholarly_photos/Vladimir_I._SOLOVIEV.jpg" title="example image" class="img-fluid rounded z-depth-1 object-fit-cover" %}
+                {% include figure.liquid loading="eager" path="assets/img/scholarly_photos/Nikita_ANDRIYANOV.jpg" title="example image" class="img-fluid rounded z-depth-1 object-fit-cover" %}
             </div>
         </div>
     </div>     
 </div>
 
 <div class="project-main-text mt-4">
-    Vladimir I. SOLOVIEV教授介绍了团队在经典机器学习、自然语言处理及蛋白质序列生成等基础领域的长期研究与技术积累，团队不仅开发了高效的问答系统，探索了面向金融、医疗等领域的生成式AI应用，在前沿的蛋白质序列生成与设计方面，团队的研究致力于通过AI预测并优化蛋白质功能并拥有将技术转化为金融科技、资产管理等实际解决方案的丰富经验。目前，其核心研究聚焦于数字农业，在智能装备方面，研发了集成RTK导航的机器人及苹果计数系统，实现了果实产量的预测。在信息化应用方面，构建了用于管理智能密集型苹果园的自主生态系统，实现果园的自动化检测与管理。在机器人系统层面，实现了苹果采摘的自动化作业，并着力提升空地协同网络的环境适应性。中俄两国科研团队在苹果园的产量估测、植物表型与采摘损伤等关键环节，取得了系列技术突破。面向未来，团队将协同探索全流程无人化果园系统等前沿方向。
+    报告中，Nikita ANDRIYANOV副教授报介绍了面向集约化果园自主运输的感知技术，结合了用于苹果检测的YOLO系列检测器自适应集成与基于Transformer的语义分割导航。首先，Nikita ANDRIYANOV副教授基于果园场景中苹果检测面临的挑战，阐述了团队采用的模型集成策略，可实现在各种天气条件下均能稳定提升检测精度。并展示了团队自主开发的软件平台，该平台不仅支持自动检测与人工校正，还提供多种实用的模型选择与融合方式。接下来，Nikita ANDRIYANOV副教授着重解释了语义分割相对于传统边界框检测在导航中的优势，介绍了利用SegFormer架构进行语义分割。他强调，单纯的苹果定位无法引导车辆行驶，而语义分割能清晰划分出可通行路径、树木、近树干安全区等区域，并通过提取路径中心线，使车辆能沿果树行间稳定直线前进。最后，Nikita ANDRIYANOV副教授表示未来将推进实时集成、嵌入式优化及田间验证等工作。
 </div>
 <div class="project-main-text mt-4">
-    会后，根据Vladimir I. SOLOVIEV教授上述汇报内容，各位教授相互交流的同时，在场研究生也踊跃参与交流，向Vladimir I. SOLOVIEV教授积极请教与探讨。此次报告会一定程度上为各位同学指明了科研方向，大家纷纷表示受益匪浅。
+    报告结束后，根据Nikita ANDRIYANOV副教授提到的各种研究和观点，与会师生展开了热烈交流，为在场师生拓展了研究视野，也进一步促进了相关领域的研究思路交叉与启发。
 </div>
