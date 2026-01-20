@@ -466,6 +466,11 @@ ninja.data = [{
           description: "俄罗斯联邦金融大学Nikita ANDRIYANOV副教授",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Nikita%20ANDRIYANOV%E5%89%AF%E6%95%99%E6%8E%88/";
+            },},{id: "projects-农工综合体中大语言模型参数优化与高效微调应用进展",
+          title: '农工综合体中大语言模型参数优化与高效微调应用进展',
+          description: "俄罗斯联邦金融大学Petr NIKITIN副教授",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Petr%20NIKITIN%E5%89%AF%E6%95%99%E6%8E%88/";
             },},{id: "projects-现代苹果园的人工智能应用进展",
           title: '现代苹果园的人工智能应用进展',
           description: "俄罗斯国立土地规划大学副校长Vladimir I. SOLOVIEV教授",
