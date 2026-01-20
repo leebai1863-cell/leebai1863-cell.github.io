@@ -1,6 +1,7 @@
 <div class="col">
-  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
-    <div class="card h-100 hoverable">
+  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" 
+     class="project-card-link">
+    <div class="card h-100 hoverable project-card">
       {% if project.img %}
         {%
           include figure.liquid
@@ -8,28 +9,140 @@
           path=project.img
           sizes = "250px"
           alt="project thumbnail"
-          class="card-img-top"
+          class="card-img-top project-img"
         %}
       {% endif %}
       <div class="card-body">
-        <h2 class="card-title">{{ project.title }}</h2>
-        <p class="card-text">{{ project.description }}</p>
-        <div class="row ml-1 mr-1 p-0">
-          {% if project.github %}
-            <div class="github-icon">
-              <div class="icon" data-toggle="tooltip" title="Code Repository">
-                <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
-              </div>
-              {% if project.github_stars %}
-                <span class="stars" data-toggle="tooltip" title="GitHub Stars">
-                  <i class="fa-solid fa-star"></i>
-                  <span id="{{ project.github_stars }}-stars"></span>
-                </span>
-              {% endif %}
+        <h2 class="card-title project-main-title">{{ project.title }}</h2>
+        <p class="card-text project-author">{{ project.description }}</p>
+        
+        <!-- 如果不需要GitHub图标，可以移除以下部分 -->
+        {% if project.github %}
+        <div class="row ml-1 mr-1 p-0 mt-2">
+          <div class="github-icon">
+            <div class="icon" data-toggle="tooltip" title="Code Repository">
+              <a href="{{ project.github }}"><i class="fa-brands fa-github gh-icon"></i></a>
             </div>
-          {% endif %}
+            {% if project.github_stars %}
+              <span class="stars" data-toggle="tooltip" title="GitHub Stars">
+                <i class="fa-solid fa-star"></i>
+                <span id="{{ project.github_stars }}-stars"></span>
+              </span>
+            {% endif %}
+          </div>
         </div>
+        {% endif %}
+        
+        <!-- 添加日期信息（如果项目中有date字段） -->
+        {% if project.date %}
+        <div class="row ml-1 mr-1 p-0 mt-2">
+          <small class="text-muted">
+            <i class="fas fa-calendar-alt me-1"></i>{{ project.date | date: "%Y年%m月%d日" }}
+          </small>
+        </div>
+        {% endif %}
       </div>
     </div>
   </a>
 </div>
+
+<style>
+/* 项目卡片样式 */
+.project-card {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-color: #3498db;
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card-link:hover {
+  color: inherit;
+}
+
+.project-main-title {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 限制标题最多显示2行 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.4em; /* 确保标题区域高度一致 */
+}
+
+.project-author {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 14px;
+  color: #7f8c8d;
+  line-height: 1.4;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 限制描述最多显示2行 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 1.8em; /* 确保描述区域高度一致 */
+}
+
+.project-img {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* GitHub图标样式调整 */
+.github-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.github-icon .icon a {
+  color: #333;
+  font-size: 18px;
+}
+
+.github-icon .icon a:hover {
+  color: #3498db;
+}
+
+/* 确保卡片布局一致 */
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-title {
+  margin-top: 0;
+}
+
+/* 适配不同屏幕尺寸 */
+@media (max-width: 768px) {
+  .project-main-title {
+    font-size: 16px;
+  }
+  
+  .project-author {
+    font-size: 13px;
+  }
+  
+  .project-img {
+    height: 150px;
+  }
+}
+</style>
