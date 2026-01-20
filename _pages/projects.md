@@ -82,10 +82,10 @@ horizontal: false
         <div class="project-card row g-0">
           <!-- 左侧3列：强制读取project的第一张图片 -->
           <div class="col-md-3">
-            {% comment %} 核心逻辑：优先用project的image字段（第一张图），无则用默认图 {% endcomment %}
-            {% assign project_image = project.image | default: "/assets/images/default-seminar.jpg" %}
+            {% comment %} 核心修改：将project.image 改为 project.img，匹配你的project文件字段 {% endcomment %}
+            {% assign project_image = project.img | default: "/assets/images/default-seminar.jpg" %}
             <img 
-              src="{{ project_image | absolute_url }}"  <!-- 强制解析为绝对路径，避免路径错误 -->
+              src="{{ project_image | prepend: '/' | absolute_url }}"  <!-- 补全开头的/，再解析为绝对路径 -->
               class="project-img" 
               alt="{{ project.title | escape }}"  <!-- 转义特殊字符，避免alt属性出错 -->
               <!-- 图片加载失败时兜底 -->
@@ -115,9 +115,9 @@ horizontal: false
       <a href="{{ project.url | relative_url }}" class="card-link">
         <div class="project-card row g-0">
           <div class="col-md-3">
-            {% assign project_image = project.image | default: "/assets/images/default-seminar.jpg" %}
+            {% assign project_image = project.img | default: "/assets/images/default-seminar.jpg" %}
             <img 
-              src="{{ project_image | absolute_url }}"
+              src="{{ project_image | prepend: '/' | absolute_url }}"
               class="project-img" 
               alt="{{ project.title | escape }}"
               onerror="this.src='{{ '/assets/images/default-seminar.jpg' | absolute_url }}'"
