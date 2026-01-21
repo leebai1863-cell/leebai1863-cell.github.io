@@ -210,7 +210,11 @@ nav_order: 7
       <div class="stat-label">已毕业学生</div>
     </div>
     <div class="stat-item">
-      <div class="stat-number">{{ site.data.members.current | size | plus: site.data.members.graduated | size }}</div>
+      <div class="stat-number">
+        {% assign current = site.data.members.current | size %}
+        {% assign graduated = site.data.members.graduated | size %}
+        {{ current | plus: graduated }}
+      </div>
       <div class="stat-label">总计</div>
     </div>
   </div>
