@@ -259,7 +259,7 @@ graduated:
     name: "彭俊"
     degree: "硕士研究生"
     photo: "/assets/img/members/pj.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "高校"  # 请在这里填写毕业去向
   
   - year: "2014级"
     name: "孙世鹏"
