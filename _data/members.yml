@@ -184,7 +184,7 @@ current:
     research: "智能农业装备控制"
   
   - year: "2025级"
-    name: "戎军科"
+    name: "戎均可"
     degree: "硕士研究生"
     photo: "/assets/img/members/rjk.jpg"
     research: "智能农业装备控制"
@@ -250,8 +250,6 @@ current:
     photo: "/assets/img/members/zh.jpg"
     research: "智能农业装备控制"
 
-
-  
   # 继续添加其他在读学生...
   # 格式：年-姓名-学位-照片路径-研究方向
 
@@ -321,12 +319,6 @@ graduated:
     photo: "/assets/img/members/zzx.jpg"
     research: ""
   
-  - year: "2019年访学"
-    name: "张云赫"
-    degree: "硕士研究生"
-    photo: "/assets/img/members/zyh.jpg"
-    research: ""
-
   # 2020级博士
   - year: "2020级"
     name: "武振超"
