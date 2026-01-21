@@ -319,6 +319,12 @@ graduated:
     photo: "/assets/img/members/zzx.jpg"
     research: ""
   
+  - year: "2019级"
+    name: "张云赫"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/zyh.jpg"
+    research: ""
+
   # 2020级博士
   - year: "2020级"
     name: "武振超"
