@@ -294,7 +294,7 @@ graduated:
     degree: "硕士研究生"
     photo: "/assets/img/members/zhd.jpg"
     research: ""
-    
+
   # 2018级硕士
   - year: "2018级"
     name: "宋珍珍"
@@ -321,6 +321,12 @@ graduated:
     photo: "/assets/img/members/zzx.jpg"
     research: ""
   
+  - year: "2019年访学"
+    name: "张云赫"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/zyh.jpg"
+    research: ""
+
   # 2020级博士
   - year: "2020级"
     name: "武振超"
