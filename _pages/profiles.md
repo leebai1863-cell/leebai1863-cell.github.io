@@ -15,13 +15,26 @@ nav_order: 7
   padding: 20px;
 }
 
-.team-title {
+/* 标题样式 */
+.section-title {
   font-family: "Times New Roman", SimSun, serif;
   font-size: 28px;
   font-weight: 600;
   color: #2c3e50;
   text-align: center;
   margin-bottom: 40px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #3498db;
+}
+
+.subsection-title {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 50px 0 30px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
 }
 
 /* 网格布局 - 每行两列卡片 */
@@ -64,6 +77,11 @@ nav_order: 7
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.student-card:hover .student-photo img {
+  transform: scale(1.05);
 }
 
 .no-photo-placeholder {
@@ -117,15 +135,49 @@ nav_order: 7
   line-height: 1.4;
 }
 
+/* 统计数据样式 */
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 40px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.stat-label {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   .team-container {
     padding: 15px;
   }
   
-  .team-title {
+  .section-title {
     font-size: 24px;
     margin-bottom: 30px;
+  }
+  
+  .subsection-title {
+    font-size: 20px;
+    margin: 40px 0 25px 0;
   }
   
   .students-grid {
@@ -142,19 +194,45 @@ nav_order: 7
     width: 100%;
     height: 180px;
   }
+  
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 </style>
 
 <div class="team-container">
-  <h1 class="team-title">在读学生</h1>
+  <h1 class="section-title">实验室成员</h1>
   
-  <!-- 学生信息卡片容器 -->
+  <!-- 统计数据 -->
+  <div class="stats-container">
+    <div class="stat-item">
+      <div class="stat-number">{{ site.data.members.current | size }}</div>
+      <div class="stat-label">在读学生</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">{{ site.data.members.graduated | size }}</div>
+      <div class="stat-label">已毕业学生</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">{{ site.data.members.current | size | plus: site.data.members.graduated | size }}</div>
+      <div class="stat-label">总计</div>
+    </div>
+  </div>
+  
+  <!-- 在读学生部分 -->
+  <h2 class="subsection-title">在读学生</h2>
+  
+  <!-- 博士研究生 -->
+  <h3 style="font-family: 'Times New Roman', SimSun, serif; font-size: 18px; color: #555; margin: 30px 0 15px 0;">博士研究生</h3>
   <div class="students-grid">
-    {% for student in site.data.members %}
+    {% assign sorted_phd = site.data.members.current | where: "degree", "博士研究生" | sort: "year" %}
+    {% for student in sorted_phd %}
     <div class="student-card">
       <div class="student-photo">
         {% if student.photo %}
-        <img src="{{ student.photo | relative_url }}" alt="{{ student.name }}">
+        <img src="{{ student.photo | relative_url }}" alt="{{ student.name }}" loading="lazy">
         {% else %}
         <div class="no-photo-placeholder">
           照片
@@ -165,11 +243,101 @@ nav_order: 7
         <div class="student-year">{{ student.year }}</div>
         <div class="student-name">{{ student.name }}</div>
         <div class="student-degree">{{ student.degree }}</div>
-        {% if student.research %}
+        {% if student.research and student.research != "" %}
         <div class="student-research">{{ student.research }}</div>
         {% endif %}
       </div>
     </div>
     {% endfor %}
   </div>
+  
+  <!-- 硕士研究生 -->
+  <h3 style="font-family: 'Times New Roman', SimSun, serif; font-size: 18px; color: #555; margin: 30px 0 15px 0;">硕士研究生</h3>
+  <div class="students-grid">
+    {% assign sorted_ms = site.data.members.current | where: "degree", "硕士研究生" | sort: "year" %}
+    {% for student in sorted_ms %}
+    <div class="student-card">
+      <div class="student-photo">
+        {% if student.photo %}
+        <img src="{{ student.photo | relative_url }}" alt="{{ student.name }}" loading="lazy">
+        {% else %}
+        <div class="no-photo-placeholder">
+          照片
+        </div>
+        {% endif %}
+      </div>
+      <div class="student-info">
+        <div class="student-year">{{ student.year }}</div>
+        <div class="student-name">{{ student.name }}</div>
+        <div class="student-degree">{{ student.degree }}</div>
+        {% if student.research and student.research != "" %}
+        <div class="student-research">{{ student.research }}</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <!-- 已毕业学生部分 -->
+  <h2 class="subsection-title">已毕业学生</h2>
+  
+  <!-- 已毕业博士研究生 -->
+  {% assign graduated_phd = site.data.members.graduated | where: "degree", "博士研究生" %}
+  {% if graduated_phd.size > 0 %}
+  <h3 style="font-family: 'Times New Roman', SimSun, serif; font-size: 18px; color: #555; margin: 30px 0 15px 0;">博士研究生</h3>
+  <div class="students-grid">
+    {% assign sorted_graduated_phd = graduated_phd | sort: "year" %}
+    {% for student in sorted_graduated_phd %}
+    <div class="student-card">
+      <div class="student-photo">
+        {% if student.photo %}
+        <img src="{{ student.photo | relative_url }}" alt="{{ student.name }}" loading="lazy">
+        {% else %}
+        <div class="no-photo-placeholder">
+          照片
+        </div>
+        {% endif %}
+      </div>
+      <div class="student-info">
+        <div class="student-year">{{ student.year }}</div>
+        <div class="student-name">{{ student.name }}</div>
+        <div class="student-degree">{{ student.degree }}</div>
+        {% if student.research and student.research != "" %}
+        <div class="student-research">{{ student.research }}</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  <!-- 已毕业硕士研究生 -->
+  {% assign graduated_ms = site.data.members.graduated | where: "degree", "硕士研究生" %}
+  {% if graduated_ms.size > 0 %}
+  <h3 style="font-family: 'Times New Roman', SimSun, serif; font-size: 18px; color: #555; margin: 30px 0 15px 0;">硕士研究生</h3>
+  <div class="students-grid">
+    {% assign sorted_graduated_ms = graduated_ms | sort: "year" %}
+    {% for student in sorted_graduated_ms %}
+    <div class="student-card">
+      <div class="student-photo">
+        {% if student.photo %}
+        <img src="{{ student.photo | relative_url }}" alt="{{ student.name }}" loading="lazy">
+        {% else %}
+        <div class="no-photo-placeholder">
+          照片
+        </div>
+        {% endif %}
+      </div>
+      <div class="student-info">
+        <div class="student-year">{{ student.year }}</div>
+        <div class="student-name">{{ student.name }}</div>
+        <div class="student-degree">{{ student.degree }}</div>
+        {% if student.research and student.research != "" %}
+        <div class="student-research">{{ student.research }}</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
 </div>
