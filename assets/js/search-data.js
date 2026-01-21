@@ -439,7 +439,7 @@ ninja.data = [{
           title: '实验室集体活动',
           description: "羽毛球",
           section: "Activities",handler: () => {
-              window.location.href = "/activities/example-activity/";
+              window.location.href = "/activities/2026-01-16/";
             },},{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
