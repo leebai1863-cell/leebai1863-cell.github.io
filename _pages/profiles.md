@@ -53,7 +53,7 @@ nav_order: 7
   overflow: hidden;
   transition: all 0.3s ease;
   display: flex;
-  height: 160px; /* 稍微降低高度，因为移除了研究方向 */
+  height: 180px; /* 恢复高度，因为要显示毕业去向 */
 }
 
 .student-card:hover {
@@ -127,7 +127,20 @@ nav_order: 7
   margin-bottom: 8px;
 }
 
-/* 移除研究方向相关的样式 */
+/* 毕业去向样式 */
+.student-destination {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.student-destination strong {
+  color: #2c3e50;
+  font-style: normal;
+}
 
 /* 统计数据样式 */
 .stats-container {
@@ -294,6 +307,12 @@ nav_order: 7
         <div class="student-year">{{ student.year }}</div>
         <div class="student-name">{{ student.name }}</div>
         <div class="student-degree">{{ student.degree }}</div>
+        <!-- 添加毕业去向显示 -->
+        {% if student.graduation_destination and student.graduation_destination != "" %}
+        <div class="student-destination">
+          <strong>毕业去向：</strong>{{ student.graduation_destination }}
+        </div>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
@@ -321,6 +340,12 @@ nav_order: 7
         <div class="student-year">{{ student.year }}</div>
         <div class="student-name">{{ student.name }}</div>
         <div class="student-degree">{{ student.degree }}</div>
+        <!-- 添加毕业去向显示 -->
+        {% if student.graduation_destination and student.graduation_destination != "" %}
+        <div class="student-destination">
+          <strong>毕业去向：</strong>{{ student.graduation_destination }}
+        </div>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
