@@ -53,7 +53,7 @@ nav_order: 7
   overflow: hidden;
   transition: all 0.3s ease;
   display: flex;
-  height: 180px; /* 固定高度，确保卡片对齐 */
+  height: 160px; /* 稍微降低高度，因为移除了研究方向 */
 }
 
 .student-card:hover {
@@ -127,13 +127,7 @@ nav_order: 7
   margin-bottom: 8px;
 }
 
-.student-research {
-  font-family: "Times New Roman", SimSun, serif;
-  font-size: 14px;
-  color: #555;
-  font-style: italic;
-  line-height: 1.4;
-}
+/* 移除研究方向相关的样式 */
 
 /* 统计数据样式 */
 .stats-container {
@@ -243,9 +237,6 @@ nav_order: 7
         <div class="student-year">{{ student.year }}</div>
         <div class="student-name">{{ student.name }}</div>
         <div class="student-degree">{{ student.degree }}</div>
-        {% if student.research and student.research != "" %}
-        <div class="student-research">{{ student.research }}</div>
-        {% endif %}
       </div>
     </div>
     {% endfor %}
@@ -270,9 +261,6 @@ nav_order: 7
         <div class="student-year">{{ student.year }}</div>
         <div class="student-name">{{ student.name }}</div>
         <div class="student-degree">{{ student.degree }}</div>
-        {% if student.research and student.research != "" %}
-        <div class="student-research">{{ student.research }}</div>
-        {% endif %}
       </div>
     </div>
     {% endfor %}
@@ -302,9 +290,6 @@ nav_order: 7
         <div class="student-year">{{ student.year }}</div>
         <div class="student-name">{{ student.name }}</div>
         <div class="student-degree">{{ student.degree }}</div>
-        {% if student.research and student.research != "" %}
-        <div class="student-research">{{ student.research }}</div>
-        {% endif %}
       </div>
     </div>
     {% endfor %}
@@ -332,9 +317,6 @@ nav_order: 7
         <div class="student-year">{{ student.year }}</div>
         <div class="student-name">{{ student.name }}</div>
         <div class="student-degree">{{ student.degree }}</div>
-        {% if student.research and student.research != "" %}
-        <div class="student-research">{{ student.research }}</div>
-        {% endif %}
       </div>
     </div>
     {% endfor %}
