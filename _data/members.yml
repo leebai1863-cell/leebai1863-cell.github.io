@@ -256,33 +256,161 @@ current:
   # 格式：年-姓名-学位-照片路径-研究方向
 
 graduated:
-  - year: "2019级"
-    name: "张伟"
-    degree: "博士研究生"
-    photo: "/assets/img/members/zhangwei.jpg"
-    research: "现就职于XX大学，副教授"
-    
-  
-  - year: "2020级"
-    name: "李娜"
-    degree: "博士研究生"
-    photo: "/assets/img/members/lina.jpg"
-    research: "现就职于XX研究院，副研究员"
-    
-  
-  - year: "2020级"
-    name: "王强"
+  # 2014级硕士
+  - year: "2014级"
+    name: "彭俊"
     degree: "硕士研究生"
-    photo: "/assets/img/members/wangqiang.jpg"
-    research: "现就职于XX科技公司，算法工程师"
+    photo: "/assets/img/members/pj.jpg"
+    research: ""
+  
+  - year: "2014级"
+    name: "孙世鹏"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/ssp.jpg"
+    research: ""
+  
+  # 2016级硕士
+  - year: "2016级"
+    name: "冯亚利"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/fyl.jpg"
+    research: ""
+
+  - year: "2016级"
+    name: "谢洪起"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/xhq.jpg"
+    research: ""
+
+  # 2017级硕士
+  - year: "2017级"
+    name: "刘智豪"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/lzh.jpg"
+    research: ""
+
+  - year: "2017级"
+    name: "赵海东"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/zhd.jpg"
+    research: ""
     
+  # 2018级硕士
+  - year: "2018级"
+    name: "宋珍珍"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/szz.jpg"
+    research: ""
+  
+  - year: "2018级"
+    name: "王文奇"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/wwq.jpg"
+    research: ""
+  
+  # 2019级硕士
+  - year: "2019级"
+    name: "高芳芳"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/gff.jpg"
+    research: ""
+  
+  - year: "2019级"
+    name: "周忠贤"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/zzx.jpg"
+    research: ""
+  
+  # 2020级博士
+  - year: "2020级"
+    name: "武振超"
+    degree: "博士研究生"
+    photo: "/assets/img/members/wzc.jpg"
+    research: ""
+  
+  # 2020级硕士
+  - year: "2020级"
+    name: "李政坤"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/lzk.jpg"
+    research: ""
+  
+  - year: "2020级"
+    name: "李果"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/lg.jpg"
+    research: ""
+  
+  - year: "2020级"
+    name: "赵关奥"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/zga.jpg"
+    research: ""
+  
+  - year: "2020级"
+    name: "杨睿哲"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/yrz.jpg"
+    research: ""
+  
+  - year: "2020级"
+    name: "索睿"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/sr.jpg"
+    research: ""
+  
+  # 2021级硕士
+  - year: "2021级"
+    name: "孙晓明"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/sxm.jpg"
+    research: ""
   
   - year: "2021级"
-    name: "刘芳"
+    name: "房文泰"
     degree: "硕士研究生"
-    photo: "/assets/img/members/liufang.jpg"
-    research: "现就职于XX农业公司，技术总监"
-    
+    photo: "/assets/img/members/fwt.jpg"
+    research: ""
   
-  # 继续添加其他已毕业学生...
-  # 格式：年-姓名-学位-照片路径-毕业后去向-毕业年份
+  - year: "2021级"
+    name: "高常青"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/gcq.jpg"
+    research: ""
+  
+  # 2022级硕士
+  - year: "2022级"
+    name: "江晗慧"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/jhh.jpg"
+    research: ""
+  
+  - year: "2022级"
+    name: "荆旭东"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/jxd.jpg"
+    research: ""
+  
+  - year: "2022级"
+    name: "陈池"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/cc.jpg"
+    research: ""
+  
+  - year: "2022级"
+    name: "党浩杰"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/dhj.jpg"
+    research: ""
+  
+  - year: "2022级"
+    name: "韦瑞扬"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/wry.jpg"
+    research: ""
+  
+  - year: "2022级"
+    name: "刘国良"
+    degree: "硕士研究生"
+    photo: "/assets/img/members/llg.jpg"
+    research: ""
