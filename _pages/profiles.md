@@ -2,7 +2,7 @@
 layout: page
 permalink: /members/
 title: Members
-description: Team members of lab
+description: Team members of AgRobot
 nav: true
 nav_order: 7
 ---
