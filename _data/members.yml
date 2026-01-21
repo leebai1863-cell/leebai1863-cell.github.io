@@ -259,162 +259,162 @@ graduated:
     name: "彭俊"
     degree: "硕士研究生"
     photo: "/assets/img/members/pj.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2014级"
     name: "孙世鹏"
     degree: "硕士研究生"
     photo: "/assets/img/members/ssp.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   # 2016级硕士
   - year: "2016级"
     name: "冯亚利"
     degree: "硕士研究生"
     photo: "/assets/img/members/fyl.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
 
   - year: "2016级"
     name: "谢洪起"
     degree: "硕士研究生"
     photo: "/assets/img/members/xhq.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
 
   # 2017级硕士
   - year: "2017级"
     name: "刘智豪"
     degree: "硕士研究生"
     photo: "/assets/img/members/lzh.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
 
   - year: "2017级"
     name: "赵海东"
     degree: "硕士研究生"
     photo: "/assets/img/members/zhd.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
 
   # 2018级硕士
   - year: "2018级"
     name: "宋珍珍"
     degree: "硕士研究生"
     photo: "/assets/img/members/szz.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2018级"
     name: "王文奇"
     degree: "硕士研究生"
     photo: "/assets/img/members/wwq.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   # 2019级硕士
   - year: "2019级"
     name: "高芳芳"
     degree: "硕士研究生"
     photo: "/assets/img/members/gff.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2019级"
     name: "周忠贤"
     degree: "硕士研究生"
     photo: "/assets/img/members/zzx.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2019级"
     name: "张云赫"
     degree: "硕士研究生"
     photo: "/assets/img/members/zyh.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
 
   # 2020级博士
   - year: "2020级"
     name: "武振超"
     degree: "博士研究生"
     photo: "/assets/img/members/wzc.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   # 2020级硕士
   - year: "2020级"
     name: "李政坤"
     degree: "硕士研究生"
     photo: "/assets/img/members/lzk.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2020级"
     name: "李果"
     degree: "硕士研究生"
     photo: "/assets/img/members/lg.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2020级"
     name: "赵关奥"
     degree: "硕士研究生"
     photo: "/assets/img/members/zga.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2020级"
     name: "杨睿哲"
     degree: "硕士研究生"
     photo: "/assets/img/members/yrz.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2020级"
     name: "索睿"
     degree: "硕士研究生"
     photo: "/assets/img/members/sr.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   # 2021级硕士
   - year: "2021级"
     name: "孙晓明"
     degree: "硕士研究生"
     photo: "/assets/img/members/sxm.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2021级"
     name: "房文泰"
     degree: "硕士研究生"
     photo: "/assets/img/members/fwt.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2021级"
     name: "高常青"
     degree: "硕士研究生"
     photo: "/assets/img/members/gcq.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   # 2022级硕士
   - year: "2022级"
     name: "江晗慧"
     degree: "硕士研究生"
     photo: "/assets/img/members/jhh.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "荆旭东"
     degree: "硕士研究生"
     photo: "/assets/img/members/jxd.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "陈池"
     degree: "硕士研究生"
     photo: "/assets/img/members/cc.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "党浩杰"
     degree: "硕士研究生"
     photo: "/assets/img/members/dhj.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "韦瑞扬"
     degree: "硕士研究生"
     photo: "/assets/img/members/wry.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "刘国良"
     degree: "硕士研究生"
     photo: "/assets/img/members/llg.jpg"
-    research: ""
+    graduation_destination: ""  # 请在这里填写毕业去向
