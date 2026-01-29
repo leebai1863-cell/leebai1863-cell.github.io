@@ -34,11 +34,7 @@ graduated:
   # ... 原有已毕业学生数据
 
 current:
-  - year: "2020级"
-    name: "姜立志"
-    degree: "博士研究生"
-    photo: "/assets/img/members/jlz.jpg"
-    research: ""
+  
   
   - year: "2022级"
     name: "毛吾兰"
@@ -285,6 +281,13 @@ current:
   # 格式：年-姓名-学位-照片路径-研究方向
 
 graduated:
+
+  - year: "2020级"
+    name: "姜立志"
+    degree: "博士研究生"
+    photo: "/assets/img/members/jlz.jpg"
+    graduation_destination: "高校"  # 请在这里填写毕业去向
+
   # 2014级硕士
   - year: "2014级"
     name: "彭俊"
