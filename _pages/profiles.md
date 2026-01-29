@@ -280,19 +280,17 @@ nav_order: 7
   margin-bottom: 8px;
 }
 
-/* 毕业去向样式 */
+/* 毕业去向样式 - 已去除斜体 */
 .student-destination {
   font-family: "Times New Roman", SimSun, serif;
   font-size: 14px;
   color: #555;
   margin-top: 8px;
   line-height: 1.4;
-  font-style: italic;
 }
 
 .student-destination strong {
   color: #2c3e50;
-  font-style: normal;
 }
 
 /* 统计数据样式 */
