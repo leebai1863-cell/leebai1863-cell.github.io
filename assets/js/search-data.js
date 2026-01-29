@@ -486,6 +486,11 @@ ninja.data = [{
           description: "俄罗斯国立土地规划大学副校长Vladimir I. SOLOVIEV教授",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Vladimir%20I.%20SOLOVIEV%E6%95%99%E6%8E%88/";
+            },},{id: "projects-smart-agriculture-and-the-trade-off-between-variability-and-digitization",
+          title: 'Smart Agriculture and the Trade-off Between Variability and Digitization',
+          description: "意大利帕多瓦大学Francesco MARINELLO教授",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Francesco%20MARINELLO%E6%95%99%E6%8E%88/";
             },},{
         id: 'social-cv',
         title: 'CV',
