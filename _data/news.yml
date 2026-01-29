@@ -1,6 +1,6 @@
 # _data/news.yml
 
-- date: 2024-01-15
+- date: 2026-01-
   category: "Publication"
   title: "Our paper on agricultural robotics is accepted by IEEE Transactions"
   description: "Our latest research on computer vision for fruit harvesting has been accepted for publication."
@@ -8,7 +8,5 @@
   image: ""
   link: ""
   pdf: ""
-  slides: ""
-  video: ""
 
 
