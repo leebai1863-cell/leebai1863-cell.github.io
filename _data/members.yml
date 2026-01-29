@@ -5,14 +5,14 @@
 # 导师信息
 faculty:
   - name: "傅隆生"
-    title: "教授，博士生导师"
+    title: "教授、博导"
     degree: "博士"
     photo: "/assets/img/members/fls.jpg"
     email: "zhang@university.edu"
     research_interest: "农业机器人，机器视觉，智能控制"
   
   - name: "李晨"
-    title: "讲师，硕士生导师"
+    title: "讲师、硕导"
     degree: "博士"
     photo: "/assets/img/members/lc.jpg"
     email: "c.li@nwafu.edu.cn"
