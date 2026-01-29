@@ -1,10 +1,10 @@
 # _data/news.yml
 
-- date: 2026-01-
-  category: "Publication"
-  title: "Our paper on agricultural robotics is accepted by IEEE Transactions"
-  description: "Our latest research on computer vision for fruit harvesting has been accepted for publication."
-  content: "This paper presents a novel approach to apple recognition and localization in complex orchard environments. The method achieves 95% accuracy in fruit detection."
+- date: 2026-01-09
+  category: "Smart Agriculture Webinar"
+  title: "Smart Agriculture Webinar"
+  description: "实验室全体同学线上学习美国佛罗里达大学Yiannis AMPATZIDIS教授的题为“Towards Autonomous and Intelligent Specialty Crop Management Using AI and Robotics”的学术报告，报告由傅隆生教授线上主持。"
+  content: "实验室全体同学线上学习美国佛罗里达大学Yiannis AMPATZIDIS教授的题为“Towards Autonomous and Intelligent Specialty Crop Management Using AI and Robotics”的学术报告，报告由傅隆生教授线上主持。"
   image: ""
   link: ""
   pdf: ""
