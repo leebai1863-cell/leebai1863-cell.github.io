@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 意大利帕多瓦大学Francesco MARINELLO教授分享智慧农业中差异性与数字化权衡的研究进展
+title: 智慧农业中差异性与数字化权衡的研究进展
 description: 意大利帕多瓦大学Francesco MARINELLO教授
 img: assets/img/scholarly_photos/Francesco_MARINELLO.jpg
 importance: 1
