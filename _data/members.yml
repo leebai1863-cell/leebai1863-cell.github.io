@@ -364,7 +364,7 @@ graduated:
     name: "武振超"
     degree: "博士研究生"
     photo: "/assets/img/members/wzc.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "安徽农业大学工学院 副教授"  # 请在这里填写毕业去向
   
   # 2020级硕士
   - year: "2020级"
@@ -389,13 +389,13 @@ graduated:
     name: "杨睿哲"
     degree: "硕士研究生"
     photo: "/assets/img/members/yrz.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "科佳机电"  # 请在这里填写毕业去向
   
   - year: "2020级"
     name: "索睿"
     degree: "硕士研究生"
     photo: "/assets/img/members/sr.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "新疆交通职业技术学院"  # 请在这里填写毕业去向
   
   # 2021级硕士
   - year: "2021级"
