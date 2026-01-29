@@ -2,6 +2,37 @@
 # 实验室成员信息数据文件
 # 分为两大类别：current（在读学生）和graduated（已毕业学生）
 
+# 导师信息
+faculty:
+  - name: "傅隆生"
+    title: "教授，博士生导师"
+    degree: "博士"
+    photo: "/assets/img/members/zhang.jpg"
+    email: "zhang@university.edu"
+    research_interest: "农业机器人，机器视觉，智能控制"
+  
+  - name: "李晨"
+    title: "副教授，硕士生导师"
+    degree: "博士"
+    photo: "/assets/img/members/li.jpg"
+    email: "li@university.edu"
+    research_interest: "无人机农业应用，精准农业，传感器技术"
+  
+  - name: "江艾莲"
+    title: "研究员"
+    degree: "博士"
+    photo: "/assets/img/members/wang.jpg"
+    email: "wang@university.edu"
+    research_interest: "农业物联网，大数据分析，智能决策系统"
+
+# 在读学生
+current:
+  # ... 原有在读学生数据
+
+# 已毕业学生
+graduated:
+  # ... 原有已毕业学生数据
+
 current:
   - year: "2020级"
     name: "姜立志"
