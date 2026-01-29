@@ -37,10 +37,30 @@ nav_order: 7
   border-bottom: 1px solid #eaeaea;
 }
 
+/* 第一位导师特殊样式 - 单行显示 */
+.first-faculty-card {
+  background: #fff;
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  height: 220px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.first-faculty-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  border-color: #3498db;
+}
+
 /* 导师卡片样式 */
 .faculty-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* 固定两列 */
   gap: 30px;
   margin: 30px 0;
 }
@@ -74,6 +94,10 @@ nav_order: 7
   border-right: 1px solid #eaeaea;
 }
 
+.first-faculty-card .faculty-photo {
+  width: 220px; /* 第一位导师照片更大 */
+}
+
 .faculty-photo img {
   width: 100%;
   height: 100%;
@@ -81,6 +105,7 @@ nav_order: 7
   transition: transform 0.3s ease;
 }
 
+.first-faculty-card:hover .faculty-photo img,
 .faculty-card:hover .faculty-photo img {
   transform: scale(1.05);
 }
@@ -93,6 +118,10 @@ nav_order: 7
   justify-content: center;
 }
 
+.first-faculty-card .faculty-info {
+  padding: 30px; /* 第一位导师信息区域更大 */
+}
+
 .faculty-name {
   font-family: "Times New Roman", SimSun, serif;
   font-size: 22px;
@@ -102,12 +131,20 @@ nav_order: 7
   line-height: 1.3;
 }
 
+.first-faculty-card .faculty-name {
+  font-size: 24px; /* 第一位导师名字更大 */
+}
+
 .faculty-title {
   font-family: "Times New Roman", SimSun, serif;
   font-size: 17px;
   font-weight: 600;
   color: #3498db;
   margin-bottom: 8px;
+}
+
+.first-faculty-card .faculty-title {
+  font-size: 18px; /* 第一位导师职称更大 */
 }
 
 .faculty-degree {
@@ -126,6 +163,10 @@ nav_order: 7
   line-height: 1.5;
 }
 
+.first-faculty-card .faculty-research {
+  font-size: 15px; /* 第一位导师研究方向文字更大 */
+}
+
 .faculty-research strong {
   color: #2c3e50;
   font-style: normal;
@@ -138,6 +179,10 @@ nav_order: 7
   color: #555;
   margin-top: 8px;
   line-height: 1.5;
+}
+
+.first-faculty-card .faculty-contact {
+  font-size: 15px; /* 第一位导师联系信息文字更大 */
 }
 
 .faculty-contact strong {
@@ -295,6 +340,18 @@ nav_order: 7
     margin: 40px 0 25px 0;
   }
   
+  .first-faculty-card {
+    height: auto;
+    flex-direction: column;
+  }
+  
+  .first-faculty-card .faculty-photo {
+    width: 100%;
+    height: 220px;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
   .faculty-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -360,8 +417,43 @@ nav_order: 7
   <!-- 导师团队部分 -->
   {% if site.data.members.faculty and site.data.members.faculty.size > 0 %}
   <h2 class="subsection-title">导师团队</h2>
+  
+  <!-- 第一位导师单独显示 -->
+  {% assign first_faculty = site.data.members.faculty | first %}
+  <div class="first-faculty-card">
+    <div class="faculty-photo">
+      {% if first_faculty.photo %}
+      <img src="{{ first_faculty.photo | relative_url }}" alt="{{ first_faculty.name }}" loading="lazy">
+      {% else %}
+      <div class="no-photo-placeholder">
+        照片
+      </div>
+      {% endif %}
+    </div>
+    <div class="faculty-info">
+      <div class="faculty-name">{{ first_faculty.name }}</div>
+      <div class="faculty-title">{{ first_faculty.title }}</div>
+      {% if first_faculty.degree %}
+      <div class="faculty-degree">{{ first_faculty.degree }}</div>
+      {% endif %}
+      {% if first_faculty.research_interest %}
+      <div class="faculty-research">
+        <strong>研究方向：</strong>{{ first_faculty.research_interest }}
+      </div>
+      {% endif %}
+      {% if first_faculty.email %}
+      <div class="faculty-contact">
+        <strong>邮箱：</strong>{{ first_faculty.email }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!-- 其他导师网格布局 -->
+  {% assign remaining_faculty = site.data.members.faculty | slice: 1, site.data.members.faculty.size %}
+  {% if remaining_faculty.size > 0 %}
   <div class="faculty-grid">
-    {% for faculty in site.data.members.faculty %}
+    {% for faculty in remaining_faculty %}
     <div class="faculty-card">
       <div class="faculty-photo">
         {% if faculty.photo %}
@@ -392,6 +484,7 @@ nav_order: 7
     </div>
     {% endfor %}
   </div>
+  {% endif %}
   {% endif %}
   
   <!-- 在读学生部分 -->
