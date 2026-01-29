@@ -1,6 +1,6 @@
 <div class="news">
-  {% if site.news != blank %}
-    {% assign news_size = site.news | size %}
+  {% if site.data.news != blank %}
+    {% assign news_size = site.data.news | size %}
     <div
       class="table-responsive"
       {% if include.limit and page.announcements.scrollable and news_size > 3 %}
@@ -8,7 +8,7 @@
       {% endif %}
     >
       <table class="table table-sm table-borderless">
-        {% assign news = site.news | reverse %}
+        {% assign news = site.data.news | sort: 'date' | reverse %}
         {% if include.limit and page.announcements.limit %}
           {% assign news_limit = page.announcements.limit %}
         {% else %}
@@ -16,13 +16,39 @@
         {% endif %}
         {% for item in news limit: news_limit %}
           <tr>
-            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+            <th scope="row" style="width: 20%; vertical-align: top;">
+              {{ item.date | date: '%b %d, %Y' }}
+            </th>
             <td>
-              {% if item.inline %}
-                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-              {% else %}
-                <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-              {% endif %}
+              <div class="news-item">
+                <div class="news-header">
+                  {% if item.link and item.link != "" %}
+                    <a class="news-title" href="{{ item.link }}" target="_blank">
+                      {{ item.title }}
+                      <i class="fas fa-external-link-alt fa-xs ms-1"></i>
+                    </a>
+                  {% else %}
+                    <span class="news-title">{{ item.title }}</span>
+                  {% endif %}
+                  {% if item.category %}
+                    <span class="badge bg-primary ms-2">{{ item.category }}</span>
+                  {% endif %}
+                </div>
+                {% if item.description %}
+                  <div class="news-description small text-muted mt-1">
+                    {{ item.description | truncatewords: 15 }}
+                  </div>
+                {% endif %}
+                {% if item.tags and item.tags.size > 0 %}
+                  <div class="news-tags mt-1">
+                    {% for tag in item.tags limit: 3 %}
+                      <span class="badge bg-light text-dark border me-1" style="font-size: 0.7rem;">
+                        {{ tag }}
+                      </span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
             </td>
           </tr>
         {% endfor %}
@@ -32,3 +58,23 @@
     <p>No news so far...</p>
   {% endif %}
 </div>
+
+<style>
+.news-item {
+  padding: 2px 0;
+}
+
+.news-title {
+  font-weight: 600;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.news-title:hover {
+  color: #3498db;
+}
+
+.news-description {
+  line-height: 1.4;
+}
+</style>
