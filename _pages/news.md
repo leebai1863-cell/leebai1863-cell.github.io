@@ -11,7 +11,7 @@ nav_order: 2
 
 Here are all my recent news, announcements, and updates, sorted by date (newest first).
 
-{% assign sorted_news = site.news | sort: 'date' | reverse %}
+{% assign sorted_news = site.data.news | sort: 'date' | reverse %}
 
 <div class="news-archive">
   {% for item in sorted_news %}
@@ -34,7 +34,7 @@ Here are all my recent news, announcements, and updates, sorted by date (newest 
     
     <!-- 标题 -->
     <h2 class="news-title">
-      {% if item.link %}
+      {% if item.link and item.link != "" %}
         <a href="{{ item.link }}" target="_blank" class="text-decoration-none">
           {{ item.title }}
           <i class="fas fa-external-link-alt fa-xs ms-1"></i>
@@ -52,12 +52,12 @@ Here are all my recent news, announcements, and updates, sorted by date (newest 
     <!-- 详细内容（如果有） -->
     {% if item.content and item.content != "" %}
       <div class="news-content mt-3">
-        {{ item.content }}
+        {{ item.content | markdownify }}
       </div>
     {% endif %}
     
     <!-- 图片（如果有） -->
-    {% if item.image %}
+    {% if item.image and item.image != "" %}
       <div class="news-image mt-3">
         <img src="{{ item.image | relative_url }}" 
              class="img-fluid rounded" 
@@ -78,27 +78,27 @@ Here are all my recent news, announcements, and updates, sorted by date (newest 
     {% endif %}
     
     <!-- 额外链接 -->
-    {% if item.link or item.pdf or item.slides %}
+    {% if item.link or item.pdf or item.slides or item.video %}
       <div class="news-links mt-3">
-        {% if item.link %}
+        {% if item.link and item.link != "" %}
           <a href="{{ item.link }}" class="btn btn-outline-primary btn-sm me-2" target="_blank">
             <i class="fas fa-external-link-alt me-1"></i> Read More
           </a>
         {% endif %}
         
-        {% if item.pdf %}
+        {% if item.pdf and item.pdf != "" %}
           <a href="{{ item.pdf | relative_url }}" class="btn btn-outline-secondary btn-sm me-2">
             <i class="fas fa-file-pdf me-1"></i> PDF
           </a>
         {% endif %}
         
-        {% if item.slides %}
+        {% if item.slides and item.slides != "" %}
           <a href="{{ item.slides | relative_url }}" class="btn btn-outline-secondary btn-sm me-2">
             <i class="fas fa-chalkboard me-1"></i> Slides
           </a>
         {% endif %}
         
-        {% if item.video %}
+        {% if item.video and item.video != "" %}
           <a href="{{ item.video }}" class="btn btn-outline-secondary btn-sm me-2" target="_blank">
             <i class="fas fa-video me-1"></i> Video
           </a>
@@ -124,3 +124,40 @@ Here are all my recent news, announcements, and updates, sorted by date (newest 
     <p class="text-muted">Check back later for updates.</p>
   </div>
 {% endif %}
+
+<style>
+/* 自定义样式 */
+.news-item {
+  transition: all 0.3s ease;
+}
+
+.news-item:hover {
+  background-color: rgba(0,0,0,0.01);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.news-title {
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.news-description {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.news-content {
+  color: #444;
+  line-height: 1.6;
+}
+
+.news-image img {
+  transition: transform 0.3s ease;
+}
+
+.news-image img:hover {
+  transform: scale(1.01);
+}
+</style>
