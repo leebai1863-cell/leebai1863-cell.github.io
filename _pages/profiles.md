@@ -37,6 +37,114 @@ nav_order: 7
   border-bottom: 1px solid #eaeaea;
 }
 
+/* 导师卡片样式 */
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.faculty-card {
+  background: #fff;
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  height: 220px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faculty-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  border-color: #3498db;
+}
+
+.faculty-photo {
+  width: 180px;
+  height: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #eaeaea;
+}
+
+.faculty-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.faculty-card:hover .faculty-photo img {
+  transform: scale(1.05);
+}
+
+.faculty-info {
+  flex: 1;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.faculty-name {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.faculty-title {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #3498db;
+  margin-bottom: 8px;
+}
+
+.faculty-degree {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 15px;
+  color: #7f8c8d;
+  margin-bottom: 12px;
+}
+
+/* 研究方向样式 */
+.faculty-research {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.faculty-research strong {
+  color: #2c3e50;
+  font-style: normal;
+}
+
+/* 联系信息样式 */
+.faculty-contact {
+  font-family: "Times New Roman", SimSun, serif;
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.faculty-contact strong {
+  color: #2c3e50;
+  font-style: normal;
+}
+
 /* 网格布局 - 每行两列卡片 */
 .students-grid {
   display: grid;
@@ -187,6 +295,23 @@ nav_order: 7
     margin: 40px 0 25px 0;
   }
   
+  .faculty-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .faculty-card {
+    height: auto;
+    flex-direction: column;
+  }
+  
+  .faculty-photo {
+    width: 100%;
+    height: 200px;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
   .students-grid {
     grid-template-columns: 1fr; /* 在小屏幕上变为单列 */
     gap: 20px;
@@ -232,13 +357,52 @@ nav_order: 7
     </div>
   </div>
   
+  <!-- 导师团队部分 -->
+  {% if site.data.members.faculty and site.data.members.faculty.size > 0 %}
+  <h2 class="subsection-title">导师团队</h2>
+  <div class="faculty-grid">
+    {% for faculty in site.data.members.faculty %}
+    <div class="faculty-card">
+      <div class="faculty-photo">
+        {% if faculty.photo %}
+        <img src="{{ faculty.photo | relative_url }}" alt="{{ faculty.name }}" loading="lazy">
+        {% else %}
+        <div class="no-photo-placeholder">
+          照片
+        </div>
+        {% endif %}
+      </div>
+      <div class="faculty-info">
+        <div class="faculty-name">{{ faculty.name }}</div>
+        <div class="faculty-title">{{ faculty.title }}</div>
+        {% if faculty.degree %}
+        <div class="faculty-degree">{{ faculty.degree }}</div>
+        {% endif %}
+        {% if faculty.research_interest %}
+        <div class="faculty-research">
+          <strong>研究方向：</strong>{{ faculty.research_interest }}
+        </div>
+        {% endif %}
+        {% if faculty.email %}
+        <div class="faculty-contact">
+          <strong>邮箱：</strong>{{ faculty.email }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
   <!-- 在读学生部分 -->
   <h2 class="subsection-title">在读学生</h2>
   
   <!-- 博士研究生 -->
+  {% assign phd_students = site.data.members.current | where: "degree", "博士研究生" %}
+  {% if phd_students.size > 0 %}
   <h3 style="font-family: 'Times New Roman', SimSun, serif; font-size: 18px; color: #555; margin: 30px 0 15px 0;">博士研究生</h3>
   <div class="students-grid">
-    {% assign sorted_phd = site.data.members.current | where: "degree", "博士研究生" | sort: "year" %}
+    {% assign sorted_phd = phd_students | sort: "year" %}
     {% for student in sorted_phd %}
     <div class="student-card">
       <div class="student-photo">
@@ -258,11 +422,14 @@ nav_order: 7
     </div>
     {% endfor %}
   </div>
+  {% endif %}
   
   <!-- 硕士研究生 -->
+  {% assign ms_students = site.data.members.current | where: "degree", "硕士研究生" %}
+  {% if ms_students.size > 0 %}
   <h3 style="font-family: 'Times New Roman', SimSun, serif; font-size: 18px; color: #555; margin: 30px 0 15px 0;">硕士研究生</h3>
   <div class="students-grid">
-    {% assign sorted_ms = site.data.members.current | where: "degree", "硕士研究生" | sort: "year" %}
+    {% assign sorted_ms = ms_students | sort: "year" %}
     {% for student in sorted_ms %}
     <div class="student-card">
       <div class="student-photo">
@@ -282,6 +449,7 @@ nav_order: 7
     </div>
     {% endfor %}
   </div>
+  {% endif %}
   
   <!-- 已毕业学生部分 -->
   <h2 class="subsection-title">已毕业学生</h2>
