@@ -402,53 +402,53 @@ graduated:
     name: "孙晓明"
     degree: "硕士研究生"
     photo: "/assets/img/members/sxm.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "太原重工"  # 请在这里填写毕业去向
   
   - year: "2021级"
     name: "房文泰"
     degree: "硕士研究生"
     photo: "/assets/img/members/fwt.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "大疆"  # 请在这里填写毕业去向
   
   - year: "2021级"
     name: "高常青"
     degree: "硕士研究生"
     photo: "/assets/img/members/gcq.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "湖南大学博士"  # 请在这里填写毕业去向
   
   # 2022级硕士
   - year: "2022级"
     name: "江晗慧"
     degree: "硕士研究生"
     photo: "/assets/img/members/jhh.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "国网安徽"  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "荆旭东"
     degree: "硕士研究生"
     photo: "/assets/img/members/jxd.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "OPPO"  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "陈池"
     degree: "硕士研究生"
     photo: "/assets/img/members/cc.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "西安比亚迪"  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "党浩杰"
     degree: "硕士研究生"
     photo: "/assets/img/members/dhj.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "西安航天自动化"  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "韦瑞扬"
     degree: "硕士研究生"
     photo: "/assets/img/members/wry.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "深圳比亚迪"  # 请在这里填写毕业去向
   
   - year: "2022级"
     name: "刘国良"
     degree: "硕士研究生"
     photo: "/assets/img/members/llg.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "泰开高压"  # 请在这里填写毕业去向
