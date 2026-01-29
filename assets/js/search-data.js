@@ -109,22 +109,6 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "news-new-research-project-started",
-          title: 'New Research Project Started',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/2024-11-22-welcome-news/";
             },},{id: "projects-ai与机器人赋能特色作物管理技术及研究进展",
           title: 'AI与机器人赋能特色作物管理技术及研究进展',
           description: "美国佛罗里达大学Yiannis AMPATZIDIS教授",
