@@ -491,6 +491,11 @@ ninja.data = [{
           description: "意大利帕多瓦大学Francesco MARINELLO教授",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Francesco%20MARINELLO%E6%95%99%E6%8E%88/";
+            },},{id: "projects-实验室组会",
+          title: '实验室组会',
+          description: "实验室全体成员参与",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Presentions_2026.01.25/";
             },},{
         id: 'social-cv',
         title: 'CV',
