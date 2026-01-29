@@ -50,6 +50,17 @@ date: 2026-01-23
     </div>     
 </div>
 
+<!-- 新增image-container类，为图片添加顶部间距 -->
+<div class="image-container"> 
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2 mt-3 mt-md-0">
+            <div class="ratio ratio-4x3">
+                {% include figure.liquid loading="eager" path="assets/img/scholarly_photos/Francesco_MARINELLO_1.jpg" title="example image" class="img-fluid rounded z-depth-1 object-fit-cover" %}
+            </div>
+        </div>
+    </div>     
+</div>
+
 <div class="project-main-text mt-4">
     报告中，Francesco教授立足意大利葡萄与果树产业实际，围绕农业生产条件的空间差异与动态变化问题，介绍了基于大尺度葡萄园长期监测的数字化研究进展。Francesco教授结合卫星遥感与近地传感等手段，分析了多尺度作物生长差异的主要驱动因素，并通过变量施肥、变量喷洒及病害风险预测等案例，展示了数字化技术在提升资源利用效率和支撑精准管理方面的应用潜力，同时指出需警惕过度数字化带来的数据冗余与决策负担问题，强调数据向可执行管理决策有效转化的重要性。
 </div>
