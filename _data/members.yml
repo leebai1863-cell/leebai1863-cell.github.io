@@ -293,7 +293,7 @@ graduated:
     name: "彭俊"
     degree: "硕士研究生"
     photo: "/assets/img/members/pj.jpg"
-    graduation_destination: "高校"  # 请在这里填写毕业去向
+    graduation_destination: "长安大学讲师"  # 请在这里填写毕业去向
   
   - year: "2014级"
     name: "孙世鹏"
@@ -306,52 +306,52 @@ graduated:
     name: "冯亚利"
     degree: "硕士研究生"
     photo: "/assets/img/members/fyl.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "山西农业大学讲师"  # 请在这里填写毕业去向
 
   - year: "2016级"
     name: "谢洪起"
     degree: "硕士研究生"
     photo: "/assets/img/members/xhq.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "成都京东方"  # 请在这里填写毕业去向
 
   # 2017级硕士
   - year: "2017级"
     name: "刘智豪"
     degree: "硕士研究生"
     photo: "/assets/img/members/lzh.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "熠鑫科技"  # 请在这里填写毕业去向
 
   - year: "2017级"
     name: "赵海东"
     degree: "硕士研究生"
     photo: "/assets/img/members/zhd.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "法士特"  # 请在这里填写毕业去向
 
   # 2018级硕士
   - year: "2018级"
     name: "宋珍珍"
     degree: "硕士研究生"
     photo: "/assets/img/members/szz.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "潍柴动力"  # 请在这里填写毕业去向
   
   - year: "2018级"
     name: "王文奇"
     degree: "硕士研究生"
     photo: "/assets/img/members/wwq.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "徐工集团"  # 请在这里填写毕业去向
   
   # 2019级硕士
   - year: "2019级"
     name: "高芳芳"
     degree: "硕士研究生"
     photo: "/assets/img/members/gff.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "吉林大学博士"  # 请在这里填写毕业去向
   
   - year: "2019级"
     name: "周忠贤"
     degree: "硕士研究生"
     photo: "/assets/img/members/zzx.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "广联达有限公司"  # 请在这里填写毕业去向
   
   - year: "2019级"
     name: "张云赫"
@@ -371,19 +371,19 @@ graduated:
     name: "李政坤"
     degree: "硕士研究生"
     photo: "/assets/img/members/lzk.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "佐治亚大学直博"  # 请在这里填写毕业去向
   
   - year: "2020级"
     name: "李果"
     degree: "硕士研究生"
     photo: "/assets/img/members/lg.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "三一重工"  # 请在这里填写毕业去向
   
   - year: "2020级"
     name: "赵关奥"
     degree: "硕士研究生"
     photo: "/assets/img/members/zga.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: "西安交通大学博士"  # 请在这里填写毕业去向
   
   - year: "2020级"
     name: "杨睿哲"
