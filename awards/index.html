@@ -1,533 +1,85 @@
 <!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Awards | 傅隆生 </title> <meta name="author" content="傅隆生 "> <meta name="description" content=""> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://leebai1863-cell.github.io/awards/"> <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> 傅隆生 </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">Resume </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">News </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/scholarly%20seminars">Scholarly Seminars </a> </li> <li class="nav-item "> <a class="nav-link" href="/activities/">Activities </a> </li> <li class="nav-item active"> <a class="nav-link" href="/awards/">Awards <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/members/">Members </a> </li> <li class="nav-item dropdown "> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">submenus </a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> <a class="dropdown-item " href="/books/">bookshelf</a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/blog/">blog</a> </div> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="awards-page container mt-5"> <div class="page-header text-center mb-5"> <h1 class="display-5 mb-3">Awards &amp; Honors</h1> <p class="lead text-muted">Academic achievements and recognitions</p> </div> <div class="stats-summary mb-5"> <div class="row g-3"> <div class="col-md-3 col-6"> <div class="stat-box text-center p-3"> <div class="stat-value fw-bold fs-3 text-primary" id="total-awards"> 0 </div> <div class="stat-label text-muted">Total Awards</div> </div> </div> <div class="col-md-3 col-6"> <div class="stat-box text-center p-3"> <div class="stat-value fw-bold fs-3 text-success" id="faculty-awards-count"> 0 </div> <div class="stat-label text-muted">Faculty Awards</div> </div> </div> <div class="col-md-3 col-6"> <div class="stat-box text-center p-3"> <div class="stat-value fw-bold fs-3 text-warning" id="student-awards-count"> 0 </div> <div class="stat-label text-muted">Student Awards</div> </div> </div> <div class="col-md-3 col-6"> <div class="stat-box text-center p-3"> <div class="stat-value fw-bold fs-3 text-info" id="years-count"> 0 </div> <div class="stat-label text-muted">Years</div> </div> </div> </div> </div> <div class="awards-filter mb-4"> <div class="btn-group" role="group" aria-label="Awards filter"> <button type="button" class="btn btn-outline-primary active" data-filter="all">All Awards</button> <button type="button" class="btn btn-outline-primary" data-filter="faculty">Faculty Awards</button> <button type="button" class="btn btn-outline-primary" data-filter="student">Student Awards</button> </div> </div> <section class="faculty-awards-section mb-5"> <div class="section-header mb-4"> <h2 class="section-title mb-2"> <i class="fas fa-chalkboard-teacher me-2"></i> Faculty Awards </h2> </div> <div id="teacher-awards-list" class="teacher-awards-list"> <div class="text-center py-5"> <div class="spinner-border text-primary" role="status"> <span class="visually-hidden">Loading...</span> </div> <p class="mt-2">Loading faculty awards...</p> </div> </div> <div id="teacher-pagination" class="pagination-wrapper mt-4 d-none"> <nav aria-label="Faculty awards pagination"> <ul class="pagination justify-content-center mb-0" id="teacher-pagination-list"> </ul> <div class="text-center mt-2"> <small class="text-muted" id="teacher-page-info">Page 1 of 1</small> </div> </nav> </div> </section> <section class="student-awards-section mb-5"> <div class="section-header mb-4"> <h2 class="section-title mb-2"> <i class="fas fa-graduation-cap me-2"></i> Student Awards </h2> </div> <div id="student-awards-list" class="student-awards-list"> <div class="text-center py-5"> <div class="spinner-border text-success" role="status"> <span class="visually-hidden">Loading...</span> </div> <p class="mt-2">Loading student awards...</p> </div> </div> <div id="student-pagination" class="pagination-wrapper mt-4 d-none"> <nav aria-label="Student awards pagination"> <ul class="pagination justify-content-center mb-0" id="student-pagination-list"> </ul> <div class="text-center mt-2"> <small class="text-muted" id="student-page-info">Page 1 of 1</small> </div> </nav> </div> </section> <button id="back-to-top" class="btn btn-primary rounded-circle shadow d-none" style="position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px;"> <i class="fas fa-chevron-up"></i> </button> </div> <div id="awards-data" style="display:none;"> <div class="award-item" data-type="导师" data-title="优秀研究生导师" data-year="2020" data-month="11" data-level="3" data-level-name="优秀导师" data-organization="学校" data-competition="" data-participant="" data-description="年度优秀研究生指导教师" data-note=""> </div> <div class="award-item" data-type="导师" data-title="优秀研究生导师" data-year="2020" data-month="11" data-level="3" data-level-name="优秀导师" data-organization="学校" data-competition="" data-participant="" data-description="年度优秀研究生指导教师" data-note=""> </div> <div class="award-item" data-type="导师" data-title="优秀研究生导师" data-year="2020" data-month="11" data-level="3" data-level-name="优秀导师" data-organization="学校" data-competition="" data-participant="" data-description="年度优秀研究生指导教师" data-note=""> </div> <div class="award-item" data-type="导师" data-title="优秀研究生导师" data-year="2020" data-month="11" data-level="3" data-level-name="优秀导师" data-organization="学校" data-competition="" data-participant="" data-description="年度优秀研究生指导教师" data-note=""> </div> <div class="award-item" data-type="导师" data-title="优秀研究生导师" data-year="2020" data-month="11" data-level="3" data-level-name="优秀导师" data-organization="学校" data-competition="" data-participant="" data-description="年度优秀研究生指导教师" data-note=""> </div> <div class="award-item" data-type="导师" data-title="优秀研究生导师" data-year="2020" data-month="11" data-level="3" data-level-name="优秀导师" data-organization="学校" data-competition="" data-participant="" data-description="年度优秀研究生指导教师" data-note=""> </div> <div class="award-item" data-type="导师" data-title="优秀研究生导师" data-year="2020" data-month="11" data-level="3" data-level-name="优秀导师" data-organization="学校" data-competition="" data-participant="" data-description="年度优秀研究生指导教师" data-note=""> </div> <div class="award-item" data-type="学生" data-title="基于果枝状态与力杠杆分离的猕猴桃疏果机器人" data-year="2025" data-month="8" data-level="0" data-level-name="国赛入围" data-organization="" data-competition="第七届中国研究生机器人创新设计大赛" data-participant="张梦影（硕士研究生）" data-description="" data-note="团队连续三年入围该项赛事的全国总决赛，全校唯一！"> </div> <div class="award-item" data-type="学生" data-title="第二十届中国研究生电子设计竞赛" data-year="2025" data-month="8" data-level="3" data-level-name="国家级三等奖" data-organization="" data-competition="" data-participant="辜煜（硕士研究生）" data-description="" data-note=""> </div> <div class="award-item" data-type="学生" data-title="第二十届中国研究生电子设计竞赛" data-year="2025" data-month="8" data-level="5" data-level-name="西北赛区二等奖" data-organization="" data-competition="" data-participant="丁煜松（硕士研究生）" data-description="" data-note=""> </div> <div class="award-item" data-type="学生" data-title="第二十届中国研究生电子设计竞赛" data-year="2025" data-month="8" data-level="5" data-level-name="西北赛区二等奖" data-organization="" data-competition="" data-participant="牛世奥（硕士研究生）" data-description="" data-note=""> </div> </div> <style>.awards-page{max-width:1200px}.page-header{padding:3rem 0;margin-bottom:2rem}.display-5{font-weight:700;color:#2c3e50}.lead{color:#6c757d;font-size:1.1rem}.stats-summary{margin-bottom:3rem}.stat-box{background:white;border:1px solid #e9ecef;border-radius:8px;transition:transform .2s ease}.stat-box:hover{transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,0.05)}.stat-value{margin-bottom:.5rem}.stat-label{font-size:.9rem}.awards-filter{text-align:center;margin-bottom:2rem}.awards-filter .btn{min-width:120px}.section-header{padding-bottom:1rem;margin-bottom:1.5rem;border-bottom:2px solid #f0f0f0}.section-title{font-size:1.5rem;font-weight:600;color:#2c3e50;margin-bottom:.5rem}.teacher-awards-list{min-height:200px}.teacher-award-card{background:white;border:1px solid #e9ecef;border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;border-left:4px solid #0d6efd;transition:box-shadow .2s ease}.teacher-award-card:hover{box-shadow:0 4px 12px rgba(0,0,0,0.08)}.teacher-award-header{margin-bottom:1rem}.teacher-award-title{font-weight:600;font-size:1.1rem;color:#2c3e50;margin-bottom:.5rem}.teacher-award-meta{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1rem}.meta-badge{display:inline-flex;align-items:center;padding:.3rem .75rem;background:#f8f9fa;border-radius:20px;font-size:.85rem;color:#6c757d;border:1px solid #e9ecef}.meta-badge i{margin-right:.4rem;opacity:.7}.teacher-award-description{color:#495057;line-height:1.6;padding:1rem;background:#f8f9fa;border-radius:6px;margin-bottom:1rem;border-left:3px solid #0d6efd}.teacher-award-footer{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid #f0f0f0}.award-level-badge{font-size:.85rem;font-weight:600;padding:.4rem .8rem;border-radius:20px;background:#0d6efd;color:white}.level-0 .award-level-badge{background:linear-gradient(135deg,#ffd700,#ff9800);color:#856404}.level-1 .award-level-badge{background:linear-gradient(135deg,#dc3545,#c82333);color:white}.level-2 .award-level-badge{background:linear-gradient(135deg,#fd7e14,#e9690c);color:white}.level-3 .award-level-badge{background:linear-gradient(135deg,#17a2b8,#138496);color:white}.level-4 .award-level-badge{background:linear-gradient(135deg,#28a745,#1e7e34);color:white}.level-5 .award-level-badge{background:linear-gradient(135deg,#6f42c1,#59359a);color:white}.level-other .award-level-badge{background:linear-gradient(135deg,#6c757d,#545b62);color:white}.student-awards-list{min-height:200px}.year-group{margin-bottom:2.5rem}.year-group h4{font-weight:600;color:#495057;padding-bottom:.5rem;margin-bottom:1rem;border-bottom:2px solid #e9ecef}.student-award-item{padding:1rem;border:1px solid #e9ecef;border-radius:6px;margin-bottom:1rem;background:white;transition:box-shadow .2s ease}.student-award-item:hover{box-shadow:0 3px 8px rgba(0,0,0,0.06)}.student-award-item h5{font-weight:600;font-size:1rem;color:#2c3e50;margin-bottom:.5rem}.student-info,.project-info{margin-bottom:.5rem}.note-info .alert{background-color:#f8f9fa;border-color:#e9ecef;padding:.5rem .75rem;margin-top:.5rem}.pagination-wrapper{padding:1rem;background:#f8f9fa;border-radius:8px}.pagination{margin-bottom:0}.page-link{border-radius:4px!important;margin:0 2px;min-width:36px;text-align:center}.page-item.active .page-link{background-color:#0d6efd;border-color:#0d6efd}.badge{font-weight:500;padding:.4em .8em}.bg-warning{background-color:#ffc107!important;color:#000!important}.bg-danger{background-color:#dc3545!important;color:white!important}.bg-success{background-color:#28a745!important;color:white!important}.bg-info{background-color:#17a2b8!important;color:white!important}.bg-secondary{background-color:#6c757d!important;color:white!important}@media(max-width:768px){.page-header{padding:2rem 0}.display-5{font-size:2rem}.stat-value{font-size:2rem}.section-title{font-size:1.3rem}.teacher-award-card,.student-award-item{padding:1rem}.teacher-award-meta{gap:.5rem}.meta-badge{font-size:.8rem;padding:.25rem .6rem}.awards-filter .btn{min-width:100px;font-size:.9rem}}.empty-state{text-align:center;padding:3rem 2rem;background:#f8f9fa;border-radius:8px;border:2px dashed #dee2e6}.empty-state i{font-size:3rem;opacity:.5;margin-bottom:1rem}.spinner-border{width:3rem;height:3rem}</style> <script>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> 傅隆生 </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">Home </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">Resume </a> </li> <li class="nav-item "> <a class="nav-link" href="/news/">News </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/scholarly%20seminars">Scholarly Seminars </a> </li> <li class="nav-item "> <a class="nav-link" href="/activities/">Activities </a> </li> <li class="nav-item active"> <a class="nav-link" href="/awards/">Awards <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/members/">Members </a> </li> <li class="nav-item dropdown "> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">submenus </a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> <a class="dropdown-item " href="/books/">bookshelf</a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/blog/">blog</a> </div> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="awards-page"> <div class="stats-cards mb-5"> <div class="row g-4"> <div class="col-lg-3 col-md-6"> <div class="stat-card text-center"> <div class="stat-number">11</div> <div class="stat-label">Total Awards</div> </div> </div> <div class="col-lg-3 col-md-6"> <div class="stat-card text-center"> <div class="stat-number"> 7 </div> <div class="stat-label">Faculty Awards</div> </div> </div> <div class="col-lg-3 col-md-6"> <div class="stat-card text-center"> <div class="stat-number"> 4 </div> <div class="stat-label">Student Awards</div> </div> </div> <div class="col-lg-3 col-md-6"> <div class="stat-card text-center"> <div class="stat-number"> 2 </div> <div class="stat-label">Years</div> </div> </div> </div> </div> <div class="filter-buttons mb-4"> <div class="d-flex flex-wrap justify-content-center gap-3"> <button class="filter-btn active" data-filter="all"> <i class="fas fa-list me-2"></i>All Awards </button> <button class="filter-btn" data-filter="faculty"> <i class="fas fa-chalkboard-teacher me-2"></i>Faculty Awards </button> <button class="filter-btn" data-filter="student"> <i class="fas fa-graduation-cap me-2"></i>Student Awards </button> </div> </div> <div class="all-awards-section" id="all-awards"> <div class="year-section mb-5"> <h3 class="year-title">2025</h3> <div class="awards-grid"> <div class="award-card award-type-学生 award-level-5"> <div class="award-header"> <h4 class="award-title">第二十届中国研究生电子设计竞赛</h4> <div class="award-type-badge"> <span class="badge student-badge"> <i class="fas fa-graduation-cap me-1"></i>Student </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-users me-2"></i> <span>牛世奥（硕士研究生）</span> </div> </div> <div class="award-footer"> <span class="award-level level-5"> 西北赛区二等奖 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2025 </span> </div> </div> <div class="award-card award-type-学生 award-level-5"> <div class="award-header"> <h4 class="award-title">第二十届中国研究生电子设计竞赛</h4> <div class="award-type-badge"> <span class="badge student-badge"> <i class="fas fa-graduation-cap me-1"></i>Student </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-users me-2"></i> <span>丁煜松（硕士研究生）</span> </div> </div> <div class="award-footer"> <span class="award-level level-5"> 西北赛区二等奖 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2025 </span> </div> </div> <div class="award-card award-type-学生 award-level-3"> <div class="award-header"> <h4 class="award-title">第二十届中国研究生电子设计竞赛</h4> <div class="award-type-badge"> <span class="badge student-badge"> <i class="fas fa-graduation-cap me-1"></i>Student </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-users me-2"></i> <span>辜煜（硕士研究生）</span> </div> </div> <div class="award-footer"> <span class="award-level level-3"> 国家级三等奖 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2025 </span> </div> </div> <div class="award-card award-type-学生 award-level-0"> <div class="award-header"> <h4 class="award-title">基于果枝状态与力杠杆分离的猕猴桃疏果机器人</h4> <div class="award-type-badge"> <span class="badge student-badge"> <i class="fas fa-graduation-cap me-1"></i>Student </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-medal me-2"></i> <span>第七届中国研究生机器人创新设计大赛</span> </div> <div class="detail-item"> <i class="fas fa-users me-2"></i> <span>张梦影（硕士研究生）</span> </div> </div> <div class="award-note"> <i class="fas fa-star me-2"></i> 团队连续三年入围该项赛事的全国总决赛，全校唯一！ </div> <div class="award-footer"> <span class="award-level level-0"> 国赛入围 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2025 </span> </div> </div> </div> </div> <div class="year-section mb-5"> <h3 class="year-title">2020</h3> <div class="awards-grid"> <div class="award-card award-type-导师 award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> <div class="award-type-badge"> <span class="badge faculty-badge"> <i class="fas fa-chalkboard-teacher me-1"></i>Faculty </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-type-导师 award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> <div class="award-type-badge"> <span class="badge faculty-badge"> <i class="fas fa-chalkboard-teacher me-1"></i>Faculty </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-type-导师 award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> <div class="award-type-badge"> <span class="badge faculty-badge"> <i class="fas fa-chalkboard-teacher me-1"></i>Faculty </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-type-导师 award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> <div class="award-type-badge"> <span class="badge faculty-badge"> <i class="fas fa-chalkboard-teacher me-1"></i>Faculty </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-type-导师 award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> <div class="award-type-badge"> <span class="badge faculty-badge"> <i class="fas fa-chalkboard-teacher me-1"></i>Faculty </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-type-导师 award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> <div class="award-type-badge"> <span class="badge faculty-badge"> <i class="fas fa-chalkboard-teacher me-1"></i>Faculty </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-type-导师 award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> <div class="award-type-badge"> <span class="badge faculty-badge"> <i class="fas fa-chalkboard-teacher me-1"></i>Faculty </span> </div> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> </div> </div> </div> <div class="faculty-awards-section d-none" id="faculty-awards"> <div class="year-section mb-5"> <h3 class="year-title">2020</h3> <div class="awards-grid"> <div class="award-card award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> <div class="award-card award-level-3"> <div class="award-header"> <h4 class="award-title">优秀研究生导师</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-university me-2"></i> <span>学校</span> </div> </div> <div class="award-description"> 年度优秀研究生指导教师 </div> <div class="award-footer"> <span class="award-level level-3"> 优秀导师 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2020 </span> </div> </div> </div> </div> </div> <div class="student-awards-section d-none" id="student-awards"> <div class="year-section mb-5"> <h3 class="year-title">2025</h3> <div class="awards-grid"> <div class="award-card award-level-5"> <div class="award-header"> <h4 class="award-title">第二十届中国研究生电子设计竞赛</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-users me-2"></i> <span>牛世奥（硕士研究生）</span> </div> </div> <div class="project-info"> <small>Project:</small> <div>第二十届中国研究生电子设计竞赛</div> </div> <div class="award-footer"> <span class="award-level level-5"> 西北赛区二等奖 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2025 </span> </div> </div> <div class="award-card award-level-5"> <div class="award-header"> <h4 class="award-title">第二十届中国研究生电子设计竞赛</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-users me-2"></i> <span>丁煜松（硕士研究生）</span> </div> </div> <div class="project-info"> <small>Project:</small> <div>第二十届中国研究生电子设计竞赛</div> </div> <div class="award-footer"> <span class="award-level level-5"> 西北赛区二等奖 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2025 </span> </div> </div> <div class="award-card award-level-3"> <div class="award-header"> <h4 class="award-title">第二十届中国研究生电子设计竞赛</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-users me-2"></i> <span>辜煜（硕士研究生）</span> </div> </div> <div class="project-info"> <small>Project:</small> <div>第二十届中国研究生电子设计竞赛</div> </div> <div class="award-footer"> <span class="award-level level-3"> 国家级三等奖 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2025 </span> </div> </div> <div class="award-card award-level-0"> <div class="award-header"> <h4 class="award-title">第七届中国研究生机器人创新设计大赛</h4> </div> <div class="award-details"> <div class="detail-item"> <i class="fas fa-users me-2"></i> <span>张梦影（硕士研究生）</span> </div> </div> <div class="project-info"> <small>Project:</small> <div>基于果枝状态与力杠杆分离的猕猴桃疏果机器人</div> </div> <div class="award-note"> <i class="fas fa-star me-2"></i> 团队连续三年入围该项赛事的全国总决赛，全校唯一！ </div> <div class="award-footer"> <span class="award-level level-0"> 国赛入围 </span> <span class="award-year"> <i class="far fa-calendar me-1"></i>2025 </span> </div> </div> </div> </div> </div> </div> <style>.awards-page{max-width:1200px;margin:0 auto;padding:2rem 1rem}.stats-cards{margin-top:2rem}.stat-card{background:white;border:1px solid #e9ecef;border-radius:12px;padding:2rem 1.5rem;transition:all .3s ease;box-shadow:0 2px 8px rgba(0,0,0,0.05)}.stat-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,0.1);border-color:#007bff}.stat-number{font-size:2.5rem;font-weight:700;color:#2c3e50;margin-bottom:.5rem;line-height:1}.stat-label{font-size:.9rem;color:#6c757d;font-weight:500;text-transform:uppercase;letter-spacing:.5px}.filter-buttons{margin:3rem 0 2rem}.filter-btn{background:white;border:2px solid #e9ecef;border-radius:30px;padding:.75rem 1.5rem;font-weight:500;color:#495057;transition:all .3s ease;display:flex;align-items:center;justify-content:center}.filter-btn:hover{border-color:#007bff;color:#007bff;transform:translateY(-2px)}.filter-btn.active{background:#007bff;border-color:#007bff;color:white;box-shadow:0 4px 12px rgba(0,123,255,0.2)}.filter-btn i{font-size:.9em}.year-section{margin-bottom:3rem}.year-title{font-size:1.5rem;font-weight:600;color:#2c3e50;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:2px solid #f0f0f0}.awards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:1.5rem}@media(max-width:768px){.awards-grid{grid-template-columns:1fr}}.award-card{background:white;border:1px solid #e9ecef;border-radius:10px;padding:1.5rem;transition:all .3s ease;box-shadow:0 2px 8px rgba(0,0,0,0.05);display:flex;flex-direction:column;height:100%}.award-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,0.1);border-color:#007bff}.award-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}.award-title{font-weight:600;font-size:1.1rem;color:#2c3e50;line-height:1.4;flex:1;margin-right:1rem}.badge{font-weight:500;padding:.4em .8em;border-radius:20px;font-size:.75rem}.faculty-badge{background:rgba(0,123,255,0.1);color:#007bff;border:1px solid rgba(0,123,255,0.2)}.student-badge{background:rgba(40,167,69,0.1);color:#28a745;border:1px solid rgba(40,167,69,0.2)}.award-details{margin-bottom:1rem}.detail-item{display:flex;align-items:center;margin-bottom:.5rem;color:#6c757d;font-size:.9rem}.detail-item i{width:16px;text-align:center;opacity:.7}.award-description{color:#495057;line-height:1.6;font-size:.95rem;padding:.75rem;background:#f8f9fa;border-radius:6px;margin-bottom:1rem;border-left:3px solid #007bff}.project-info{background:#f8f9fa;padding:.75rem;border-radius:6px;margin-bottom:1rem;border-left:3px solid #28a745}.project-info small{display:block;color:#6c757d;font-size:.8rem;margin-bottom:.25rem}.project-info div{color:#495057;font-size:.9rem}.award-note{background:#fff3cd;border:1px solid #ffeaa7;color:#856404;padding:.75rem;border-radius:6px;font-size:.9rem;margin-bottom:1rem;display:flex;align-items:flex-start}.award-note i{margin-top:2px}.award-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:1rem;border-top:1px solid #f0f0f0}.award-level{font-weight:600;padding:.4em .8em;border-radius:20px;font-size:.8rem}.level-0{background:linear-gradient(135deg,#ffd700,#ff9800);color:#856404}.level-1{background:linear-gradient(135deg,#dc3545,#c82333);color:white}.level-2{background:linear-gradient(135deg,#fd7e14,#e9690c);color:white}.level-3{background:linear-gradient(135deg,#17a2b8,#138496);color:white}.level-4{background:linear-gradient(135deg,#28a745,#1e7e34);color:white}.level-5{background:linear-gradient(135deg,#6f42c1,#59359a);color:white}.level-other{background:linear-gradient(135deg,#6c757d,#545b62);color:white}.award-year{color:#6c757d;font-size:.85rem}.empty-state{text-align:center;padding:4rem 2rem;color:#6c757d}.empty-state i{font-size:3rem;margin-bottom:1rem;opacity:.3}@media(max-width:768px){.awards-page{padding:1rem}.stat-number{font-size:2rem}.stat-card{padding:1.5rem 1rem}.filter-btn{padding:.5rem 1rem;font-size:.9rem}.year-title{font-size:1.3rem}.award-card{padding:1.25rem}}@media(max-width:576px){.stats-cards .row{margin:0 -0.5rem}.stats-cards .col-lg-3{padding:0 .5rem}.filter-buttons .d-flex{flex-direction:column;gap:.75rem}.filter-btn{width:100%}}</style> <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // ============================
-  // 初始化数据
-  // ============================
-  
-  // 从隐藏的div中获取所有奖项数据
-  const awardItems = document.querySelectorAll('#awards-data .award-item');
-  const allAwards = Array.from(awardItems).map(item => ({
-    type: item.getAttribute('data-type'),
-    title: item.getAttribute('data-title'),
-    year: parseInt(item.getAttribute('data-year')),
-    month: parseInt(item.getAttribute('data-month')),
-    level: parseInt(item.getAttribute('data-level')),
-    levelName: item.getAttribute('data-level-name'),
-    organization: item.getAttribute('data-organization'),
-    competition: item.getAttribute('data-competition'),
-    participant: item.getAttribute('data-participant'),
-    description: item.getAttribute('data-description'),
-    note: item.getAttribute('data-note')
-  }));
-  
-  // 分离导师和学生奖项
-  const facultyAwards = allAwards.filter(a => a.type === "导师");
-  const studentAwards = allAwards.filter(a => a.type === "学生");
-  
-  // 按年份和等级排序
-  facultyAwards.sort((a, b) => {
-    if (b.year !== a.year) return b.year - a.year;
-    if (b.month !== a.month) return b.month - a.month;
-    return a.level - b.level;
-  });
-  
-  studentAwards.sort((a, b) => {
-    if (b.year !== a.year) return b.year - a.year;
-    if (b.month !== a.month) return b.month - a.month;
-    return a.level - b.level;
-  });
-  
-  // ============================
-  // 更新统计信息
-  // ============================
-  function updateStatistics() {
-    const totalAwards = allAwards.length;
-    const facultyCount = facultyAwards.length;
-    const studentCount = studentAwards.length;
-    const yearsSet = new Set(allAwards.map(a => a.year));
-    const yearsCount = yearsSet.size;
-    
-    // 更新统计数字
-    document.getElementById('total-awards').textContent = totalAwards;
-    document.getElementById('faculty-awards-count').textContent = facultyCount;
-    document.getElementById('student-awards-count').textContent = studentCount;
-    document.getElementById('years-count').textContent = yearsCount;
-  }
-  
-  // ============================
-  // 导师获奖分页功能
-  // ============================
-  
-  const teacherItemsPerPage = 4;
-  let currentTeacherPage = 1;
-  const totalTeacherItems = facultyAwards.length;
-  const totalTeacherPages = Math.ceil(totalTeacherItems / teacherItemsPerPage);
-  
-  const teacherListContainer = document.getElementById('teacher-awards-list');
-  const teacherPagination = document.getElementById('teacher-pagination');
-  const teacherPaginationList = document.getElementById('teacher-pagination-list');
-  const teacherPageInfo = document.getElementById('teacher-page-info');
-  
-  // 渲染导师获奖列表
-  function renderTeacherAwards() {
-    teacherListContainer.innerHTML = '';
-    
-    if (totalTeacherItems === 0) {
-      teacherListContainer.innerHTML = `
-        <div class="empty-state">
-          <i class="fas fa-award"></i>
-          <h4 class="text-muted mb-2">No faculty awards recorded</h4>
-          <p class="text-muted mb-0">Faculty awards are being updated...</p>
-        </div>
-      `;
-      teacherPagination.classList.add('d-none');
-      return;
-    }
-    
-    // 计算当前页的项目
-    const startIndex = (currentTeacherPage - 1) * teacherItemsPerPage;
-    const endIndex = startIndex + teacherItemsPerPage;
-    const currentItems = facultyAwards.slice(startIndex, endIndex);
-    
-    // 渲染项目
-    currentItems.forEach((award, index) => {
-      const awardCard = document.createElement('div');
-      awardCard.className = `teacher-award-card level-${award.level}`;
-      
-      awardCard.innerHTML = `
-        <div class="teacher-award-header">
-          <h5 class="teacher-award-title">${award.title}</h5>
-          
-          <div class="teacher-award-meta">
-            ${award.organization ? `
-            <span class="meta-badge">
-              <i class="fas fa-building"></i>
-              ${award.organization}
-            </span>
-            ` : ''}
-            <span class="meta-badge">
-              <i class="far fa-calendar-alt"></i>
-              ${award.year}-${String(award.month).padStart(2, '0')}
-            </span>
-          </div>
-        </div>
-        
-        ${award.description ? `
-        <div class="teacher-award-description">
-          ${award.description}
-        </div>
-        ` : ''}
-        
-        <div class="teacher-award-footer">
-          <div class="award-level-badge">
-            <i class="fas fa-${getLevelIcon(award.level)} me-1"></i>
-            ${award.levelName}
-          </div>
-          <div class="text-muted small">${award.year} Year</div>
-        </div>
-      `;
-      
-      teacherListContainer.appendChild(awardCard);
-    });
-    
-    // 更新分页控件
-    updateTeacherPagination();
-  }
-  
-  // 获取等级对应的图标
-  function getLevelIcon(level) {
-    switch(level) {
-      case 0: return 'crown';
-      case 1: return 'trophy';
-      case 2: return 'medal';
-      case 3: return 'award';
-      case 4: return 'star';
-      case 5: return 'certificate';
-      default: return 'gem';
-    }
-  }
-  
-  // 更新导师分页控件
-  function updateTeacherPagination() {
-    if (totalTeacherPages <= 1) {
-      teacherPagination.classList.add('d-none');
-      return;
-    }
-    
-    teacherPagination.classList.remove('d-none');
-    teacherPageInfo.textContent = `Page ${currentTeacherPage} of ${totalTeacherPages} • ${totalTeacherItems} awards`;
-    
-    // 生成分页HTML
-    let paginationHTML = '';
-    
-    // 上一页按钮
-    if (currentTeacherPage > 1) {
-      paginationHTML += `
-        <li class="page-item">
-          <a class="page-link teacher-page" data-page="${currentTeacherPage - 1}" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-      `;
-    } else {
-      paginationHTML += `
-        <li class="page-item disabled">
-          <span class="page-link" aria-hidden="true">&laquo;</span>
-        </li>
-      `;
-    }
-    
-    // 页码按钮（最多显示5个）
-    const maxPages = 5;
-    let startPage = Math.max(1, currentTeacherPage - Math.floor(maxPages / 2));
-    let endPage = Math.min(totalTeacherPages, startPage + maxPages - 1);
-    
-    if (endPage - startPage + 1 < maxPages) {
-      startPage = Math.max(1, endPage - maxPages + 1);
-    }
-    
-    // 第一页
-    if (startPage > 1) {
-      paginationHTML += `
-        <li class="page-item">
-          <a class="page-link teacher-page" data-page="1">1</a>
-        </li>
-        ${startPage > 2 ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : ''}
-      `;
-    }
-    
-    // 中间页码
-    for (let i = startPage; i <= endPage; i++) {
-      if (i === currentTeacherPage) {
-        paginationHTML += `
-          <li class="page-item active">
-            <span class="page-link">${i}</span>
-          </li>
-        `;
-      } else {
-        paginationHTML += `
-          <li class="page-item">
-            <a class="page-link teacher-page" data-page="${i}">${i}</a>
-          </li>
-        `;
-      }
-    }
-    
-    // 最后一页
-    if (endPage < totalTeacherPages) {
-      paginationHTML += `
-        ${endPage < totalTeacherPages - 1 ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : ''}
-        <li class="page-item">
-          <a class="page-link teacher-page" data-page="${totalTeacherPages}">${totalTeacherPages}</a>
-        </li>
-      `;
-    }
-    
-    // 下一页按钮
-    if (currentTeacherPage < totalTeacherPages) {
-      paginationHTML += `
-        <li class="page-item">
-          <a class="page-link teacher-page" data-page="${currentTeacherPage + 1}" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      `;
-    } else {
-      paginationHTML += `
-        <li class="page-item disabled">
-          <span class="page-link" aria-hidden="true">&raquo;</span>
-        </li>
-      `;
-    }
-    
-    teacherPaginationList.innerHTML = paginationHTML;
-    
-    // 为分页链接添加点击事件
-    document.querySelectorAll('.teacher-page[data-page]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const page = parseInt(this.getAttribute('data-page'));
-        if (page && page !== currentTeacherPage) {
-          currentTeacherPage = page;
-          renderTeacherAwards();
-          window.scrollTo({
-            top: document.querySelector('.faculty-awards-section').offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  }
-  
-  // ============================
-  // 学生获奖分页功能
-  // ============================
-  
-  const studentItemsPerPage = 10;
-  let currentStudentPage = 1;
-  const totalStudentItems = studentAwards.length;
-  const totalStudentPages = Math.ceil(totalStudentItems / studentItemsPerPage);
-  
-  const studentListContainer = document.getElementById('student-awards-list');
-  const studentPagination = document.getElementById('student-pagination');
-  const studentPaginationList = document.getElementById('student-pagination-list');
-  const studentPageInfo = document.getElementById('student-page-info');
-  
-  // 渲染学生获奖列表
-  function renderStudentAwards() {
-    studentListContainer.innerHTML = '';
-    
-    if (totalStudentItems === 0) {
-      studentListContainer.innerHTML = `
-        <div class="empty-state">
-          <i class="fas fa-graduation-cap"></i>
-          <h4 class="text-muted mb-2">No student awards recorded</h4>
-          <p class="text-muted mb-0">Student awards are being updated...</p>
-        </div>
-      `;
-      studentPagination.classList.add('d-none');
-      return;
-    }
-    
-    // 计算当前页的项目
-    const startIndex = (currentStudentPage - 1) * studentItemsPerPage;
-    const endIndex = startIndex + studentItemsPerPage;
-    const currentItems = studentAwards.slice(startIndex, endIndex);
-    
-    // 按年份分组
-    const itemsByYear = {};
-    currentItems.forEach(award => {
-      if (!itemsByYear[award.year]) {
-        itemsByYear[award.year] = [];
-      }
-      itemsByYear[award.year].push(award);
-    });
-    
-    // 渲染年份分组
-    const years = Object.keys(itemsByYear).sort((a, b) => b - a);
-    years.forEach(year => {
-      const yearGroup = document.createElement('div');
-      yearGroup.className = 'year-group';
-      
-      yearGroup.innerHTML = `
-        <h4>${year}</h4>
-        <div class="year-awards">
-          ${itemsByYear[year].map(award => {
-            // 根据等级确定徽章颜色
-            let badgeClass = 'bg-secondary';
-            if (award.level === 0) {
-              badgeClass = 'bg-warning';
-            } else if (award.level === 1) {
-              badgeClass = 'bg-danger';
-            } else if (award.level === 2) {
-              badgeClass = 'bg-warning';
-            } else if (award.level === 3) {
-              badgeClass = 'bg-info';
-            } else if (award.level === 4) {
-              badgeClass = 'bg-success';
-            }
-            
-            return `
-              <div class="student-award-item">
-                <div class="row">
-                  <div class="col-md-8">
-                    <h5>${award.competition || award.title}</h5>
-                    
-                    ${award.title !== award.competition ? `
-                    <div class="project-info">
-                      <small class="text-muted">
-                        <i class="fas fa-project-diagram me-1"></i>
-                        ${award.title}
-                      </small>
-                    </div>
-                    ` : ''}
-                    
-                    <div class="student-info">
-                      <span class="badge bg-light text-dark">
-                        <i class="fas fa-user-graduate me-1"></i>
-                        ${award.participant || 'Team'}
-                      </span>
-                    </div>
-                    
-                    ${award.note ? `
-                    <div class="note-info">
-                      <div class="alert alert-light py-2 px-3 mb-0">
-                        <small>
-                          <i class="fas fa-star me-1"></i>
-                          ${award.note}
-                        </small>
-                      </div>
-                    </div>
-                    ` : ''}
-                  </div>
-                  
-                  <div class="col-md-4 text-md-end">
-                    <div class="mb-2">
-                      <span class="badge ${badgeClass}">
-                        ${award.levelName}
-                      </span>
-                    </div>
-                    <div class="text-muted small">
-                      ${award.year}-${String(award.month).padStart(2, '0')}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            `;
-          }).join('')}
-        </div>
-      `;
-      
-      studentListContainer.appendChild(yearGroup);
-    });
-    
-    // 更新分页控件
-    updateStudentPagination();
-  }
-  
-  // 更新学生分页控件
-  function updateStudentPagination() {
-    if (totalStudentPages <= 1) {
-      studentPagination.classList.add('d-none');
-      return;
-    }
-    
-    studentPagination.classList.remove('d-none');
-    studentPageInfo.textContent = `Page ${currentStudentPage} of ${totalStudentPages} • ${totalStudentItems} awards`;
-    
-    // 生成分页HTML
-    let paginationHTML = '';
-    
-    // 上一页按钮
-    if (currentStudentPage > 1) {
-      paginationHTML += `
-        <li class="page-item">
-          <a class="page-link student-page" data-page="${currentStudentPage - 1}" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-      `;
-    } else {
-      paginationHTML += `
-        <li class="page-item disabled">
-          <span class="page-link" aria-hidden="true">&laquo;</span>
-        </li>
-      `;
-    }
-    
-    // 页码按钮
-    for (let i = 1; i <= totalStudentPages; i++) {
-      if (i === currentStudentPage) {
-        paginationHTML += `
-          <li class="page-item active">
-            <span class="page-link">${i}</span>
-          </li>
-        `;
-      } else {
-        paginationHTML += `
-          <li class="page-item">
-            <a class="page-link student-page" data-page="${i}">${i}</a>
-          </li>
-        `;
-      }
-    }
-    
-    // 下一页按钮
-    if (currentStudentPage < totalStudentPages) {
-      paginationHTML += `
-        <li class="page-item">
-          <a class="page-link student-page" data-page="${currentStudentPage + 1}" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      `;
-    } else {
-      paginationHTML += `
-        <li class="page-item disabled">
-          <span class="page-link" aria-hidden="true">&raquo;</span>
-        </li>
-      `;
-    }
-    
-    studentPaginationList.innerHTML = paginationHTML;
-    
-    // 为分页链接添加点击事件
-    document.querySelectorAll('.student-page[data-page]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const page = parseInt(this.getAttribute('data-page'));
-        if (page && page !== currentStudentPage) {
-          currentStudentPage = page;
-          renderStudentAwards();
-          window.scrollTo({
-            top: document.querySelector('.student-awards-section').offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  }
-  
-  // ============================
   // 筛选功能
-  // ============================
-  document.querySelectorAll('.awards-filter .btn').forEach(button => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const allAwardsSection = document.getElementById('all-awards');
+  const facultyAwardsSection = document.getElementById('faculty-awards');
+  const studentAwardsSection = document.getElementById('student-awards');
+  
+  filterButtons.forEach(button => {
     button.addEventListener('click', function() {
       // 更新按钮状态
-      document.querySelectorAll('.awards-filter .btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
+      filterButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
       
+      // 显示对应的部分
       const filter = this.getAttribute('data-filter');
       
-      // 根据筛选显示/隐藏部分
-      const facultySection = document.querySelector('.faculty-awards-section');
-      const studentSection = document.querySelector('.student-awards-section');
+      allAwardsSection.classList.add('d-none');
+      facultyAwardsSection.classList.add('d-none');
+      studentAwardsSection.classList.add('d-none');
       
       if (filter === 'all') {
-        facultySection.style.display = 'block';
-        studentSection.style.display = 'block';
+        allAwardsSection.classList.remove('d-none');
       } else if (filter === 'faculty') {
-        facultySection.style.display = 'block';
-        studentSection.style.display = 'none';
+        facultyAwardsSection.classList.remove('d-none');
       } else if (filter === 'student') {
-        facultySection.style.display = 'none';
-        studentSection.style.display = 'block';
+        studentAwardsSection.classList.remove('d-none');
       }
+      
+      // 平滑滚动到顶部
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   });
   
-  // ============================
-  // 回到顶部按钮
-  // ============================
-  const backToTopBtn = document.getElementById('back-to-top');
+  // 添加卡片悬停动画
+  const awardCards = document.querySelectorAll('.award-card');
+  awardCards.forEach(card => {
+    card.style.transition = 'all 0.3s ease';
+  });
   
-  window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-      backToTopBtn.classList.remove('d-none');
-    } else {
-      backToTopBtn.classList.add('d-none');
+  // 检查是否有空状态
+  checkEmptyStates();
+  
+  function checkEmptyStates() {
+    // 检查导师奖项
+    if (!document.querySelector('.faculty-awards-section .award-card')) {
+      document.querySelector('.faculty-awards-section').innerHTML = `
+        <div class="empty-state">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h4>No Faculty Awards</h4>
+          <p>Faculty awards will be displayed here</p>
+        </div>
+      `;
     }
-  });
-  
-  backToTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-  
-  // ============================
-  // 初始化页面
-  // ============================
-  
-  // 初始渲染
-  updateStatistics();
-  renderTeacherAwards();
-  renderStudentAwards();
+    
+    // 检查学生奖项
+    if (!document.querySelector('.student-awards-section .award-card')) {
+      document.querySelector('.student-awards-section').innerHTML = `
+        <div class="empty-state">
+          <i class="fas fa-graduation-cap"></i>
+          <h4>No Student Awards</h4>
+          <p>Student awards will be displayed here</p>
+        </div>
+      `;
+    }
+    
+    // 检查全部奖项
+    if (!document.querySelector('.all-awards-section .award-card')) {
+      document.querySelector('.all-awards-section').innerHTML = `
+        <div class="empty-state">
+          <i class="fas fa-award"></i>
+          <h4>No Awards</h4>
+          <p>Awards will be displayed here</p>
+        </div>
+      `;
+    }
+  }
 });
 </script> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 傅隆生 . Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?c15de51d4bb57887caa2c21988d97279"></script> <script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
     addBackToTop();
