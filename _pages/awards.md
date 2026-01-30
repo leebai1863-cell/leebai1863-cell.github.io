@@ -24,18 +24,6 @@ nav_order: 6
     <p class="section-subtitle text-muted">Awards and honors received by faculty members</p>
   </div>
 
-  <!-- 分页控件 - 只在顶部显示一个 -->
-  <div id="teacher-pagination" class="pagination-wrapper mb-4">
-    <nav aria-label="Faculty awards pagination">
-      <ul class="pagination justify-content-center mb-0" id="teacher-pagination-list">
-        <!-- 页码由JavaScript生成 -->
-      </ul>
-      <div class="text-center mt-2">
-        <small class="text-muted" id="teacher-page-info">Loading...</small>
-      </div>
-    </nav>
-  </div>
-
   <!-- 奖项列表容器 -->
   <div id="teacher-awards-list" class="teacher-awards-list">
     <!-- 内容由JavaScript动态加载 -->
@@ -45,6 +33,18 @@ nav_order: 6
       </div>
       <p class="mt-2">Loading faculty awards...</p>
     </div>
+  </div>
+
+  <!-- 分页控件 - 放在列表下方 -->
+  <div id="teacher-pagination" class="pagination-wrapper mt-4">
+    <nav aria-label="Faculty awards pagination">
+      <ul class="pagination justify-content-center mb-0" id="teacher-pagination-list">
+        <!-- 页码由JavaScript生成 -->
+      </ul>
+      <div class="text-center mt-2">
+        <small class="text-muted" id="teacher-page-info">Loading...</small>
+      </div>
+    </nav>
   </div>
 </div>
 
@@ -59,18 +59,6 @@ nav_order: 6
     </h2>
     <p class="section-subtitle text-muted">Competition and academic achievements by students</p>
   </div>
-
-  <!-- 学生奖项分页控件 -->
-  <div id="student-pagination" class="pagination-wrapper mb-4">
-    <nav aria-label="Student awards pagination">
-      <ul class="pagination justify-content-center mb-0" id="student-pagination-list">
-        <!-- 页码由JavaScript生成 -->
-      </ul>
-      <div class="text-center mt-2">
-        <small class="text-muted" id="student-page-info">Loading...</small>
-      </div>
-    </nav>
-  </div>
   
   <!-- 学生奖项列表容器 -->
   <div id="student-awards-list" class="student-awards-list">
@@ -81,6 +69,18 @@ nav_order: 6
       </div>
       <p class="mt-2">Loading student awards...</p>
     </div>
+  </div>
+
+  <!-- 学生奖项分页控件 -->
+  <div id="student-pagination" class="pagination-wrapper mt-4">
+    <nav aria-label="Student awards pagination">
+      <ul class="pagination justify-content-center mb-0" id="student-pagination-list">
+        <!-- 页码由JavaScript生成 -->
+      </ul>
+      <div class="text-center mt-2">
+        <small class="text-muted" id="student-page-info">Loading...</small>
+      </div>
+    </nav>
   </div>
 </div>
 
@@ -224,7 +224,7 @@ nav_order: 6
   background: #f8f9fa;
   padding: 1rem;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .page-link {
@@ -376,6 +376,11 @@ hr {
 .empty-state i {
   opacity: 0.5;
 }
+
+/* 隐藏分页控件的类 */
+.d-none {
+  display: none !important;
+}
 </style>
 
 <script>
@@ -421,7 +426,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 导师获奖分页功能
   // ============================
   
-  const teacherItemsPerPage = 5;
+  const teacherItemsPerPage = 4;  // 改为每页4条
   let currentTeacherPage = 1;
   const totalTeacherItems = teacherAwards.length;
   const totalTeacherPages = Math.ceil(totalTeacherItems / teacherItemsPerPage);
@@ -734,7 +739,7 @@ document.addEventListener('DOMContentLoaded', function() {
     studentPagination.classList.remove('d-none');
     studentPageInfo.textContent = `Page ${currentStudentPage} of ${totalStudentPages} • ${totalStudentItems} awards`;
     
-    // 生成分页HTML（与导师分页类似但更简单）
+    // 生成分页HTML
     let paginationHTML = '';
     
     // 上一页按钮
