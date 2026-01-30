@@ -24,14 +24,14 @@ nav_order: 6
     <p class="section-subtitle text-muted">Awards and honors received by faculty members</p>
   </div>
 
-  <!-- 分页控件 - 显示在上面 -->
-  <div id="teacher-pagination-top" class="pagination-wrapper mb-4 d-none">
+  <!-- 分页控件 - 只在顶部显示一个 -->
+  <div id="teacher-pagination" class="pagination-wrapper mb-4">
     <nav aria-label="Faculty awards pagination">
-      <ul class="pagination justify-content-center mb-0">
+      <ul class="pagination justify-content-center mb-0" id="teacher-pagination-list">
         <!-- 页码由JavaScript生成 -->
       </ul>
       <div class="text-center mt-2">
-        <small class="text-muted" id="teacher-page-info"></small>
+        <small class="text-muted" id="teacher-page-info">Loading...</small>
       </div>
     </nav>
   </div>
@@ -46,18 +46,6 @@ nav_order: 6
       <p class="mt-2">Loading faculty awards...</p>
     </div>
   </div>
-
-  <!-- 分页控件 - 显示在下面 -->
-  <div id="teacher-pagination-bottom" class="pagination-wrapper mt-4 d-none">
-    <nav aria-label="Faculty awards pagination">
-      <ul class="pagination justify-content-center mb-0">
-        <!-- 页码由JavaScript生成 -->
-      </ul>
-      <div class="text-center mt-2">
-        <small class="text-muted" id="teacher-page-info-bottom"></small>
-      </div>
-    </nav>
-  </div>
 </div>
 
 <hr class="my-5">
@@ -71,77 +59,29 @@ nav_order: 6
     </h2>
     <p class="section-subtitle text-muted">Competition and academic achievements by students</p>
   </div>
-  
-  {% assign student_awards = site.data.awards | where: "type", "学生" %}
-  {% if student_awards.size > 0 %}
-    {% assign sorted_student = student_awards | sort: "level" | sort: "month" | reverse | sort: "year" | reverse %}
-    
-    {% assign current_year = 0 %}
-    {% for award in sorted_student %}
-      {% if award.year != current_year %}
-        {% if current_year != 0 %}
-        </div>
-        {% endif %}
-        
-        <div class="year-section mb-4">
-          <div class="d-flex align-items-center mb-3">
-            <h3 class="mb-0 me-3">{{ award.year }}</h3>
-            <div class="flex-grow-1 border-top"></div>
-          </div>
-          <div class="awards-container">
-        {% assign current_year = award.year %}
-      {% endif %}
-      
-      <div class="award-card mb-3">
-        <div class="card-body">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <h5 class="card-title mb-0">{{ award.competition | default: award.title }}</h5>
-            <span class="badge 
-              {% if award.level == 0 %}bg-warning
-              {% elsif award.level <= 3 %}bg-danger
-              {% else %}bg-secondary
-              {% endif %}">
-              {{ award.level_name }}
-            </span>
-          </div>
-          
-          {% if award.title != award.competition %}
-          <div class="project-info mb-2">
-            <small class="text-muted">
-              <i class="fas fa-project-diagram me-1"></i>
-              {{ award.title }}
-            </small>
-          </div>
-          {% endif %}
-          
-          <div class="student-info mb-2">
-            <span class="badge bg-light text-dark">
-              <i class="fas fa-user-graduate me-1"></i>
-              {{ award.participant }}
-            </span>
-          </div>
-          
-          {% if award.note %}
-          <div class="note-info mt-2">
-            <div class="alert alert-info py-2 px-3 mb-0">
-              <small>
-                <i class="fas fa-star me-1"></i>
-                {{ award.note }}
-              </small>
-            </div>
-          </div>
-          {% endif %}
-        </div>
+
+  <!-- 学生奖项分页控件 -->
+  <div id="student-pagination" class="pagination-wrapper mb-4">
+    <nav aria-label="Student awards pagination">
+      <ul class="pagination justify-content-center mb-0" id="student-pagination-list">
+        <!-- 页码由JavaScript生成 -->
+      </ul>
+      <div class="text-center mt-2">
+        <small class="text-muted" id="student-page-info">Loading...</small>
       </div>
-    {% endfor %}
-    </div></div>
-    
-  {% else %}
-  <div class="text-center py-4 border rounded bg-light">
-    <i class="fas fa-graduation-cap fa-2x text-muted mb-3"></i>
-    <p class="text-muted mb-0">No student awards recorded</p>
+    </nav>
   </div>
-  {% endif %}
+  
+  <!-- 学生奖项列表容器 -->
+  <div id="student-awards-list" class="student-awards-list">
+    <!-- 内容由JavaScript动态加载 -->
+    <div class="text-center py-5">
+      <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2">Loading student awards...</p>
+    </div>
+  </div>
 </div>
 
 <!-- 统计信息 -->
@@ -149,8 +89,8 @@ nav_order: 6
   <div class="row g-3">
     <div class="col-md-3 col-6">
       <div class="stat-box text-center p-3 border rounded">
-        <div class="stat-value fw-bold fs-3 text-primary">
-          {{ site.data.awards | size }}
+        <div class="stat-value fw-bold fs-3 text-primary" id="total-awards">
+          0
         </div>
         <div class="stat-label text-muted">Total Awards</div>
       </div>
@@ -158,8 +98,8 @@ nav_order: 6
     
     <div class="col-md-3 col-6">
       <div class="stat-box text-center p-3 border rounded">
-        <div class="stat-value fw-bold fs-3 text-success">
-          {{ site.data.awards | where: "type", "学生" | size }}
+        <div class="stat-value fw-bold fs-3 text-success" id="student-awards-count">
+          0
         </div>
         <div class="stat-label text-muted">Student Awards</div>
       </div>
@@ -167,8 +107,8 @@ nav_order: 6
     
     <div class="col-md-3 col-6">
       <div class="stat-box text-center p-3 border rounded">
-        <div class="stat-value fw-bold fs-3 text-warning">
-          {{ site.data.awards | where: "level", 1 | size }}
+        <div class="stat-value fw-bold fs-3 text-warning" id="first-prizes-count">
+          0
         </div>
         <div class="stat-label text-muted">First Prizes</div>
       </div>
@@ -176,9 +116,8 @@ nav_order: 6
     
     <div class="col-md-3 col-6">
       <div class="stat-box text-center p-3 border rounded">
-        {% assign years = site.data.awards | map: "year" | uniq %}
-        <div class="stat-value fw-bold fs-3 text-info">
-          {{ years.size }}
+        <div class="stat-value fw-bold fs-3 text-info" id="years-count">
+          0
         </div>
         <div class="stat-label text-muted">Years</div>
       </div>
@@ -188,23 +127,23 @@ nav_order: 6
 
 </div>
 
-<!-- 导师获奖数据（隐藏在页面中，供JavaScript使用） -->
-<div id="teacher-awards-data" style="display:none;">
-  {% assign teacher_awards = site.data.awards | where: "type", "导师" %}
-  {% if teacher_awards.size > 0 %}
-    {% assign sorted_teacher = teacher_awards | sort: "level" | sort: "month" | reverse | sort: "year" | reverse %}
-    {% for award in sorted_teacher %}
-    <div class="award-item" 
-         data-title="{{ award.title | escape }}" 
-         data-year="{{ award.year }}" 
-         data-month="{{ award.month }}" 
-         data-level="{{ award.level }}" 
-         data-level-name="{{ award.level_name | escape }}" 
-         data-organization="{{ award.organization | escape }}" 
-         data-description="{{ award.description | escape }}">
-    </div>
-    {% endfor %}
-  {% endif %}
+<!-- 奖项数据（隐藏在页面中，供JavaScript使用） -->
+<div id="awards-data" style="display:none;">
+  {% for award in site.data.awards %}
+  <div class="award-item" 
+       data-type="{{ award.type | escape }}" 
+       data-title="{{ award.title | escape }}" 
+       data-year="{{ award.year }}" 
+       data-month="{{ award.month }}" 
+       data-level="{{ award.level }}" 
+       data-level-name="{{ award.level_name | escape }}" 
+       data-organization="{{ award.organization | default: '' | escape }}" 
+       data-competition="{{ award.competition | default: '' | escape }}" 
+       data-participant="{{ award.participant | default: '' | escape }}" 
+       data-description="{{ award.description | default: '' | escape }}" 
+       data-note="{{ award.note | default: '' | escape }}">
+  </div>
+  {% endfor %}
 </div>
 
 <style>
@@ -244,6 +183,7 @@ nav_order: 6
   border-radius: 8px;
   transition: all 0.2s ease;
   background: white;
+  margin-bottom: 1rem;
 }
 
 .award-card:hover {
@@ -254,6 +194,7 @@ nav_order: 6
 .award-card .card-header {
   background-color: rgba(0,0,0,0.02);
   border-bottom: 1px solid #e9ecef;
+  padding: 0.75rem 1rem;
 }
 
 .card-title {
@@ -262,17 +203,20 @@ nav_order: 6
 }
 
 /* 年份分组 */
-.year-section {
+.year-group {
   margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 3px solid #28a745;
 }
 
-.year-section h3 {
+.year-group h4 {
   color: #495057;
   font-weight: 600;
   background: #f8f9fa;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   display: inline-block;
+  margin-bottom: 1rem;
 }
 
 /* 分页样式 */
@@ -280,6 +224,7 @@ nav_order: 6
   background: #f8f9fa;
   padding: 1rem;
   border-radius: 8px;
+  margin-bottom: 1.5rem;
 }
 
 .page-link {
@@ -288,6 +233,7 @@ nav_order: 6
   cursor: pointer;
   min-width: 40px;
   text-align: center;
+  padding: 0.5rem 0.75rem;
 }
 
 .page-item.active .page-link {
@@ -329,6 +275,7 @@ nav_order: 6
   background-color: #f8f9fa;
   border-color: #e9ecef;
   border-radius: 6px;
+  margin-top: 0.5rem;
 }
 
 /* 徽章样式 */
@@ -364,7 +311,7 @@ nav_order: 6
     font-size: 1.3rem;
   }
   
-  .year-section h3 {
+  .year-group h4 {
     font-size: 1.2rem;
   }
   
@@ -381,7 +328,7 @@ nav_order: 6
   }
   
   .page-link {
-    padding: 0.375rem 0.75rem;
+    padding: 0.375rem 0.5rem;
     font-size: 0.875rem;
     min-width: 35px;
   }
@@ -416,66 +363,99 @@ hr {
   width: 3rem;
   height: 3rem;
 }
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+}
+
+.empty-state i {
+  opacity: 0.5;
+}
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // ============================
-  // 导师获奖分页功能
+  // 初始化数据
   // ============================
   
-  // 从隐藏的div中获取导师获奖数据
-  const teacherAwardsItems = document.querySelectorAll('#teacher-awards-data .award-item');
-  const teacherAwards = Array.from(teacherAwardsItems).map(item => ({
+  // 从隐藏的div中获取所有奖项数据
+  const awardItems = document.querySelectorAll('#awards-data .award-item');
+  const allAwards = Array.from(awardItems).map(item => ({
+    type: item.getAttribute('data-type'),
     title: item.getAttribute('data-title'),
     year: parseInt(item.getAttribute('data-year')),
     month: parseInt(item.getAttribute('data-month')),
     level: parseInt(item.getAttribute('data-level')),
     levelName: item.getAttribute('data-level-name'),
     organization: item.getAttribute('data-organization'),
-    description: item.getAttribute('data-description')
+    competition: item.getAttribute('data-competition'),
+    participant: item.getAttribute('data-participant'),
+    description: item.getAttribute('data-description'),
+    note: item.getAttribute('data-note')
   }));
   
-  // 分页配置
-  const itemsPerPage = 5;
+  // 分离导师和学生奖项
+  const teacherAwards = allAwards.filter(a => a.type === "导师");
+  const studentAwards = allAwards.filter(a => a.type === "学生");
+  
+  // 按年份和等级排序
+  teacherAwards.sort((a, b) => {
+    if (b.year !== a.year) return b.year - a.year;
+    if (b.month !== a.month) return b.month - a.month;
+    return a.level - b.level;
+  });
+  
+  studentAwards.sort((a, b) => {
+    if (b.year !== a.year) return b.year - a.year;
+    if (b.month !== a.month) return b.month - a.month;
+    return a.level - b.level;
+  });
+  
+  // ============================
+  // 导师获奖分页功能
+  // ============================
+  
+  const teacherItemsPerPage = 5;
   let currentTeacherPage = 1;
   const totalTeacherItems = teacherAwards.length;
-  const totalTeacherPages = Math.ceil(totalTeacherItems / itemsPerPage);
+  const totalTeacherPages = Math.ceil(totalTeacherItems / teacherItemsPerPage);
   
-  // DOM 元素
   const teacherListContainer = document.getElementById('teacher-awards-list');
-  const paginationTop = document.getElementById('teacher-pagination-top');
-  const paginationBottom = document.getElementById('teacher-pagination-bottom');
-  const pageInfo = document.getElementById('teacher-page-info');
-  const pageInfoBottom = document.getElementById('teacher-page-info-bottom');
-  
-  // 初始化显示
-  renderTeacherAwards();
+  const teacherPagination = document.getElementById('teacher-pagination');
+  const teacherPaginationList = document.getElementById('teacher-pagination-list');
+  const teacherPageInfo = document.getElementById('teacher-page-info');
   
   // 渲染导师获奖列表
   function renderTeacherAwards() {
-    // 清空容器
     teacherListContainer.innerHTML = '';
     
     if (totalTeacherItems === 0) {
       teacherListContainer.innerHTML = `
-        <div class="text-center py-4 border rounded bg-light">
-          <i class="fas fa-award fa-2x text-muted mb-3"></i>
-          <p class="text-muted mb-0">No faculty awards recorded</p>
+        <div class="empty-state">
+          <i class="fas fa-award fa-3x text-muted mb-3"></i>
+          <h4 class="text-muted mb-2">No faculty awards recorded</h4>
+          <p class="text-muted mb-0">Faculty awards are being updated...</p>
         </div>
       `;
+      teacherPagination.classList.add('d-none');
       return;
     }
     
     // 计算当前页的项目
-    const startIndex = (currentTeacherPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
+    const startIndex = (currentTeacherPage - 1) * teacherItemsPerPage;
+    const endIndex = startIndex + teacherItemsPerPage;
     const currentItems = teacherAwards.slice(startIndex, endIndex);
     
     // 渲染项目
     currentItems.forEach((award, index) => {
       const awardCard = document.createElement('div');
-      awardCard.className = 'award-card mb-3';
+      awardCard.className = 'award-card';
       awardCard.style.animationDelay = `${index * 0.1}s`;
       
       // 根据等级确定徽章颜色
@@ -498,10 +478,12 @@ document.addEventListener('DOMContentLoaded', function() {
           <h5 class="card-title mb-2">${award.title}</h5>
           
           <div class="d-flex flex-wrap gap-2 mb-3">
+            ${award.organization ? `
             <span class="badge bg-light text-dark">
               <i class="fas fa-building me-1"></i>
               ${award.organization}
             </span>
+            ` : ''}
             <span class="badge bg-light text-dark">
               <i class="far fa-calendar-alt me-1"></i>
               ${award.year}-${award.month}
@@ -516,142 +498,342 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // 更新分页控件
-    updatePaginationControls();
+    updateTeacherPagination();
   }
   
-  // 更新分页控件
-  function updatePaginationControls() {
-    // 如果没有数据，隐藏分页
+  // 更新导师分页控件
+  function updateTeacherPagination() {
     if (totalTeacherPages <= 1) {
-      paginationTop.classList.add('d-none');
-      paginationBottom.classList.add('d-none');
+      teacherPagination.classList.add('d-none');
       return;
     }
     
-    // 显示分页控件
-    paginationTop.classList.remove('d-none');
-    paginationBottom.classList.remove('d-none');
+    teacherPagination.classList.remove('d-none');
+    teacherPageInfo.textContent = `Page ${currentTeacherPage} of ${totalTeacherPages} • ${totalTeacherItems} awards`;
     
-    // 生成页码HTML
-    function generatePaginationHTML() {
-      let html = '';
-      
-      // 上一页按钮
-      if (currentTeacherPage > 1) {
-        html += `
-          <li class="page-item">
-            <a class="page-link" data-page="${currentTeacherPage - 1}" aria-label="Previous">
-              <i class="fas fa-chevron-left"></i>
-            </a>
-          </li>
-        `;
-      } else {
-        html += `
-          <li class="page-item disabled">
-            <span class="page-link">
-              <i class="fas fa-chevron-left"></i>
-            </span>
-          </li>
-        `;
-      }
-      
-      // 页码按钮
-      const maxVisiblePages = 5;
-      let startPage = Math.max(1, currentTeacherPage - Math.floor(maxVisiblePages / 2));
-      let endPage = Math.min(totalTeacherPages, startPage + maxVisiblePages - 1);
-      
-      // 调整起始页码
-      if (endPage - startPage + 1 < maxVisiblePages) {
-        startPage = Math.max(1, endPage - maxVisiblePages + 1);
-      }
-      
-      // 第一页
-      if (startPage > 1) {
-        html += `
-          <li class="page-item">
-            <a class="page-link" data-page="1">1</a>
-          </li>
-          ${startPage > 2 ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : ''}
-        `;
-      }
-      
-      // 中间页码
-      for (let i = startPage; i <= endPage; i++) {
-        if (i === currentTeacherPage) {
-          html += `
-            <li class="page-item active">
-              <span class="page-link">${i}</span>
-            </li>
-          `;
-        } else {
-          html += `
-            <li class="page-item">
-              <a class="page-link" data-page="${i}">${i}</a>
-            </li>
-          `;
-        }
-      }
-      
-      // 最后一页
-      if (endPage < totalTeacherPages) {
-        html += `
-          ${endPage < totalTeacherPages - 1 ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : ''}
-          <li class="page-item">
-            <a class="page-link" data-page="${totalTeacherPages}">${totalTeacherPages}</a>
-          </li>
-        `;
-      }
-      
-      // 下一页按钮
-      if (currentTeacherPage < totalTeacherPages) {
-        html += `
-          <li class="page-item">
-            <a class="page-link" data-page="${currentTeacherPage + 1}" aria-label="Next">
-              <i class="fas fa-chevron-right"></i>
-            </a>
-          </li>
-        `;
-      } else {
-        html += `
-          <li class="page-item disabled">
-            <span class="page-link">
-              <i class="fas fa-chevron-right"></i>
-            </span>
-          </li>
-        `;
-      }
-      
-      return html;
+    // 生成分页HTML
+    let paginationHTML = '';
+    
+    // 上一页按钮
+    if (currentTeacherPage > 1) {
+      paginationHTML += `
+        <li class="page-item">
+          <a class="page-link teacher-page" data-page="${currentTeacherPage - 1}">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+        </li>
+      `;
+    } else {
+      paginationHTML += `
+        <li class="page-item disabled">
+          <span class="page-link">
+            <i class="fas fa-chevron-left"></i>
+          </span>
+        </li>
+      `;
     }
     
-    // 更新两个分页控件的HTML
-    const paginationHTML = generatePaginationHTML();
-    paginationTop.querySelector('.pagination').innerHTML = paginationHTML;
-    paginationBottom.querySelector('.pagination').innerHTML = paginationHTML;
+    // 页码按钮（最多显示5个）
+    const maxPages = 5;
+    let startPage = Math.max(1, currentTeacherPage - Math.floor(maxPages / 2));
+    let endPage = Math.min(totalTeacherPages, startPage + maxPages - 1);
     
-    // 更新页面信息
-    const pageInfoText = `Page ${currentTeacherPage} of ${totalTeacherPages} • ${totalTeacherItems} awards`;
-    pageInfo.textContent = pageInfoText;
-    pageInfoBottom.textContent = pageInfoText;
+    if (endPage - startPage + 1 < maxPages) {
+      startPage = Math.max(1, endPage - maxPages + 1);
+    }
+    
+    // 第一页
+    if (startPage > 1) {
+      paginationHTML += `
+        <li class="page-item">
+          <a class="page-link teacher-page" data-page="1">1</a>
+        </li>
+        ${startPage > 2 ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : ''}
+      `;
+    }
+    
+    // 中间页码
+    for (let i = startPage; i <= endPage; i++) {
+      if (i === currentTeacherPage) {
+        paginationHTML += `
+          <li class="page-item active">
+            <span class="page-link">${i}</span>
+          </li>
+        `;
+      } else {
+        paginationHTML += `
+          <li class="page-item">
+            <a class="page-link teacher-page" data-page="${i}">${i}</a>
+          </li>
+        `;
+      }
+    }
+    
+    // 最后一页
+    if (endPage < totalTeacherPages) {
+      paginationHTML += `
+        ${endPage < totalTeacherPages - 1 ? '<li class="page-item disabled"><span class="page-link">...</span></li>' : ''}
+        <li class="page-item">
+          <a class="page-link teacher-page" data-page="${totalTeacherPages}">${totalTeacherPages}</a>
+        </li>
+      `;
+    }
+    
+    // 下一页按钮
+    if (currentTeacherPage < totalTeacherPages) {
+      paginationHTML += `
+        <li class="page-item">
+          <a class="page-link teacher-page" data-page="${currentTeacherPage + 1}">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </li>
+      `;
+    } else {
+      paginationHTML += `
+        <li class="page-item disabled">
+          <span class="page-link">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </li>
+      `;
+    }
+    
+    teacherPaginationList.innerHTML = paginationHTML;
     
     // 为分页链接添加点击事件
-    document.querySelectorAll('.page-link[data-page]').forEach(link => {
+    document.querySelectorAll('.teacher-page[data-page]').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const page = parseInt(this.getAttribute('data-page'));
         if (page && page !== currentTeacherPage) {
           currentTeacherPage = page;
           renderTeacherAwards();
-          
-          // 滚动到导师获奖部分顶部
-          document.querySelector('.faculty-awards-section').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
         }
       });
     });
   }
+  
+  // ============================
+  // 学生获奖分页功能
+  // ============================
+  
+  const studentItemsPerPage = 10;
+  let currentStudentPage = 1;
+  const totalStudentItems = studentAwards.length;
+  const totalStudentPages = Math.ceil(totalStudentItems / studentItemsPerPage);
+  
+  const studentListContainer = document.getElementById('student-awards-list');
+  const studentPagination = document.getElementById('student-pagination');
+  const studentPaginationList = document.getElementById('student-pagination-list');
+  const studentPageInfo = document.getElementById('student-page-info');
+  
+  // 渲染学生获奖列表
+  function renderStudentAwards() {
+    studentListContainer.innerHTML = '';
+    
+    if (totalStudentItems === 0) {
+      studentListContainer.innerHTML = `
+        <div class="empty-state">
+          <i class="fas fa-graduation-cap fa-3x text-muted mb-3"></i>
+          <h4 class="text-muted mb-2">No student awards recorded</h4>
+          <p class="text-muted mb-0">Student awards are being updated...</p>
+        </div>
+      `;
+      studentPagination.classList.add('d-none');
+      return;
+    }
+    
+    // 计算当前页的项目
+    const startIndex = (currentStudentPage - 1) * studentItemsPerPage;
+    const endIndex = startIndex + studentItemsPerPage;
+    const currentItems = studentAwards.slice(startIndex, endIndex);
+    
+    // 按年份分组
+    const itemsByYear = {};
+    currentItems.forEach(award => {
+      if (!itemsByYear[award.year]) {
+        itemsByYear[award.year] = [];
+      }
+      itemsByYear[award.year].push(award);
+    });
+    
+    // 渲染年份分组
+    Object.keys(itemsByYear).sort((a, b) => b - a).forEach(year => {
+      const yearGroup = document.createElement('div');
+      yearGroup.className = 'year-group';
+      
+      yearGroup.innerHTML = `
+        <h4>${year}</h4>
+        <div class="year-awards">
+          ${itemsByYear[year].map(award => {
+            // 根据等级确定徽章颜色
+            let badgeClass = 'bg-secondary';
+            if (award.level === 0) {
+              badgeClass = 'bg-warning';
+            } else if (award.level <= 3) {
+              badgeClass = 'bg-danger';
+            }
+            
+            return `
+              <div class="award-card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="card-title mb-0">${award.competition || award.title}</h5>
+                    <span class="badge ${badgeClass}">
+                      ${award.levelName}
+                    </span>
+                  </div>
+                  
+                  ${award.title !== award.competition ? `
+                  <div class="project-info mb-2">
+                    <small class="text-muted">
+                      <i class="fas fa-project-diagram me-1"></i>
+                      ${award.title}
+                    </small>
+                  </div>
+                  ` : ''}
+                  
+                  <div class="student-info mb-2">
+                    <span class="badge bg-light text-dark">
+                      <i class="fas fa-user-graduate me-1"></i>
+                      ${award.participant}
+                    </span>
+                  </div>
+                  
+                  ${award.note ? `
+                  <div class="note-info">
+                    <div class="alert alert-info py-2 px-3 mb-0">
+                      <small>
+                        <i class="fas fa-star me-1"></i>
+                        ${award.note}
+                      </small>
+                    </div>
+                  </div>
+                  ` : ''}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+      
+      studentListContainer.appendChild(yearGroup);
+    });
+    
+    // 更新分页控件
+    updateStudentPagination();
+  }
+  
+  // 更新学生分页控件
+  function updateStudentPagination() {
+    if (totalStudentPages <= 1) {
+      studentPagination.classList.add('d-none');
+      return;
+    }
+    
+    studentPagination.classList.remove('d-none');
+    studentPageInfo.textContent = `Page ${currentStudentPage} of ${totalStudentPages} • ${totalStudentItems} awards`;
+    
+    // 生成分页HTML（与导师分页类似但更简单）
+    let paginationHTML = '';
+    
+    // 上一页按钮
+    if (currentStudentPage > 1) {
+      paginationHTML += `
+        <li class="page-item">
+          <a class="page-link student-page" data-page="${currentStudentPage - 1}">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+        </li>
+      `;
+    } else {
+      paginationHTML += `
+        <li class="page-item disabled">
+          <span class="page-link">
+            <i class="fas fa-chevron-left"></i>
+          </span>
+        </li>
+      `;
+    }
+    
+    // 页码按钮
+    for (let i = 1; i <= totalStudentPages; i++) {
+      if (i === currentStudentPage) {
+        paginationHTML += `
+          <li class="page-item active">
+            <span class="page-link">${i}</span>
+          </li>
+        `;
+      } else {
+        paginationHTML += `
+          <li class="page-item">
+            <a class="page-link student-page" data-page="${i}">${i}</a>
+          </li>
+        `;
+      }
+    }
+    
+    // 下一页按钮
+    if (currentStudentPage < totalStudentPages) {
+      paginationHTML += `
+        <li class="page-item">
+          <a class="page-link student-page" data-page="${currentStudentPage + 1}">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </li>
+      `;
+    } else {
+      paginationHTML += `
+        <li class="page-item disabled">
+          <span class="page-link">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </li>
+      `;
+    }
+    
+    studentPaginationList.innerHTML = paginationHTML;
+    
+    // 为分页链接添加点击事件
+    document.querySelectorAll('.student-page[data-page]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const page = parseInt(this.getAttribute('data-page'));
+        if (page && page !== currentStudentPage) {
+          currentStudentPage = page;
+          renderStudentAwards();
+        }
+      });
+    });
+  }
+  
+  // ============================
+  // 更新统计信息
+  // ============================
+  
+  function updateStatistics() {
+    // 计算统计数据
+    const totalAwards = allAwards.length;
+    const studentAwardsCount = studentAwards.length;
+    const firstPrizesCount = allAwards.filter(a => a.level === 1).length;
+    const yearsSet = new Set(allAwards.map(a => a.year));
+    const yearsCount = yearsSet.size;
+    
+    // 更新统计数字
+    document.getElementById('total-awards').textContent = totalAwards;
+    document.getElementById('student-awards-count').textContent = studentAwardsCount;
+    document.getElementById('first-prizes-count').textContent = firstPrizesCount;
+    document.getElementById('years-count').textContent = yearsCount;
+  }
+  
+  // ============================
+  // 初始化页面
+  // ============================
+  
+  // 初始渲染
+  renderTeacherAwards();
+  renderStudentAwards();
+  updateStatistics();
   
   // ============================
   // 回到顶部按钮
@@ -680,22 +862,5 @@ document.addEventListener('DOMContentLoaded', function() {
       behavior: 'smooth'
     });
   });
-  
-  // ============================
-  // URL参数处理（可选功能）
-  // ============================
-  function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    const results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-  }
-  
-  // 检查URL中是否有页码参数
-  const urlPage = parseInt(getUrlParameter('teacher_page'));
-  if (urlPage && urlPage >= 1 && urlPage <= totalTeacherPages) {
-    currentTeacherPage = urlPage;
-    renderTeacherAwards();
-  }
 });
 </script>
