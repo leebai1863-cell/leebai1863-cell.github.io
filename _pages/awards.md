@@ -1,216 +1,204 @@
 ---
 layout: default
 permalink: /awards/
-title: Awards
+title: 奖项与荣誉
 nav: true
 nav_order: 6
+pagination:
+  enabled: true
+  collection: awards
+  per_page: 5
+  sort_field: 'year'
+  sort_reverse: true
 ---
 
 # 奖项与荣誉
 
 <div class="container mt-4">
 
-<!-- 检查数据是否存在 -->
-{% if site.data.awards and site.data.awards.size > 0 %}
+## 🏆 导师获奖
+<!-- 导师获奖部分 -->
 
-<!-- 统计信息 -->
-<div class="row mb-4">
-  <div class="col-md-12">
-    <div class="alert alert-info">
-      <div class="row text-center">
-        <div class="col">
-          <h4 class="mb-1">{{ site.data.awards.size }}</h4>
-          <p class="mb-0 text-muted">总奖项数</p>
+{% assign teacher_awards = site.data.awards | where: "type", "导师" %}
+{% assign sorted_teacher = teacher_awards | sort: "level" | sort: "month" | reverse | sort: "year" | reverse %}
+
+{% comment %} 分页设置 {% endcomment %}
+{% assign per_page = 5 %}
+{% assign total_items = sorted_teacher.size %}
+{% assign total_pages = total_items | divided_by: per_page | plus: 1 %}
+{% assign current_page = page.current_page | default: 1 %}
+{% assign start_index = current_page | minus: 1 | times: per_page %}
+{% assign end_index = start_index | plus: per_page | minus: 1 %}
+{% assign paginated_items = sorted_teacher | slice: start_index, per_page %}
+
+<!-- 显示当前页的导师获奖 -->
+<div class="teacher-awards">
+  {% if paginated_items.size > 0 %}
+    {% for award in paginated_items %}
+    <div class="card mb-3 teacher-card">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start">
+          <h5 class="card-title mb-1">{{ award.title }}</h5>
+          <span class="badge bg-primary">{{ award.level_name }}</span>
         </div>
-        <div class="col border-start">
-          <h4 class="mb-1">{{ site.data.awards | where: "type", "学生竞赛" | size }}</h4>
-          <p class="mb-0 text-muted">学生竞赛奖</p>
+        
+        <div class="card-subtitle mb-2 text-muted">
+          <small>
+            {{ award.year }}年{{ award.month }}月 · {{ award.organization }}
+          </small>
         </div>
-        <div class="col border-start">
-          <h4 class="mb-1">{{ site.data.awards | where: "type", "个人" | size }}</h4>
-          <p class="mb-0 text-muted">个人奖项</p>
-        </div>
-        <div class="col border-start">
-          <h4 class="mb-1">{{ site.data.awards | where: "level", 1 | size }}</h4>
-          <p class="mb-0 text-muted">国家级一等奖</p>
-        </div>
+        
+        {% if award.description %}
+        <p class="card-text">{{ award.description }}</p>
+        {% endif %}
       </div>
     </div>
+    {% endfor %}
+    
+    <!-- 分页导航 -->
+    {% if total_pages > 1 %}
+    <nav aria-label="导师获奖分页" class="mt-4">
+      <ul class="pagination justify-content-center">
+        <!-- 上一页 -->
+        {% if current_page > 1 %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ current_page | minus: 1 }}#teacher-awards">上一页</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">上一页</span>
+        </li>
+        {% endif %}
+        
+        <!-- 页码 -->
+        {% for page_num in (1..total_pages) %}
+          {% if page_num == current_page %}
+          <li class="page-item active" aria-current="page">
+            <span class="page-link">{{ page_num }}</span>
+          </li>
+          {% else %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_num }}#teacher-awards">{{ page_num }}</a>
+          </li>
+          {% endif %}
+        {% endfor %}
+        
+        <!-- 下一页 -->
+        {% if current_page < total_pages %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ current_page | plus: 1 }}#teacher-awards">下一页</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <span class="page-link">下一页</span>
+        </li>
+        {% endif %}
+      </ul>
+      
+      <div class="text-center text-muted small">
+        第 {{ current_page }} 页 / 共 {{ total_pages }} 页 · 共 {{ total_items }} 项
+      </div>
+    </nav>
+    {% endif %}
+    
+  {% else %}
+  <div class="alert alert-info">
+    暂无导师获奖记录
   </div>
+  {% endif %}
 </div>
 
-<!-- 按类型分组显示 -->
-<div class="row">
-  <!-- 学生竞赛奖项 -->
-  <div class="col-lg-8">
-    <h3>🏆 学生竞赛获奖</h3>
+<hr class="my-5">
+
+## 🎓 学生获奖
+<!-- 学生获奖部分 -->
+
+{% assign student_awards = site.data.awards | where: "type", "学生" %}
+{% assign sorted_student = student_awards | sort: "level" | sort: "month" | reverse | sort: "year" | reverse %}
+
+{% if sorted_student.size > 0 %}
+  {% assign current_year = 0 %}
+  
+  {% for award in sorted_student %}
+    {% if award.year != current_year %}
+      {% if current_year != 0 %}</div>{% endif %}
+      <h4 class="mt-4 mb-3">{{ award.year }}年</h4>
+      <div class="ms-3">
+      {% assign current_year = award.year %}
+    {% endif %}
     
-    {% assign student_awards = site.data.awards | where: "type", "学生竞赛" %}
-    {% if student_awards.size > 0 %}
-      {% assign sorted_student = student_awards | sort: "level" | sort: "month" | reverse | sort: "year" | reverse %}
-      
-      {% assign current_year = 0 %}
-      {% assign current_month = 0 %}
-      
-      {% for award in sorted_student %}
-        {% if award.year != current_year %}
-          {% if current_year != 0 %}</div>{% endif %}
-          <h4 class="mt-4 mb-3">{{ award.year }}年</h4>
-          <div class="ms-3">
-          {% assign current_year = award.year %}
-          {% assign current_month = 0 %}
-        {% endif %}
-        
-        {% if award.month != current_month %}
-          {% if current_month != 0 %}</div>{% endif %}
-          <h5 class="mt-3 mb-2">{{ award.month }}月</h5>
-          <div class="ms-3">
-          {% assign current_month = award.month %}
-        {% endif %}
-        
-        <div class="award-item student-award mb-3">
-          <div class="d-flex justify-content-between align-items-start mb-1">
-            <div>
-              <strong>{{ award.competition }}</strong>
-              {% if award.name != award.competition %}
-              <div class="text-muted small">项目：{{ award.name }}</div>
-              {% endif %}
-            </div>
-            <span class="badge 
-              {% if award.level == 0 %}bg-warning text-dark
-              {% elsif award.level == 1 %}bg-danger
-              {% elsif award.level == 2 %}bg-warning text-dark
-              {% elsif award.level == 3 %}bg-info
-              {% elsif award.level == 4 %}bg-success
-              {% elsif award.level == 5 %}bg-primary
-              {% else %}bg-secondary
-              {% endif %}">
-              {{ award.level_name }}
-            </span>
-          </div>
-          
-          <div class="mb-1">
-            <span class="badge bg-light text-dark me-2">
-              <i class="fas fa-user-graduate"></i> {{ award.participant }}
-            </span>
-          </div>
-          
-          {% if award.description and award.description != "" %}
-          <div class="alert alert-light p-2 mt-2 mb-0">
-            <i class="fas fa-trophy text-warning"></i> {{ award.description }}
-          </div>
+    <div class="student-award-item mb-3">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <strong>{{ award.title }}</strong>
+          {% if award.competition %}
+          <div class="text-muted small">{{ award.competition }}</div>
           {% endif %}
         </div>
-      {% endfor %}
+        <span class="badge 
+          {% if award.level == 0 %}bg-warning text-dark
+          {% elsif award.level == 1 or award.level == 3 or award.level == 9 %}bg-danger
+          {% elsif award.level == 2 or award.level == 5 or award.level == 7 or award.level == 10 %}bg-primary
+          {% else %}bg-secondary
+          {% endif %}">
+          {{ award.level_name }}
+        </span>
       </div>
-    {% else %}
-      <p class="text-muted">暂无学生竞赛获奖记录。</p>
-    {% endif %}
-  </div>
-  
-  <!-- 个人奖项 -->
-  <div class="col-lg-4">
-    <h3>🏅 个人奖项</h3>
-    
-    {% assign personal_awards = site.data.awards | where: "type", "个人" %}
-    {% if personal_awards.size > 0 %}
-      {% assign sorted_personal = personal_awards | sort: "level" | sort: "month" | reverse | sort: "year" | reverse %}
       
-      {% for award in sorted_personal %}
-      <div class="award-item personal-award mb-3">
-        <div class="d-flex justify-content-between align-items-start mb-1">
-          <strong>{{ award.name }}</strong>
-          <span class="badge 
-            {% if award.level == 1 %}bg-danger
-            {% elsif award.level == 2 %}bg-warning text-dark
-            {% elsif award.level == 3 %}bg-info
-            {% elsif award.level == 4 %}bg-success
-            {% elsif award.level == 5 %}bg-primary
-            {% else %}bg-secondary
-            {% endif %}">
-            {{ award.level_name }}
-          </span>
-        </div>
-        
-        <div class="text-muted small mb-1">
-          {{ award.organization }} · {{ award.year }}年{{ award.month }}月
-        </div>
-        
-        {% if award.description and award.description != "" %}
-        <div class="small">{{ award.description }}</div>
-        {% endif %}
+      <div class="text-muted small mt-1">
+        {{ award.participant }}
       </div>
-      {% endfor %}
-    {% else %}
-      <p class="text-muted">暂无个人奖项记录。</p>
-    {% endif %}
-    
-    <!-- 添加新奖项的提示 -->
-    <div class="alert alert-light mt-4">
-      <h6>📝 添加新奖项</h6>
-      <p class="small mb-2">如需添加个人奖项，请编辑 <code>_data/awards.yml</code> 文件。</p>
-      <a href="#add-award-instruction" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse">
-        查看添加方法
-      </a>
-      <div id="add-award-instruction" class="collapse mt-2">
-        <pre class="bg-light p-2 small"><code>- type: "个人"
-  name: "奖项名称"
-  year: 2024
-  month: 1
-  level: 1
-  level_name: "国家级一等奖"
-  organization: "颁发机构"
-  description: "奖项描述（可选）"</code></pre>
-      </div>
+      
+      {% if award.note %}
+      <div class="small mt-1 text-info">{{ award.note }}</div>
+      {% endif %}
     </div>
+  {% endfor %}
   </div>
-</div>
-
 {% else %}
-<!-- 如果没有数据，显示静态内容 -->
-<div class="alert alert-warning">
-  <h4>📝 奖项信息正在整理中</h4>
-  <p>目前还没有添加奖项数据。</p>
-  <p>请编辑 <code>_data/awards.yml</code> 文件来添加奖项信息。</p>
+<div class="alert alert-info">
+  暂无学生获奖记录
 </div>
 {% endif %}
 
 </div>
 
 <style>
-.award-item {
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+/* 导师获奖卡片样式 */
+.teacher-card {
+  border-left: 4px solid #0d6efd;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.award-item:hover {
-  transform: translateY(-2px);
+.teacher-card:hover {
+  transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.student-award {
-  border-left: 4px solid #28a745;
+/* 学生获奖项目样式 */
+.student-award-item {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #28a745;
 }
 
-.personal-award {
-  border-left: 4px solid #0d6efd;
+.student-award-item:hover {
+  background: #e9ecef;
 }
 
-.award-item .badge {
-  font-size: 0.85em;
-  padding: 0.35em 0.65em;
-  white-space: nowrap;
+/* 分页样式增强 */
+.pagination .page-link {
+  border-color: #dee2e6;
 }
 
-.alert-light {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+.pagination .active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
 }
 
-h3 {
+/* 标题样式 */
+h2 {
   color: #2c3e50;
   border-bottom: 2px solid #dee2e6;
   padding-bottom: 10px;
@@ -221,25 +209,30 @@ h4 {
   color: #495057;
   font-weight: 600;
 }
-
-h5 {
-  color: #6c757d;
-  font-weight: 600;
-}
-
-pre {
-  border-radius: 6px;
-}
 </style>
 
 <script>
-// 简单的折叠功能
+// 分页锚点跳转处理
 document.addEventListener('DOMContentLoaded', function() {
-  var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
-  var collapseList = collapseElementList.map(function (collapseEl) {
-    return new bootstrap.Collapse(collapseEl, {
-      toggle: false
-    })
-  })
+  // 如果URL中有页码参数，滚动到导师获奖部分
+  const urlParams = new URLSearchParams(window.location.search);
+  const page = urlParams.get('page');
+  if (page) {
+    // 等待页面加载完成
+    setTimeout(() => {
+      const teacherSection = document.getElementById('teacher-awards');
+      if (teacherSection) {
+        teacherSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  }
+  
+  // 分页链接添加锚点
+  const paginationLinks = document.querySelectorAll('.pagination a.page-link');
+  paginationLinks.forEach(link => {
+    if (!link.href.includes('#')) {
+      link.href += '#teacher-awards';
+    }
+  });
 });
 </script>
