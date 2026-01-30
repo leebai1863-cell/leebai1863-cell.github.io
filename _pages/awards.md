@@ -1,7 +1,7 @@
 ---
 layout: default
-permalink: /blog/
-title: Blog
+permalink: /awards/
+title: awards
 nav: true
 nav_order: 6
 ---
