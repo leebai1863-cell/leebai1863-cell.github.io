@@ -1,23 +1,165 @@
-# 创建 `_data/awards.yml`
-- year: 2023
-  title: "国家自然科学奖"
-  category: "国家级"
-  organization: "国家自然科学基金委员会"
-  description: "基于深度学习的自然语言处理研究"
-  link: ""
-  importance: 1  # 排序权重，数字越大越靠前
+# 奖项等级编码规则：
+# 0: 特殊荣誉（如国赛入围）
+# 1: 国家级一等奖
+# 2: 国家级二等奖
+# 3: 国家级三等奖
+# 4: 赛区一等奖
+# 5: 赛区二等奖
+# 6: 赛区三等奖
 
-- year: 2022
-  title: "ACL 最佳论文奖"
-  category: "国际会议"
-  organization: "计算语言学协会"
-  description: "多语言预训练模型研究"
-  pdf: ""
-  importance: 2
+# 2025年8月获奖记录
+- name: "基于果枝状态与力杠杆分离的猕猴桃疏果机器人"
+  year: 2025
+  month: 8
+  level: 0
+  level_name: "国赛入围"
+  competition: "第七届中国研究生机器人创新设计大赛"
+  team_leader: "张梦影"
+  team_members: ""
+  achievement: "团队连续三年入围该项赛事的全国总决赛，全校唯一！"
+  note: "硕士研究生带队"
 
-- year: 2021
-  title: "优秀博士论文奖"
-  category: "学术荣誉"
-  organization: "某某大学"
-  description: "博士期间研究成果"
-  importance: 3
+- name: "第二十届中国研究生电子设计竞赛"
+  year: 2025
+  month: 8
+  level: 3
+  level_name: "国家级三等奖"
+  competition: "第二十届中国研究生电子设计竞赛"
+  team_leader: "辜煜"
+  note: "硕士研究生带队"
+
+- name: "第二十届中国研究生电子设计竞赛"
+  year: 2025
+  month: 8
+  level: 5
+  level_name: "西北赛区二等奖"
+  competition: "第二十届中国研究生电子设计竞赛"
+  team_leader: "丁煜松"
+  note: "硕士研究生带队"
+
+- name: "第二十届中国研究生电子设计竞赛"
+  year: 2025
+  month: 8
+  level: 5
+  level_name: "西北赛区二等奖"
+  competition: "第二十届中国研究生电子设计竞赛"
+  team_leader: "牛世奥"
+  note: "硕士研究生带队"
+
+- name: "第二十届中国研究生电子设计竞赛"
+  year: 2025
+  month: 8
+  level: 5
+  level_name: "西北赛区二等奖"
+  competition: "第二十届中国研究生电子设计竞赛"
+  team_leader: "张昊森"
+  note: "硕士研究生带队"
+
+- name: "第二十届中国研究生电子设计竞赛"
+  year: 2025
+  month: 8
+  level: 6
+  level_name: "西北赛区三等奖"
+  competition: "第二十届中国研究生电子设计竞赛"
+  team_leader: "蒋理国"
+  note: "硕士研究生带队"
+
+- name: "第二十届中国研究生电子设计竞赛"
+  year: 2025
+  month: 8
+  level: 6
+  level_name: "西北赛区三等奖"
+  competition: "第二十届中国研究生电子设计竞赛"
+  team_leader: "张梦影"
+  note: "硕士研究生带队"
+
+- name: "第二十届中国研究生电子设计竞赛"
+  year: 2025
+  month: 8
+  level: 6
+  level_name: "西北赛区三等奖"
+  competition: "第二十届中国研究生电子设计竞赛"
+  team_leader: "黄俊才"
+  note: "硕士研究生带队"
+
+- name: "作物智慧生产技术博新论坛学术报告"
+  year: 2025
+  month: 8
+  level: 5
+  level_name: "二等奖"
+  competition: "中国作物学会智慧农业专业委员会第四届学术年会"
+  team_leader: "张梦影"
+  note: "硕士研究生"
+
+- name: "作物智慧生产技术博新论坛学术报告"
+  year: 2025
+  month: 8
+  level: 6
+  level_name: "三等奖"
+  competition: "中国作物学会智慧农业专业委员会第四届学术年会"
+  team_leader: "孔朔琳"
+  note: "博士研究生"
+
+# 2025年7月获奖记录
+- name: "第二十七届中国机器人及人工智能大赛"
+  year: 2025
+  month: 7
+  level: 1
+  level_name: "国家级一等奖"
+  competition: "第二十七届中国机器人及人工智能大赛"
+  team_leader: "牛世奥"
+  note: "硕士研究生带队"
+
+- name: "第二十七届中国机器人及人工智能大赛"
+  year: 2025
+  month: 7
+  level: 1
+  level_name: "国家级一等奖"
+  competition: "第二十七届中国机器人及人工智能大赛"
+  team_leader: "张昊森"
+  note: "硕士研究生带队"
+
+- name: "第二十七届中国机器人及人工智能大赛"
+  year: 2025
+  month: 7
+  level: 1
+  level_name: "国家级一等奖"
+  competition: "第二十七届中国机器人及人工智能大赛"
+  team_leader: "张继伟"
+  note: "硕士研究生带队"
+
+- name: "第二十七届中国机器人及人工智能大赛"
+  year: 2025
+  month: 7
+  level: 2
+  level_name: "国家级二等奖"
+  competition: "第二十七届中国机器人及人工智能大赛"
+  team_leader: "贺磊磊"
+  note: "博士研究生带队"
+
+- name: "第二十七届中国机器人及人工智能大赛"
+  year: 2025
+  month: 7
+  level: 2
+  level_name: "国家级二等奖"
+  competition: "第二十七届中国机器人及人工智能大赛"
+  team_leader: "罗睿超"
+  note: "硕士研究生带队"
+
+- name: "第二十七届中国机器人及人工智能大赛"
+  year: 2025
+  month: 7
+  level: 2
+  level_name: "国家级二等奖"
+  competition: "第二十七届中国机器人及人工智能大赛"
+  team_leader: "史宇飞"
+  note: "硕士研究生带队"
+
+- name: "第二十七届中国机器人及人工智能大赛"
+  year: 2025
+  month: 7
+  level: 6
+  level_name: "陕西赛区三等奖"
+  competition: "第二十七届中国机器人及人工智能大赛"
+  team_leader: "黄俊才"
+  note: "硕士研究生带队"
