@@ -8,6 +8,11 @@ nav_order: 6
 
 <div class="awards-page container mt-5">
 
+<!-- 页面标题 -->
+<div class="page-header text-center mb-5">
+  <h1 class="display-5 fw-bold mb-3">🏆 Awards</h1>
+  <p class="lead text-muted mb-4">Academic and competition achievements of our team</p>
+</div>
 
 <!-- 第一部分：导师获奖 -->
 <div class="faculty-awards-section mb-5">
@@ -149,6 +154,9 @@ nav_order: 6
 
 .page-header {
   padding: 2rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  margin-bottom: 2rem;
 }
 
 .display-5 {
@@ -166,35 +174,252 @@ nav_order: 6
   font-size: 1.5rem;
   color: #2c3e50;
   font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #20c997);
+  border-radius: 2px;
 }
 
 .section-subtitle {
   font-size: 0.9rem;
 }
 
-/* 卡片样式 */
-.award-card {
-  border: 1px solid #e9ecef;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+/* 导师获奖卡片样式 - 增强版 */
+.teacher-award-card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
   background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.teacher-award-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--card-accent-color, #0d6efd), #20c997);
+}
+
+.teacher-award-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.teacher-award-header {
+  padding: 1.25rem 1.5rem 1rem;
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.05), rgba(32, 201, 151, 0.05));
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.teacher-award-title {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.teacher-award-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-bottom: 1rem;
 }
 
-.award-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
-.award-card .card-header {
-  background-color: rgba(0,0,0,0.02);
-  border-bottom: 1px solid #e9ecef;
-  padding: 0.75rem 1rem;
+.meta-badge i {
+  margin-right: 0.4rem;
+  opacity: 0.8;
 }
 
-.card-title {
+.teacher-award-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.teacher-award-description {
+  color: #495057;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid var(--card-accent-color, #0d6efd);
+}
+
+.teacher-award-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  background: rgba(0,0,0,0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.award-level-badge {
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #2c3e50;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.award-level-badge i {
+  font-size: 0.9em;
+}
+
+.award-year {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: rgba(0,0,0,0.05);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+/* 不同等级的颜色主题 */
+.level-special {
+  --card-accent-color: #ffc107;
+  --card-bg-color: #fff8e1;
+  --badge-bg: linear-gradient(135deg, #ffc107, #ff9800);
+  --badge-color: #856404;
+}
+
+.level-national-1 {
+  --card-accent-color: #dc3545;
+  --card-bg-color: #f8d7da;
+  --badge-bg: linear-gradient(135deg, #dc3545, #c82333);
+  --badge-color: white;
+}
+
+.level-national-2 {
+  --card-accent-color: #fd7e14;
+  --card-bg-color: #ffe5d0;
+  --badge-bg: linear-gradient(135deg, #fd7e14, #e9690c);
+  --badge-color: #663c00;
+}
+
+.level-national-3 {
+  --card-accent-color: #17a2b8;
+  --card-bg-color: #d1ecf1;
+  --badge-bg: linear-gradient(135deg, #17a2b8, #138496);
+  --badge-color: white;
+}
+
+.level-provincial-1 {
+  --card-accent-color: #28a745;
+  --card-bg-color: #d4edda;
+  --badge-bg: linear-gradient(135deg, #28a745, #1e7e34);
+  --badge-color: white;
+}
+
+.level-provincial-2 {
+  --card-accent-color: #6f42c1;
+  --card-bg-color: #e2d9f3;
+  --badge-bg: linear-gradient(135deg, #6f42c1, #59359a);
+  --badge-color: white;
+}
+
+.level-other {
+  --card-accent-color: #6c757d;
+  --card-bg-color: #e2e3e5;
+  --badge-bg: linear-gradient(135deg, #6c757d, #545b62);
+  --badge-color: white;
+}
+
+/* 应用颜色主题 */
+.level-special .teacher-award-card:before {
+  background: linear-gradient(to bottom, #ffc107, #ff9800);
+}
+
+.level-national-1 .teacher-award-card:before {
+  background: linear-gradient(to bottom, #dc3545, #c82333);
+}
+
+.level-national-2 .teacher-award-card:before {
+  background: linear-gradient(to bottom, #fd7e14, #e9690c);
+}
+
+.level-national-3 .teacher-award-card:before {
+  background: linear-gradient(to bottom, #17a2b8, #138496);
+}
+
+.level-provincial-1 .teacher-award-card:before {
+  background: linear-gradient(to bottom, #28a745, #1e7e34);
+}
+
+.level-provincial-2 .teacher-award-card:before {
+  background: linear-gradient(to bottom, #6f42c1, #59359a);
+}
+
+.level-other .teacher-award-card:before {
+  background: linear-gradient(to bottom, #6c757d, #545b62);
+}
+
+.level-special .award-level-badge {
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  color: #856404;
+  box-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+
+.level-national-1 .award-level-badge {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.level-national-2 .award-level-badge {
+  background: linear-gradient(135deg, #fd7e14, #e9690c);
+  color: white;
+  box-shadow: 0 2px 4px rgba(253, 126, 20, 0.3);
+}
+
+.level-national-3 .award-level-badge {
+  background: linear-gradient(135deg, #17a2b8, #138496);
+  color: white;
+  box-shadow: 0 2px 4px rgba(23, 162, 184, 0.3);
+}
+
+.level-provincial-1 .award-level-badge {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.level-provincial-2 .award-level-badge {
+  background: linear-gradient(135deg, #6f42c1, #59359a);
+  color: white;
+  box-shadow: 0 2px 4px rgba(111, 66, 193, 0.3);
+}
+
+.level-other .award-level-badge {
+  background: linear-gradient(135deg, #6c757d, #545b62);
+  color: white;
+  box-shadow: 0 2px 4px rgba(108, 117, 125, 0.3);
 }
 
 /* 年份分组 */
@@ -245,10 +470,12 @@ nav_order: 6
 .stat-box {
   background: white;
   transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
 }
 
 .stat-box:hover {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
 }
 
 .stat-value {
@@ -314,7 +541,13 @@ nav_order: 6
     font-size: 1.8rem;
   }
   
-  .award-card {
+  .teacher-award-card {
+    padding: 0;
+  }
+  
+  .teacher-award-header,
+  .teacher-award-body,
+  .teacher-award-footer {
     padding: 1rem;
   }
   
@@ -341,7 +574,7 @@ nav_order: 6
   }
 }
 
-.award-card {
+.teacher-award-card {
   animation: fadeInUp 0.3s ease forwards;
 }
 
@@ -421,7 +654,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // 导师获奖分页功能
   // ============================
   
-  const teacherItemsPerPage = 4;  // 改为每页4条
+  const teacherItemsPerPage = 4;  // 每页4条
   let currentTeacherPage = 1;
   const totalTeacherItems = teacherAwards.length;
   const totalTeacherPages = Math.ceil(totalTeacherItems / teacherItemsPerPage);
@@ -430,6 +663,32 @@ document.addEventListener('DOMContentLoaded', function() {
   const teacherPagination = document.getElementById('teacher-pagination');
   const teacherPaginationList = document.getElementById('teacher-pagination-list');
   const teacherPageInfo = document.getElementById('teacher-page-info');
+  
+  // 获取等级对应的CSS类
+  function getLevelClass(level) {
+    switch(level) {
+      case 0: return 'level-special';      // 特等奖/国赛入围
+      case 1: return 'level-national-1';   // 国家级一等奖
+      case 2: return 'level-national-2';   // 国家级二等奖
+      case 3: return 'level-national-3';   // 国家级三等奖
+      case 4: return 'level-provincial-1'; // 省级一等奖
+      case 5: return 'level-provincial-2'; // 省级二等奖
+      default: return 'level-other';       // 其他
+    }
+  }
+  
+  // 获取等级对应的图标
+  function getLevelIcon(level) {
+    switch(level) {
+      case 0: return 'fas fa-crown';      // 特等奖/国赛入围
+      case 1: return 'fas fa-trophy';     // 国家级一等奖
+      case 2: return 'fas fa-medal';      // 国家级二等奖
+      case 3: return 'fas fa-award';      // 国家级三等奖
+      case 4: return 'fas fa-star';       // 省级一等奖
+      case 5: return 'fas fa-certificate'; // 省级二等奖
+      default: return 'fas fa-gem';       // 其他
+    }
+  }
   
   // 渲染导师获奖列表
   function renderTeacherAwards() {
@@ -454,43 +713,45 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 渲染项目
     currentItems.forEach((award, index) => {
+      const levelClass = getLevelClass(award.level);
+      const levelIcon = getLevelIcon(award.level);
+      
       const awardCard = document.createElement('div');
-      awardCard.className = 'award-card';
+      awardCard.className = `teacher-award-card ${levelClass}`;
       awardCard.style.animationDelay = `${index * 0.1}s`;
       
-      // 根据等级确定徽章颜色
-      let badgeClass = 'bg-secondary';
-      if (award.level === 0) {
-        badgeClass = 'bg-warning';
-      } else if (award.level === 1) {
-        badgeClass = 'bg-danger';
-      }
-      
       awardCard.innerHTML = `
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <span class="badge ${badgeClass}">
-            ${award.levelName}
-          </span>
-          <span class="text-muted">${award.year}</span>
-        </div>
-        
-        <div class="card-body">
-          <h5 class="card-title mb-2">${award.title}</h5>
+        <div class="teacher-award-header">
+          <h5 class="teacher-award-title">${award.title}</h5>
           
-          <div class="d-flex flex-wrap gap-2 mb-3">
+          <div class="teacher-award-meta">
             ${award.organization ? `
-            <span class="badge bg-light text-dark">
-              <i class="fas fa-building me-1"></i>
+            <span class="meta-badge">
+              <i class="fas fa-building"></i>
               ${award.organization}
             </span>
             ` : ''}
-            <span class="badge bg-light text-dark">
-              <i class="far fa-calendar-alt me-1"></i>
-              ${award.year}-${award.month}
+            <span class="meta-badge">
+              <i class="far fa-calendar-alt"></i>
+              ${award.year}-${String(award.month).padStart(2, '0')}
             </span>
           </div>
-          
-          ${award.description ? `<p class="card-text text-muted">${award.description}</p>` : ''}
+        </div>
+        
+        <div class="teacher-award-body">
+          ${award.description ? `
+          <div class="teacher-award-description">
+            ${award.description}
+          </div>
+          ` : ''}
+        </div>
+        
+        <div class="teacher-award-footer">
+          <div class="award-level-badge">
+            <i class="${levelIcon}"></i>
+            ${award.levelName}
+          </div>
+          <div class="award-year">${award.year}年</div>
         </div>
       `;
       
