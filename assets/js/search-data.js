@@ -44,12 +44,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/activities/";
           },
-        },{id: "nav-awards",
-          title: "Awards",
+        },{id: "nav-奖项与荣誉",
+          title: "奖项与荣誉",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/awards/";
+            window.location.href = "/awards/index.html";
           },
         },{id: "nav-members",
           title: "Members",
