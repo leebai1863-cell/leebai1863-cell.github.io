@@ -44,8 +44,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/activities/";
           },
-        },{id: "nav-awards",
-          title: "Awards",
+        },{id: "nav-奖项与荣誉",
+          title: "奖项与荣誉",
           description: "",
           section: "Navigation",
           handler: () => {
