@@ -27,15 +27,7 @@ faculty:
 
 # 在读学生
 current:
-  # ... 原有在读学生数据
-
-# 已毕业学生
-graduated:
-  # ... 原有已毕业学生数据
-
-current:
-  
-  
+  # 博士研究生
   - year: "2022级"
     name: "毛吾兰"
     degree: "博士研究生"
@@ -96,6 +88,7 @@ current:
     photo: "/assets/img/members/Parvin_Mohammadi.jpg"
     research: ""
 
+  # 硕士研究生（2023级）
   - year: "2023级"
     name: "蒋理国"
     degree: "硕士研究生"
@@ -144,6 +137,7 @@ current:
     photo: "/assets/img/members/gy.jpg"
     research: ""
 
+  # 硕士研究生（2024级）
   - year: "2024级"
     name: "牛世奥"
     degree: "硕士研究生"
@@ -192,6 +186,7 @@ current:
     photo: "/assets/img/members/lrc.jpg"
     research: ""
 
+  # 硕士研究生（2025级）
   - year: "2025级"
     name: "龚其林"
     degree: "硕士研究生"
@@ -252,7 +247,7 @@ current:
     photo: "/assets/img/members/zq.jpg"
     research: ""
 
-  # 新增2026级硕士研究生
+  # 硕士研究生（2026级）
   - year: "2026级"
     name: "赵志广"
     degree: "硕士研究生"
@@ -277,178 +272,176 @@ current:
     photo: "/assets/img/members/zh.jpg"
     research: ""
 
-  # 继续添加其他在读学生...
-  # 格式：年-姓名-学位-照片路径-研究方向
-
+# 已毕业学生
 graduated:
-
+  # 博士研究生
   - year: "2020级"
     name: "姜立志"
     degree: "博士研究生"
     photo: "/assets/img/members/jlz.jpg"
-    graduation_destination: "高校"  # 请在这里填写毕业去向
+    graduation_destination: "高校"
 
+  - year: "2020级"
+    name: "武振超"
+    degree: "博士研究生"
+    photo: "/assets/img/members/wzc.jpg"
+    graduation_destination: "安徽农业大学工学院 副教授"
+
+  # 硕士研究生（按年级排列）
   # 2014级硕士
   - year: "2014级"
     name: "彭俊"
     degree: "硕士研究生"
     photo: "/assets/img/members/pj.jpg"
-    graduation_destination: "长安大学讲师"  # 请在这里填写毕业去向
+    graduation_destination: "长安大学讲师"
   
   - year: "2014级"
     name: "孙世鹏"
     degree: "硕士研究生"
     photo: "/assets/img/members/ssp.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: ""
   
   # 2016级硕士
   - year: "2016级"
     name: "冯亚利"
     degree: "硕士研究生"
     photo: "/assets/img/members/fyl.jpg"
-    graduation_destination: "山西农业大学讲师"  # 请在这里填写毕业去向
+    graduation_destination: "山西农业大学讲师"
 
   - year: "2016级"
     name: "谢洪起"
     degree: "硕士研究生"
     photo: "/assets/img/members/xhq.jpg"
-    graduation_destination: "成都京东方"  # 请在这里填写毕业去向
+    graduation_destination: "成都京东方"
 
   # 2017级硕士
   - year: "2017级"
     name: "刘智豪"
     degree: "硕士研究生"
     photo: "/assets/img/members/lzh.jpg"
-    graduation_destination: "熠鑫科技"  # 请在这里填写毕业去向
+    graduation_destination: "熠鑫科技"
 
   - year: "2017级"
     name: "赵海东"
     degree: "硕士研究生"
     photo: "/assets/img/members/zhd.jpg"
-    graduation_destination: "法士特"  # 请在这里填写毕业去向
+    graduation_destination: "法士特"
 
   # 2018级硕士
   - year: "2018级"
     name: "宋珍珍"
     degree: "硕士研究生"
     photo: "/assets/img/members/szz.jpg"
-    graduation_destination: "潍柴动力"  # 请在这里填写毕业去向
+    graduation_destination: "潍柴动力"
   
   - year: "2018级"
     name: "王文奇"
     degree: "硕士研究生"
     photo: "/assets/img/members/wwq.jpg"
-    graduation_destination: "徐工集团"  # 请在这里填写毕业去向
+    graduation_destination: "徐工集团"
   
   # 2019级硕士
   - year: "2019级"
     name: "高芳芳"
     degree: "硕士研究生"
     photo: "/assets/img/members/gff.jpg"
-    graduation_destination: "吉林大学博士"  # 请在这里填写毕业去向
+    graduation_destination: "吉林大学博士"
   
   - year: "2019级"
     name: "周忠贤"
     degree: "硕士研究生"
     photo: "/assets/img/members/zzx.jpg"
-    graduation_destination: "广联达有限公司"  # 请在这里填写毕业去向
+    graduation_destination: "广联达有限公司"
   
   - year: "2019级"
     name: "张云赫"
     degree: "硕士研究生"
     photo: "/assets/img/members/zyh.jpg"
-    graduation_destination: ""  # 请在这里填写毕业去向
+    graduation_destination: ""
 
-  # 2020级博士
-  - year: "2020级"
-    name: "武振超"
-    degree: "博士研究生"
-    photo: "/assets/img/members/wzc.jpg"
-    graduation_destination: "安徽农业大学工学院 副教授"  # 请在这里填写毕业去向
-  
   # 2020级硕士
   - year: "2020级"
     name: "李政坤"
     degree: "硕士研究生"
     photo: "/assets/img/members/lzk.jpg"
-    graduation_destination: "佐治亚大学直博"  # 请在这里填写毕业去向
+    graduation_destination: "佐治亚大学直博"
   
   - year: "2020级"
     name: "李果"
     degree: "硕士研究生"
     photo: "/assets/img/members/lg.jpg"
-    graduation_destination: "三一重工"  # 请在这里填写毕业去向
+    graduation_destination: "三一重工"
   
   - year: "2020级"
     name: "赵关奥"
     degree: "硕士研究生"
     photo: "/assets/img/members/zga.jpg"
-    graduation_destination: "西安交通大学博士"  # 请在这里填写毕业去向
+    graduation_destination: "西安交通大学博士"
   
   - year: "2020级"
     name: "杨睿哲"
     degree: "硕士研究生"
     photo: "/assets/img/members/yrz.jpg"
-    graduation_destination: "科佳机电"  # 请在这里填写毕业去向
+    graduation_destination: "科佳机电"
   
   - year: "2020级"
     name: "索睿"
     degree: "硕士研究生"
     photo: "/assets/img/members/sr.jpg"
-    graduation_destination: "新疆交通职业技术学院"  # 请在这里填写毕业去向
+    graduation_destination: "新疆交通职业技术学院"
   
   # 2021级硕士
   - year: "2021级"
     name: "孙晓明"
     degree: "硕士研究生"
     photo: "/assets/img/members/sxm.jpg"
-    graduation_destination: "太原重工"  # 请在这里填写毕业去向
+    graduation_destination: "太原重工"
   
   - year: "2021级"
     name: "房文泰"
     degree: "硕士研究生"
     photo: "/assets/img/members/fwt.jpg"
-    graduation_destination: "大疆"  # 请在这里填写毕业去向
+    graduation_destination: "大疆"
   
   - year: "2021级"
     name: "高常青"
     degree: "硕士研究生"
     photo: "/assets/img/members/gcq.jpg"
-    graduation_destination: "湖南大学博士"  # 请在这里填写毕业去向
+    graduation_destination: "湖南大学博士"
   
   # 2022级硕士
   - year: "2022级"
     name: "江晗慧"
     degree: "硕士研究生"
     photo: "/assets/img/members/jhh.jpg"
-    graduation_destination: "国网安徽"  # 请在这里填写毕业去向
+    graduation_destination: "国网安徽"
   
   - year: "2022级"
     name: "荆旭东"
     degree: "硕士研究生"
     photo: "/assets/img/members/jxd.jpg"
-    graduation_destination: "OPPO"  # 请在这里填写毕业去向
+    graduation_destination: "OPPO"
   
   - year: "2022级"
     name: "陈池"
     degree: "硕士研究生"
     photo: "/assets/img/members/cc.jpg"
-    graduation_destination: "西安比亚迪"  # 请在这里填写毕业去向
+    graduation_destination: "西安比亚迪"
   
   - year: "2022级"
     name: "党浩杰"
     degree: "硕士研究生"
     photo: "/assets/img/members/dhj.jpg"
-    graduation_destination: "西安航天自动化"  # 请在这里填写毕业去向
+    graduation_destination: "西安航天自动化"
   
   - year: "2022级"
     name: "韦瑞扬"
     degree: "硕士研究生"
     photo: "/assets/img/members/wry.jpg"
-    graduation_destination: "深圳比亚迪"  # 请在这里填写毕业去向
+    graduation_destination: "深圳比亚迪"
   
   - year: "2022级"
     name: "刘国良"
     degree: "硕士研究生"
     photo: "/assets/img/members/llg.jpg"
-    graduation_destination: "泰开高压"  # 请在这里填写毕业去向
+    graduation_destination: "泰开高压"
