@@ -123,7 +123,7 @@ nav_order: 6
         {% if award.note %}
         <div class="award-note">
           <i class="fas fa-star me-2"></i>
-          {{ award.note }}
+          <span>{{ award.note }}</span>
         </div>
         {% endif %}
         
@@ -216,19 +216,19 @@ nav_order: 6
             <span>{{ award.organization }}</span>
           </div>
           {% endif %}
+          
+          {% if award.title != award.competition %}
+          <div class="detail-item project-item">
+            <i class="fas fa-project-diagram me-2"></i>
+            <span>{{ award.title }}</span>
+          </div>
+          {% endif %}
         </div>
-        
-        {% if award.title != award.competition %}
-        <div class="project-info">
-          <small>Project:</small>
-          <div>{{ award.title }}</div>
-        </div>
-        {% endif %}
         
         {% if award.note %}
         <div class="award-note">
           <i class="fas fa-star me-2"></i>
-          {{ award.note }}
+          <span>{{ award.note }}</span>
         </div>
         {% endif %}
         
@@ -421,12 +421,28 @@ nav_order: 6
   margin-bottom: 0.5rem;
   color: #6c757d;
   font-size: 0.9rem;
+  flex-wrap: wrap;
 }
 
 .detail-item i {
   width: 16px;
   text-align: center;
   opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.detail-item span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.project-item {
+  background: #f8f9fa;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border-left: 3px solid #28a745;
 }
 
 /* 描述部分 */
@@ -439,27 +455,6 @@ nav_order: 6
   border-radius: 6px;
   margin-bottom: 1rem;
   border-left: 3px solid #007bff;
-}
-
-/* 项目信息 */
-.project-info {
-  background: #f8f9fa;
-  padding: 0.75rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  border-left: 3px solid #28a745;
-}
-
-.project-info small {
-  display: block;
-  color: #6c757d;
-  font-size: 0.8rem;
-  margin-bottom: 0.25rem;
-}
-
-.project-info div {
-  color: #495057;
-  font-size: 0.9rem;
 }
 
 /* 备注 */
@@ -477,6 +472,14 @@ nav_order: 6
 
 .award-note i {
   margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.award-note span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* 页脚 */
@@ -494,8 +497,10 @@ nav_order: 6
   padding: 0.4em 0.8em;
   border-radius: 20px;
   font-size: 0.8rem;
+  white-space: nowrap;
 }
 
+/* 修复：为省级三等奖(level: 6)添加颜色 */
 .level-0 {
   background: linear-gradient(135deg, #ffd700, #ff9800);
   color: #856404;
@@ -526,14 +531,20 @@ nav_order: 6
   color: white;
 }
 
-.level-other {
+.level-6 {
   background: linear-gradient(135deg, #6c757d, #545b62);
+  color: white;
+}
+
+.level-7 {
+  background: linear-gradient(135deg, #9e9e9e, #757575);
   color: white;
 }
 
 .award-year {
   color: #6c757d;
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 /* 空状态 */
@@ -575,6 +586,21 @@ nav_order: 6
   .award-card {
     padding: 1.25rem;
   }
+  
+  .award-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .award-type-badge {
+    margin-top: 0.5rem;
+  }
+  
+  .award-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -593,6 +619,16 @@ nav_order: 6
   
   .filter-btn {
     width: 100%;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .detail-item i {
+    margin-bottom: 0.25rem;
   }
 }
 </style>
