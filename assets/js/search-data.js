@@ -44,13 +44,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/activities/";
           },
-        },{id: "nav-blog",
-          title: "Blog",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blog/";
-          },
         },{id: "nav-members",
           title: "Members",
           description: "Team members of AgRobot",
