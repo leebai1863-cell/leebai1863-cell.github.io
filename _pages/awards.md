@@ -8,11 +8,6 @@ nav_order: 6
 
 <div class="awards-page container mt-5">
 
-<!-- 页面标题 -->
-<div class="page-header text-center mb-5">
-  <h1 class="display-5 fw-bold mb-3">🏆 Awards</h1>
-  <p class="lead text-muted mb-4">Academic and competition achievements of our team</p>
-</div>
 
 <!-- 第一部分：导师获奖 -->
 <div class="faculty-awards-section mb-5">
