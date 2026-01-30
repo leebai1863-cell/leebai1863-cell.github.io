@@ -1,0 +1,23 @@
+# 创建 `_data/awards.yml`
+- year: 2023
+  title: "国家自然科学奖"
+  category: "国家级"
+  organization: "国家自然科学基金委员会"
+  description: "基于深度学习的自然语言处理研究"
+  link: ""
+  importance: 1  # 排序权重，数字越大越靠前
+
+- year: 2022
+  title: "ACL 最佳论文奖"
+  category: "国际会议"
+  organization: "计算语言学协会"
+  description: "多语言预训练模型研究"
+  pdf: ""
+  importance: 2
+
+- year: 2021
+  title: "优秀博士论文奖"
+  category: "学术荣誉"
+  organization: "某某大学"
+  description: "博士期间研究成果"
+  importance: 3
