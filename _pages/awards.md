@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /awards/
-title: awards
+title: Awards
 nav: true
 nav_order: 6
 ---
