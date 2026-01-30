@@ -88,7 +88,7 @@ nav_order: 6
   <div class="year-section mb-5">
     <h3 class="year-title">All Awards</h3>
     
-    <div id="all-awards-list" class="awards-grid">
+    <div id="all-awards-list" class="awards-list">
       <!-- 内容由JavaScript动态加载 -->
       <div class="text-center py-5">
         <div class="spinner-border text-primary" role="status">
@@ -117,7 +117,7 @@ nav_order: 6
   <div class="year-section mb-5">
     <h3 class="year-title">Faculty Awards</h3>
     
-    <div id="faculty-awards-list" class="awards-grid">
+    <div id="faculty-awards-list" class="awards-list">
       <!-- 内容由JavaScript动态加载 -->
       <div class="text-center py-5">
         <div class="spinner-border text-primary" role="status">
@@ -146,7 +146,7 @@ nav_order: 6
   <div class="year-section mb-5">
     <h3 class="year-title">Student Awards</h3>
     
-    <div id="student-awards-list" class="awards-grid">
+    <div id="student-awards-list" class="awards-list">
       <!-- 内容由JavaScript动态加载 -->
       <div class="text-center py-5">
         <div class="spinner-border text-success" role="status">
@@ -265,31 +265,23 @@ nav_order: 6
   border-bottom: 2px solid #f0f0f0;
 }
 
-/* 奖项网格 */
-.awards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
+/* 奖项列表 - 单列布局 */
+.awards-list {
   min-height: 200px;
 }
 
-@media (max-width: 768px) {
-  .awards-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 奖项卡片 */
+/* 奖项卡片 - 单列布局 */
 .award-card {
   background: white;
   border: 1px solid #e9ecef;
   border-radius: 10px;
   padding: 1.5rem;
+  margin-bottom: 1rem;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: 100%;
 }
 
 .award-card:hover {
@@ -307,7 +299,7 @@ nav_order: 6
 
 .award-title {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #2c3e50;
   line-height: 1.4;
   flex: 1;
