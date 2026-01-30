@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /awards/
-title: 奖项与荣誉
+title: Awards
 nav: true
 nav_order: 6
 ---
