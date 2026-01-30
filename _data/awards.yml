@@ -11,6 +11,54 @@
   level_name: "优秀导师"
   organization: "学校"
   description: "年度优秀研究生指导教师"
+- type: "导师"
+  title: "优秀研究生导师"
+  year: 2020
+  month: 11
+  level: 3
+  level_name: "优秀导师"
+  organization: "学校"
+  description: "年度优秀研究生指导教师"
+- type: "导师"
+  title: "优秀研究生导师"
+  year: 2020
+  month: 11
+  level: 3
+  level_name: "优秀导师"
+  organization: "学校"
+  description: "年度优秀研究生指导教师"
+- type: "导师"
+  title: "优秀研究生导师"
+  year: 2020
+  month: 11
+  level: 3
+  level_name: "优秀导师"
+  organization: "学校"
+  description: "年度优秀研究生指导教师"
+- type: "导师"
+  title: "优秀研究生导师"
+  year: 2020
+  month: 11
+  level: 3
+  level_name: "优秀导师"
+  organization: "学校"
+  description: "年度优秀研究生指导教师"
+- type: "导师"
+  title: "优秀研究生导师"
+  year: 2020
+  month: 11
+  level: 3
+  level_name: "优秀导师"
+  organization: "学校"
+  description: "年度优秀研究生指导教师"
+- type: "导师"
+  title: "优秀研究生导师"
+  year: 2020
+  month: 11
+  level: 3
+  level_name: "优秀导师"
+  organization: "学校"
+  description: "年度优秀研究生指导教师"
 
 # ========== 学生获奖（原有数据） ==========
 - type: "学生"
